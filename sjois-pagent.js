@@ -14137,7 +14137,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           G("div", {
             className: " my-1",
             children: G(Qg, {
-              site: t.shopifyUrl,
+              site: window.location.origin,
               productURL: window.location.href,
               openKey: t.openApiKey,
             }),
