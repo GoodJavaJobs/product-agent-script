@@ -14080,6 +14080,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
               className: "flex-1 input-chat ",
             }),
             G("svg", {
+              style: { cursor: "pointer" },
               xmlns: "http://www.w3.org/2000/svg",
               fill: "#000000",
               viewBox: "0 0 24 24",
