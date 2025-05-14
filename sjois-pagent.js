@@ -14020,6 +14020,12 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           style: { scrollbarWidth: "thin" },
           className:
             "h-300 p-3 overflow-y-auto  border-b border-gray-200 chat-bubble",
+          onWheel: (y) => {
+            y.stopPropagation();
+            const x = y.currentTarget,
+              S = y.deltaY;
+            (x.scrollTop += S), y.preventDefault();
+          },
           children: [
             r.map((y, x) =>
               G(
@@ -14085,6 +14091,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
               fill: "#000000",
               viewBox: "0 0 24 24",
               className: "w-6 h-6",
+              onClick: b,
               children: [
                 G("g", {
                   children: G("path", {
@@ -14100,49 +14107,46 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     });
   }
   function Yg({ agentInfo: t }) {
-    return (
-      console.log(t),
-      G("div", {
-        className: "border border-gray-200",
-        children: [
-          G("div", {
-            className: "flex gap-2 border-b border-gray-200  chat-header",
-            children: [
-              G("div", {
-                children: G("img", {
-                  className: "rounded-full",
-                  width: 40,
-                  src: t.image,
-                  alt: t.name,
-                }),
+    return G("div", {
+      className: "border border-gray-200",
+      children: [
+        G("div", {
+          className: "flex gap-2 border-b border-gray-200  chat-header",
+          children: [
+            G("div", {
+              children: G("img", {
+                className: "rounded-full",
+                width: 40,
+                src: t.image,
+                alt: t.name,
               }),
-              G("div", {
-                children: [
-                  G("h3", {
-                    style: { margin: 0 },
-                    className: "font-bold",
-                    children: t.name,
-                  }),
-                  G("p", {
-                    style: { marginBottom: 0, marginTop: "5px" },
-                    className: "text-sm text-gray-500",
-                    children: t.description,
-                  }),
-                ],
-              }),
-            ],
-          }),
-          G("div", {
-            className: " my-1",
-            children: G(Qg, {
-              site: window.location.origin,
-              productURL: window.location.href,
-              openKey: t.openApiKey,
             }),
+            G("div", {
+              children: [
+                G("h3", {
+                  style: { margin: 0 },
+                  className: "font-bold",
+                  children: t.name,
+                }),
+                G("p", {
+                  style: { marginBottom: 0, marginTop: "5px" },
+                  className: "text-sm text-gray-500",
+                  children: t.description,
+                }),
+              ],
+            }),
+          ],
+        }),
+        G("div", {
+          className: " my-1",
+          children: G(Qg, {
+            site: window.location.origin,
+            productURL: window.location.href,
+            openKey: t.openApiKey,
           }),
-        ],
-      })
-    );
+        }),
+      ],
+    });
   }
   const Zg = (t) => {
     let e;
