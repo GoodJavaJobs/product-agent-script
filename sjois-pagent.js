@@ -13975,7 +13975,6 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       : "";
   }
   function Qg({ site: t, productURL: e, openKey: n }) {
-    console.log(n);
     const [r, i] = Dn([]),
       [s, a] = Dn(""),
       [o, l] = Dn([]),
@@ -14020,7 +14019,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         G("div", {
           style: { scrollbarWidth: "thin" },
           className:
-            "h-300 p-3 overflow-y-auto space-y-2 border-b border-gray-200 chat-bubble",
+            "h-300 p-3 overflow-y-auto  border-b border-gray-200 chat-bubble",
           children: [
             r.map((y, x) =>
               G(
@@ -14069,7 +14068,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           ],
         }),
         G("div", {
-          className: "p-3 flex gap-3 items-center space-x-2",
+          className: "p-3 flex gap-3 items-center  chat-footer",
           children: [
             G("input", {
               onKeyDown: (y) => {
@@ -14079,8 +14078,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
               value: s,
               onChange: (y) => a(y.target.value),
               placeholder: "Ask me anything about this product...",
-              className:
-                "flex-1 border border-gray-300 rounded p-2 outline-none focus:border-black ",
+              className: "flex-1 input-chat ",
             }),
             G("svg", {
               xmlns: "http://www.w3.org/2000/svg",
@@ -14108,12 +14106,12 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         className: "border border-gray-200",
         children: [
           G("div", {
-            className: "flex gap-2 border-b border-gray-200 p-3",
+            className: "flex gap-2 border-b border-gray-200  chat-header",
             children: [
               G("div", {
                 children: G("img", {
                   className: "rounded-full",
-                  width: 45,
+                  width: 40,
                   src: t.image,
                   alt: t.name,
                 }),
