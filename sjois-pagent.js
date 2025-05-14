@@ -14060,7 +14060,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                 x
               )
             ),
-            G("div", { ref: d }),
+            G("div", { style: { display: "block" }, ref: d }),
             h &&
               G("div", {
                 className:
