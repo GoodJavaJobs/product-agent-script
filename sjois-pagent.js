@@ -120,14 +120,14 @@
       d,
       g,
       _,
-      w,
+      y,
       b = (r && r.__k) || Ca,
-      y = e.length;
-    for (l = ah(n, e, b, l, y), h = 0; h < y; h++)
+      w = e.length;
+    for (l = ah(n, e, b, l, w), h = 0; h < w; h++)
       (d = n.__k[h]) != null &&
         ((f = d.__i == -1 ? dn : b[d.__i] || dn),
         (d.__i = h),
-        (w = oi(t, d, f, i, s, a, o, l, u, c)),
+        (y = oi(t, d, f, i, s, a, o, l, u, c)),
         (g = d.__e),
         d.ref &&
           f.ref != d.ref &&
@@ -135,8 +135,8 @@
         _ == null && g != null && (_ = g),
         4 & d.__u || f.__k === d.__k
           ? (l = Ia(d, l, t))
-          : typeof d.type == "function" && w !== void 0
-          ? (l = w)
+          : typeof d.type == "function" && y !== void 0
+          ? (l = y)
           : g && (l = g.nextSibling),
         (d.__u &= -7));
     return (n.__e = _), l;
@@ -311,9 +311,9 @@
       d,
       g,
       _,
-      w,
-      b,
       y,
+      b,
+      w,
       x,
       S,
       P,
@@ -330,12 +330,12 @@
       try {
         if (
           ((b = e.props),
-          (y = "prototype" in C && C.prototype.render),
+          (w = "prototype" in C && C.prototype.render),
           (x = (c = C.contextType) && r[c.__c]),
           (S = c ? (x ? x.props.value : c.__) : r),
           n.__c
-            ? (w = (h = e.__c = n.__c).__ = h.__E)
-            : (y
+            ? (y = (h = e.__c = n.__c).__ = h.__E)
+            : (w
                 ? (e.__c = h = new C(b, S))
                 : ((e.__c = h = new Xe(b, S)),
                   (h.constructor = C),
@@ -348,8 +348,8 @@
               (f = h.__d = !0),
               (h.__h = []),
               (h._sb = [])),
-          y && h.__s == null && (h.__s = h.state),
-          y &&
+          w && h.__s == null && (h.__s = h.state),
+          w &&
             C.getDerivedStateFromProps != null &&
             (h.__s == h.state && (h.__s = Ge({}, h.__s)),
             Ge(h.__s, C.getDerivedStateFromProps(b, h.__s))),
@@ -358,14 +358,14 @@
           (h.__v = e),
           f)
         )
-          y &&
+          w &&
             C.getDerivedStateFromProps == null &&
             h.componentWillMount != null &&
             h.componentWillMount(),
-            y && h.componentDidMount != null && h.__h.push(h.componentDidMount);
+            w && h.componentDidMount != null && h.__h.push(h.componentDidMount);
         else {
           if (
-            (y &&
+            (w &&
               C.getDerivedStateFromProps == null &&
               b !== d &&
               h.componentWillReceiveProps != null &&
@@ -392,7 +392,7 @@
             break e;
           }
           h.componentWillUpdate != null && h.componentWillUpdate(b, h.__s, S),
-            y &&
+            w &&
               h.componentDidUpdate != null &&
               h.__h.push(function () {
                 h.componentDidUpdate(d, g, _);
@@ -405,7 +405,7 @@
           (h.__e = !1),
           (v = z.__r),
           (T = 0),
-          y)
+          w)
         ) {
           for (
             h.state = h.__s,
@@ -427,7 +427,7 @@
           while (h.__d && ++T < 25);
         (h.state = h.__s),
           h.getChildContext != null && (r = Ge(Ge({}, r), h.getChildContext())),
-          y &&
+          w &&
             !f &&
             h.getSnapshotBeforeUpdate != null &&
             (_ = h.getSnapshotBeforeUpdate(d, g)),
@@ -440,7 +440,7 @@
           (h.base = e.__e),
           (e.__u &= -161),
           h.__h.length && a.push(h),
-          w && (h.__E = h.__ = null);
+          y && (h.__E = h.__ = null);
       } catch (I) {
         if (((e.__v = null), l || s != null))
           if (I.then) {
@@ -491,13 +491,13 @@
       d,
       g,
       _,
-      w = n.props,
+      y = n.props,
       b = e.props,
-      y = e.type;
+      w = e.type;
     if (
-      (y == "svg"
+      (w == "svg"
         ? (i = "http://www.w3.org/2000/svg")
-        : y == "math"
+        : w == "math"
         ? (i = "http://www.w3.org/1998/Math/MathML")
         : i || (i = "http://www.w3.org/1999/xhtml"),
       s != null)
@@ -505,28 +505,28 @@
       for (u = 0; u < s.length; u++)
         if (
           (d = s[u]) &&
-          "setAttribute" in d == !!y &&
-          (y ? d.localName == y : d.nodeType == 3)
+          "setAttribute" in d == !!w &&
+          (w ? d.localName == w : d.nodeType == 3)
         ) {
           (t = d), (s[u] = null);
           break;
         }
     }
     if (t == null) {
-      if (y == null) return document.createTextNode(b);
-      (t = document.createElementNS(i, y, b.is && b)),
+      if (w == null) return document.createTextNode(b);
+      (t = document.createElementNS(i, w, b.is && b)),
         o && (z.__m && z.__m(e, s), (o = !1)),
         (s = null);
     }
-    if (y == null) w === b || (o && t.data == b) || (t.data = b);
+    if (w == null) y === b || (o && t.data == b) || (t.data = b);
     else {
       if (
-        ((s = s && Zn.call(t.childNodes)), (w = n.props || dn), !o && s != null)
+        ((s = s && Zn.call(t.childNodes)), (y = n.props || dn), !o && s != null)
       )
-        for (w = {}, u = 0; u < t.attributes.length; u++)
-          w[(d = t.attributes[u]).name] = d.value;
-      for (u in w)
-        if (((d = w[u]), u != "children")) {
+        for (y = {}, u = 0; u < t.attributes.length; u++)
+          y[(d = t.attributes[u]).name] = d.value;
+      for (u in y)
+        if (((d = y[u]), u != "children")) {
           if (u == "dangerouslySetInnerHTML") h = d;
           else if (!(u in b)) {
             if (
@@ -548,8 +548,8 @@
             : u == "checked"
             ? (_ = d)
             : (o && typeof d != "function") ||
-              w[u] === d ||
-              rr(t, u, d, w[u], i);
+              y[u] === d ||
+              rr(t, u, d, y[u], i);
       if (c)
         o ||
           (h && (c.__html == h.__html || c.__html == t.innerHTML)) ||
@@ -563,7 +563,7 @@
           e,
           n,
           r,
-          y == "foreignObject" ? "http://www.w3.org/1999/xhtml" : i,
+          w == "foreignObject" ? "http://www.w3.org/1999/xhtml" : i,
           s,
           a,
           s ? s[0] : n.__k && It(n, 0),
@@ -575,15 +575,15 @@
         for (u = s.length; u--; ) si(s[u]);
       o ||
         ((u = "value"),
-        y == "progress" && g == null
+        w == "progress" && g == null
           ? t.removeAttribute("value")
           : g != null &&
             (g !== t[u] ||
-              (y == "progress" && !g) ||
-              (y == "option" && g != w[u])) &&
-            rr(t, u, g, w[u], i),
+              (w == "progress" && !g) ||
+              (w == "option" && g != y[u])) &&
+            rr(t, u, g, y[u], i),
         (u = "checked"),
-        _ != null && _ != t[u] && rr(t, u, _, w[u], i));
+        _ != null && _ != t[u] && rr(t, u, _, y[u], i));
     }
     return t;
   }
@@ -858,8 +858,8 @@
     );
   }
   const di = {};
-  function Ma(t, e, n, r, i, s, a, o, l, u, c, h, f, d, g, _, w, b) {
-    let y = t,
+  function Ma(t, e, n, r, i, s, a, o, l, u, c, h, f, d, g, _, y, b) {
+    let w = t,
       x = b,
       S = 0,
       P = !1;
@@ -873,52 +873,52 @@
     }
     if (
       (typeof u == "function"
-        ? (y = u(e, y))
-        : y instanceof Date
-        ? (y = f == null ? void 0 : f(y))
+        ? (w = u(e, w))
+        : w instanceof Date
+        ? (w = f == null ? void 0 : f(w))
         : n === "comma" &&
-          ze(y) &&
-          (y = Da(y, function (j) {
+          ze(w) &&
+          (w = Da(w, function (j) {
             return j instanceof Date ? (f == null ? void 0 : f(j)) : j;
           })),
-      y === null)
+      w === null)
     ) {
-      if (s) return l && !_ ? l(e, ae.encoder, w, "key", d) : e;
-      y = "";
+      if (s) return l && !_ ? l(e, ae.encoder, y, "key", d) : e;
+      w = "";
     }
-    if (wh(y) || mh(y)) {
+    if (wh(w) || mh(w)) {
       if (l) {
-        const j = _ ? e : l(e, ae.encoder, w, "key", d);
+        const j = _ ? e : l(e, ae.encoder, y, "key", d);
         return [
           (g == null ? void 0 : g(j)) +
             "=" +
-            (g == null ? void 0 : g(l(y, ae.encoder, w, "value", d))),
+            (g == null ? void 0 : g(l(w, ae.encoder, y, "value", d))),
         ];
       }
       return [
-        (g == null ? void 0 : g(e)) + "=" + (g == null ? void 0 : g(String(y))),
+        (g == null ? void 0 : g(e)) + "=" + (g == null ? void 0 : g(String(w))),
       ];
     }
     const v = [];
-    if (typeof y > "u") return v;
+    if (typeof w > "u") return v;
     let T;
-    if (n === "comma" && ze(y))
-      _ && l && (y = Da(y, l)),
-        (T = [{ value: y.length > 0 ? y.join(",") || null : void 0 }]);
+    if (n === "comma" && ze(w))
+      _ && l && (w = Da(w, l)),
+        (T = [{ value: w.length > 0 ? w.join(",") || null : void 0 }]);
     else if (ze(u)) T = u;
     else {
-      const j = Object.keys(y);
+      const j = Object.keys(w);
       T = c ? j.sort(c) : j;
     }
     const V = o ? String(e).replace(/\./g, "%2E") : String(e),
-      O = r && ze(y) && y.length === 1 ? V + "[]" : V;
-    if (i && ze(y) && y.length === 0) return O + "[]";
+      O = r && ze(w) && w.length === 1 ? V + "[]" : V;
+    if (i && ze(w) && w.length === 0) return O + "[]";
     for (let j = 0; j < T.length; ++j) {
       const C = T[j],
-        I = typeof C == "object" && typeof C.value < "u" ? C.value : y[C];
+        I = typeof C == "object" && typeof C.value < "u" ? C.value : w[C];
       if (a && I === null) continue;
       const L = h && o ? C.replace(/\./g, "%2E") : C,
-        R = ze(y)
+        R = ze(w)
           ? typeof n == "function"
             ? n(O, L)
             : O
@@ -937,7 +937,7 @@
             s,
             a,
             o,
-            n === "comma" && _ && ze(y) ? null : l,
+            n === "comma" && _ && ze(w) ? null : l,
             u,
             c,
             h,
@@ -945,7 +945,7 @@
             d,
             g,
             _,
-            w,
+            y,
             N
           )
         );
@@ -2043,13 +2043,13 @@
       const c = po(u.headers);
       if (!u.ok) {
         if (n && this.shouldRetry(u)) {
-          const y = `retrying, ${n} attempts remaining`;
+          const w = `retrying, ${n} attempts remaining`;
           return (
-            it(`response (error; ${y})`, u.status, a, c),
+            it(`response (error; ${w})`, u.status, a, c),
             this.retryRequest(r, n, c)
           );
         }
-        const d = await u.text().catch((y) => yi(y).message),
+        const d = await u.text().catch((w) => yi(w).message),
           g = Vh(d),
           _ = g ? void 0 : d;
         throw (
@@ -3665,39 +3665,39 @@
             : f.message;
         if (!_) throw new D("missing message in ChatCompletion response");
         if (!_.function_call) return;
-        const { name: w, arguments: b } = _.function_call,
-          y = c[w];
-        if (y) {
-          if (l && l !== w) {
+        const { name: y, arguments: b } = _.function_call,
+          w = c[y];
+        if (w) {
+          if (l && l !== y) {
             const v = `Invalid function_call: ${JSON.stringify(
-              w
+              y
             )}. ${JSON.stringify(l)} requested. Please try again`;
-            this._addMessage({ role: i, name: w, content: v });
+            this._addMessage({ role: i, name: y, content: v });
             continue;
           }
         } else {
           const v = `Invalid function_call: ${JSON.stringify(
-            w
+            y
           )}. Available options are: ${h
             .map((T) => JSON.stringify(T.name))
             .join(", ")}. Please try again`;
-          this._addMessage({ role: i, name: w, content: v });
+          this._addMessage({ role: i, name: y, content: v });
           continue;
         }
         let x;
         try {
-          x = Lo(y) ? await y.parse(b) : b;
+          x = Lo(w) ? await w.parse(b) : b;
         } catch (v) {
           this._addMessage({
             role: i,
-            name: w,
+            name: y,
             content: v instanceof Error ? v.message : String(v),
           });
           continue;
         }
-        const S = await y.function(x, this),
+        const S = await w.function(x, this),
           P = we(this, _e, "m", $i).call(this, S);
-        if ((this._addMessage({ role: i, name: w, content: P }), l)) return;
+        if ((this._addMessage({ role: i, name: y, content: P }), l)) return;
       }
     }
     async _runTools(e, n, r) {
@@ -3708,49 +3708,49 @@
           typeof s != "string" &&
           ((d = s == null ? void 0 : s.function) == null ? void 0 : d.name),
         { maxChatCompletions: u = Mo } = r || {},
-        c = n.tools.map((w) => {
-          if (Sn(w)) {
-            if (!w.$callback)
+        c = n.tools.map((y) => {
+          if (Sn(y)) {
+            if (!y.$callback)
               throw new D(
                 "Tool given to `.runTools()` that does not have an associated function"
               );
             return {
               type: "function",
               function: {
-                function: w.$callback,
-                name: w.function.name,
-                description: w.function.description || "",
-                parameters: w.function.parameters,
-                parse: w.$parseRaw,
+                function: y.$callback,
+                name: y.function.name,
+                description: y.function.description || "",
+                parameters: y.function.parameters,
+                parse: y.$parseRaw,
                 strict: !0,
               },
             };
           }
-          return w;
+          return y;
         }),
         h = {};
-      for (const w of c)
-        w.type === "function" &&
-          (h[w.function.name || w.function.function.name] = w.function);
+      for (const y of c)
+        y.type === "function" &&
+          (h[y.function.name || y.function.function.name] = y.function);
       const f =
         "tools" in n
-          ? c.map((w) =>
-              w.type === "function"
+          ? c.map((y) =>
+              y.type === "function"
                 ? {
                     type: "function",
                     function: {
-                      name: w.function.name || w.function.function.name,
-                      parameters: w.function.parameters,
-                      description: w.function.description,
-                      strict: w.function.strict,
+                      name: y.function.name || y.function.function.name,
+                      parameters: y.function.parameters,
+                      description: y.function.description,
+                      strict: y.function.strict,
                     },
                   }
-                : w
+                : y
             )
           : void 0;
-      for (const w of n.messages) this._addMessage(w, !1);
-      for (let w = 0; w < u; ++w) {
-        const y =
+      for (const y of n.messages) this._addMessage(y, !1);
+      for (let y = 0; y < u; ++y) {
+        const w =
           (g = (
             await this._createChatCompletion(
               e,
@@ -3760,9 +3760,9 @@
           ).choices[0]) == null
             ? void 0
             : g.message;
-        if (!y) throw new D("missing message in ChatCompletion response");
-        if (!((_ = y.tool_calls) != null && _.length)) return;
-        for (const x of y.tool_calls) {
+        if (!w) throw new D("missing message in ChatCompletion response");
+        if (!((_ = w.tool_calls) != null && _.length)) return;
+        for (const x of w.tool_calls) {
           if (x.type !== "function") continue;
           const S = x.id,
             { name: P, arguments: v } = x.function,
@@ -4218,7 +4218,7 @@
       );
     }),
     (ji = function (n) {
-      var i, s, a, o, l, u, c, h, f, d, g, _, w, b, y;
+      var i, s, a, o, l, u, c, h, f, d, g, _, y, b, w;
       if (this.ended) return;
       const r = X(this, oe, "m", tl).call(this, n);
       this._emit("chunk", n, r);
@@ -4266,7 +4266,7 @@
               X(this, oe, "m", Di).call(this, S, P.current_tool_call_index)),
             (P.current_tool_call_index = v.index);
         for (const v of x.delta.tool_calls ?? []) {
-          const T = (w = S.message.tool_calls) == null ? void 0 : w[v.index];
+          const T = (y = S.message.tool_calls) == null ? void 0 : y[v.index];
           T != null &&
             T.type &&
             ((T == null ? void 0 : T.type) === "function"
@@ -4276,7 +4276,7 @@
                   arguments: T.function.arguments,
                   parsed_arguments: T.function.parsed_arguments,
                   arguments_delta:
-                    ((y = v.function) == null ? void 0 : y.arguments) ?? "",
+                    ((w = v.function) == null ? void 0 : w.arguments) ?? "",
                 })
               : (T == null || T.type, void 0));
         }
@@ -4388,9 +4388,9 @@
         }
         if ((Object.assign(_, g), !c)) continue;
         const {
-          content: w,
+          content: y,
           refusal: b,
-          function_call: y,
+          function_call: w,
           role: x,
           tool_calls: S,
           ...P
@@ -4399,16 +4399,16 @@
           (Object.assign(_.message, P),
           b && (_.message.refusal = (_.message.refusal || "") + b),
           x && (_.message.role = x),
-          y &&
+          w &&
             (_.message.function_call
-              ? (y.name && (_.message.function_call.name = y.name),
-                y.arguments &&
+              ? (w.name && (_.message.function_call.name = w.name),
+                w.arguments &&
                   ((s = _.message.function_call).arguments ??
                     (s.arguments = ""),
-                  (_.message.function_call.arguments += y.arguments)))
-              : (_.message.function_call = y)),
-          w &&
-            ((_.message.content = (_.message.content || "") + w),
+                  (_.message.function_call.arguments += w.arguments)))
+              : (_.message.function_call = w)),
+          y &&
+            ((_.message.content = (_.message.content || "") + y),
             !_.message.refusal &&
               X(this, oe, "m", Fi).call(this) &&
               (_.message.parsed = el(_.message.content))),
@@ -4497,11 +4497,11 @@
             const {
                 content: g = null,
                 function_call: _,
-                tool_calls: w,
+                tool_calls: y,
                 ...b
               } = u,
-              y = u.role;
-            if (!y) throw new D(`missing role for choice ${h}`);
+              w = u.role;
+            if (!w) throw new D(`missing role for choice ${h}`);
             if (_) {
               const { arguments: x, name: S } = _;
               if (x == null)
@@ -4512,7 +4512,7 @@
                 message: {
                   content: g,
                   function_call: { arguments: x, name: S },
-                  role: y,
+                  role: w,
                   refusal: u.refusal ?? null,
                 },
                 finish_reason: c,
@@ -4520,7 +4520,7 @@
                 logprobs: f,
               };
             }
-            return w
+            return y
               ? {
                   ...d,
                   index: h,
@@ -4528,10 +4528,10 @@
                   logprobs: f,
                   message: {
                     ...b,
-                    role: y,
+                    role: w,
                     content: g,
                     refusal: u.refusal ?? null,
-                    tool_calls: w.map((x, S) => {
+                    tool_calls: y.map((x, S) => {
                       const { function: P, type: v, id: T, ...V } = x,
                         { arguments: O, name: j, ...C } = P || {};
                       if (T == null)
@@ -4560,7 +4560,7 @@ ${Pr(t)}`);
                   message: {
                     ...b,
                     content: g,
-                    role: y,
+                    role: w,
                     refusal: u.refusal ?? null,
                   },
                   finish_reason: c,
@@ -7311,40 +7311,40 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       h = "",
       f = "comment",
       d = "declaration";
-    bs = function (_, w) {
+    bs = function (_, y) {
       if (typeof _ != "string")
         throw new TypeError("First argument must be a string");
       if (!_) return [];
-      w = w || {};
+      y = y || {};
       var b = 1,
-        y = 1;
+        w = 1;
       function x(L) {
         var R = L.match(e);
         R && (b += R.length);
         var N = L.lastIndexOf(l);
-        y = ~N ? L.length - N : y + L.length;
+        w = ~N ? L.length - N : w + L.length;
       }
       function S() {
-        var L = { line: b, column: y };
+        var L = { line: b, column: w };
         return function (R) {
           return (R.position = new P(L)), V(), R;
         };
       }
       function P(L) {
         (this.start = L),
-          (this.end = { line: b, column: y }),
-          (this.source = w.source);
+          (this.end = { line: b, column: w }),
+          (this.source = y.source);
       }
       P.prototype.content = _;
       function v(L) {
-        var R = new Error(w.source + ":" + b + ":" + y + ": " + L);
+        var R = new Error(y.source + ":" + b + ":" + w + ": " + L);
         if (
           ((R.reason = L),
-          (R.filename = w.source),
+          (R.filename = y.source),
           (R.line = b),
-          (R.column = y),
+          (R.column = w),
           (R.source = _),
-          !w.silent)
+          !y.silent)
         )
           throw R;
       }
@@ -7376,10 +7376,10 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
             return v("End of comment missing");
           var N = _.slice(2, R - 2);
           return (
-            (y += 2),
+            (w += 2),
             x(N),
             (_ = _.slice(R)),
-            (y += 2),
+            (w += 2),
             L({ type: f, comment: N })
           );
         }
@@ -8657,7 +8657,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     }
     function l(x) {
       if ((r++, e.containerState._closeFlow)) {
-        (e.containerState._closeFlow = void 0), i && y();
+        (e.containerState._closeFlow = void 0), i && w();
         const S = e.events.length;
         let P = S,
           v;
@@ -8689,7 +8689,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return (e.containerState = {}), t.check(bu, c, h)(x);
     }
     function c(x) {
-      return i && y(), b(r), f(x);
+      return i && w(), b(r), f(x);
     }
     function h(x) {
       return (
@@ -8706,7 +8706,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     }
     function g(x) {
       if (x === null) {
-        i && y(), b(0), t.consume(x);
+        i && w(), b(0), t.consume(x);
         return;
       }
       return (
@@ -8721,18 +8721,18 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     }
     function _(x) {
       if (x === null) {
-        w(t.exit("chunkFlow"), !0), b(0), t.consume(x);
+        y(t.exit("chunkFlow"), !0), b(0), t.consume(x);
         return;
       }
       return F(x)
         ? (t.consume(x),
-          w(t.exit("chunkFlow")),
+          y(t.exit("chunkFlow")),
           (r = 0),
           (e.interrupt = void 0),
           o)
         : (t.consume(x), _);
     }
-    function w(x, S) {
+    function y(x, S) {
       const P = e.sliceStream(x);
       if (
         (S && P.push(null),
@@ -8778,7 +8778,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       }
       n.length = x;
     }
-    function y() {
+    function w() {
       i.write([null]),
         (s = void 0),
         (i = void 0),
@@ -9205,22 +9205,22 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         : (t.consume(v), g);
     }
     function _(v) {
-      return t.attempt(i, S, w)(v);
+      return t.attempt(i, S, y)(v);
     }
-    function w(v) {
+    function y(v) {
       return t.enter("lineEnding"), t.consume(v), t.exit("lineEnding"), b;
     }
     function b(v) {
-      return s > 0 && K(v) ? Z(t, y, "linePrefix", s + 1)(v) : y(v);
+      return s > 0 && K(v) ? Z(t, w, "linePrefix", s + 1)(v) : w(v);
     }
-    function y(v) {
+    function w(v) {
       return v === null || F(v)
         ? t.check(Cu, _, S)(v)
         : (t.enter("codeFlowValue"), x(v));
     }
     function x(v) {
       return v === null || F(v)
-        ? (t.exit("codeFlowValue"), y(v))
+        ? (t.exit("codeFlowValue"), w(v))
         : (t.consume(v), x);
     }
     function S(v) {
@@ -9563,7 +9563,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       d = n,
       g = 0,
       _ = 0;
-    const w = [_];
+    const y = [_];
     for (; d; ) {
       for (; t.get(++i)[1] !== d; );
       s.push(i),
@@ -9585,20 +9585,20 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         o[f][1].type === o[f - 1][1].type &&
         o[f][1].start.line !== o[f][1].end.line &&
         ((_ = f + 1),
-        w.push(_),
+        y.push(_),
         (d._tokenizer = void 0),
         (d.previous = void 0),
         (d = d.next));
     for (
       a.events = [],
-        d ? ((d._tokenizer = void 0), (d.previous = void 0)) : w.pop(),
-        f = w.length;
+        d ? ((d._tokenizer = void 0), (d.previous = void 0)) : y.pop(),
+        f = y.length;
       f--;
 
     ) {
-      const b = o.slice(w[f], w[f + 1]),
-        y = s.pop();
-      l.push([y, y + b.length - 1]), t.splice(y, 2, b);
+      const b = o.slice(y[f], y[f + 1]),
+        w = s.pop();
+      l.push([w, w + b.length - 1]), t.splice(w, 2, b);
     }
     for (l.reverse(), f = -1; ++f < l.length; )
       (u[g + l[f][0]] = g + l[f][1]), (g += l[f][1] - l[f][0] - 1);
@@ -9704,9 +9704,9 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         ? (t.consume(b), c--, _)
         : b === null || b === 32 || b === 40 || Os(b)
         ? n(b)
-        : (t.consume(b), b === 92 ? w : _);
+        : (t.consume(b), b === 92 ? y : _);
     }
-    function w(b) {
+    function y(b) {
       return b === 40 || b === 41 || b === 92 ? (t.consume(b), _) : _(b);
     }
   }
@@ -10053,7 +10053,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         : m === 63
         ? (t.consume(m), (i = 3), r.interrupt ? e : p)
         : We(m)
-        ? (t.consume(m), (a = String.fromCharCode(m)), w)
+        ? (t.consume(m), (a = String.fromCharCode(m)), y)
         : n(m);
     }
     function f(m) {
@@ -10075,9 +10075,9 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         : n(m);
     }
     function _(m) {
-      return We(m) ? (t.consume(m), (a = String.fromCharCode(m)), w) : n(m);
+      return We(m) ? (t.consume(m), (a = String.fromCharCode(m)), y) : n(m);
     }
-    function w(m) {
+    function y(m) {
       if (m === null || m === 47 || m === 62 || ve(m)) {
         const Me = m === 47,
           Pt = a.toLowerCase();
@@ -10089,18 +10089,18 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
             r.interrupt && !r.parser.lazy[r.now().line]
               ? n(m)
               : s
-              ? y(m)
+              ? w(m)
               : x(m));
       }
       return m === 45 || Pe(m)
-        ? (t.consume(m), (a += String.fromCharCode(m)), w)
+        ? (t.consume(m), (a += String.fromCharCode(m)), y)
         : n(m);
     }
     function b(m) {
       return m === 62 ? (t.consume(m), r.interrupt ? e : I) : n(m);
     }
-    function y(m) {
-      return K(m) ? (t.consume(m), y) : j(m);
+    function w(m) {
+      return K(m) ? (t.consume(m), w) : j(m);
     }
     function x(m) {
       return m === 47
@@ -10265,7 +10265,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         : p === 91
         ? (t.consume(p), (s = 0), g)
         : We(p)
-        ? (t.consume(p), y)
+        ? (t.consume(p), w)
         : n(p);
     }
     function c(p) {
@@ -10296,23 +10296,23 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return p === null
         ? n(p)
         : p === 93
-        ? (t.consume(p), w)
+        ? (t.consume(p), y)
         : F(p)
         ? ((a = _), me(p))
         : (t.consume(p), _);
     }
-    function w(p) {
+    function y(p) {
       return p === 93 ? (t.consume(p), b) : _(p);
     }
     function b(p) {
       return p === 62 ? he(p) : p === 93 ? (t.consume(p), b) : _(p);
     }
-    function y(p) {
+    function w(p) {
       return p === null || p === 62
         ? he(p)
         : F(p)
-        ? ((a = y), me(p))
-        : (t.consume(p), y);
+        ? ((a = w), me(p))
+        : (t.consume(p), w);
     }
     function x(p) {
       return p === null
@@ -11176,7 +11176,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     const l = {
         attempt: T(P),
         check: T(v),
-        consume: y,
+        consume: w,
         enter: x,
         exit: S,
         interrupt: T(v, { interrupt: !0 }),
@@ -11198,7 +11198,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     function h(C) {
       return (
         (a = Oe(a, C)),
-        w(),
+        y(),
         a[a.length - 1] !== null
           ? []
           : (V(e, 0), (u.events = Ls(s, u.events, u)), u.events)
@@ -11217,7 +11217,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     function _(C) {
       (i[C.line] = C.column), j();
     }
-    function w() {
+    function y() {
       let C;
       for (; r._index < a.length; ) {
         const I = a[r._index];
@@ -11234,7 +11234,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     function b(C) {
       c = c(C);
     }
-    function y(C) {
+    function w(C) {
       F(C)
         ? (r.line++, (r.column = 1), (r.offset += C === -3 ? 2 : 1), j())
         : C !== -1 && (r.column++, r.offset++),
@@ -11563,7 +11563,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         characterReferenceMarkerNumeric: Pt,
         characterReferenceValue: ge,
         characterReference: Xn,
-        codeFenced: l(w),
+        codeFenced: l(y),
         codeFencedFence: _,
         codeFencedFenceInfo: d,
         codeFencedFenceMeta: g,
@@ -11574,7 +11574,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         data: j,
         definition: l(),
         definitionDestinationString: S,
-        definitionLabelString: y,
+        definitionLabelString: w,
         definitionTitleString: x,
         emphasis: l(),
         hardBreakEscape: l(I),
@@ -11805,7 +11805,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       this.data.flowCodeInside ||
         (this.buffer(), (this.data.flowCodeInside = !0));
     }
-    function w() {
+    function y() {
       const k = this.resume(),
         A = this.stack[this.stack.length - 1];
       (A.value = k.replace(/^(\r?\n|\r)|(\r?\n|\r)$/g, "")),
@@ -11816,7 +11816,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         A = this.stack[this.stack.length - 1];
       A.value = k.replace(/(\r?\n|\r)$/g, "");
     }
-    function y(k) {
+    function w(k) {
       const A = this.resume(),
         B = this.stack[this.stack.length - 1];
       (B.label = A), (B.identifier = Jt(this.sliceSerialize(k)).toLowerCase());
@@ -12772,8 +12772,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         _ = t.footnoteCounts.get(h);
       for (; _ !== void 0 && ++d <= _; ) {
         g.length > 0 && g.push({ type: "text", value: " " });
-        let y = typeof n == "string" ? n : n(l, d);
-        typeof y == "string" && (y = { type: "text", value: y }),
+        let w = typeof n == "string" ? n : n(l, d);
+        typeof w == "string" && (w = { type: "text", value: w }),
           g.push({
             type: "element",
             tagName: "a",
@@ -12783,16 +12783,16 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
               ariaLabel: typeof r == "string" ? r : r(l, d),
               className: ["data-footnote-backref"],
             },
-            children: Array.isArray(y) ? y : [y],
+            children: Array.isArray(w) ? w : [w],
           });
       }
-      const w = c[c.length - 1];
-      if (w && w.type === "element" && w.tagName === "p") {
-        const y = w.children[w.children.length - 1];
-        y && y.type === "text"
-          ? (y.value += " ")
-          : w.children.push({ type: "text", value: " " }),
-          w.children.push(...g);
+      const y = c[c.length - 1];
+      if (y && y.type === "element" && y.tagName === "p") {
+        const w = y.children[y.children.length - 1];
+        w && w.type === "text"
+          ? (w.value += " ")
+          : y.children.push({ type: "text", value: " " }),
+          y.children.push(...g);
       } else c.push(...g);
       const b = {
         type: "element",
@@ -12914,7 +12914,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         let d = Yu,
           g,
           _,
-          w;
+          y;
         if (
           (!e || s(l, u, c[c.length - 1] || void 0)) &&
           ((d = pg(n(l, c))), d[0] === Zu)
@@ -12924,12 +12924,12 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           const b = l;
           if (b.children && d[0] !== dg)
             for (
-              _ = (r ? b.children.length : -1) + a, w = c.concat(b);
+              _ = (r ? b.children.length : -1) + a, y = c.concat(b);
               _ > -1 && _ < b.children.length;
 
             ) {
-              const y = b.children[_];
-              if (((g = o(y, _, w)()), g[0] === Zu)) return g;
+              const w = b.children[_];
+              if (((g = o(w, _, y)()), g[0] === Zu)) return g;
               _ = typeof g[1] == "number" ? g[1] : _ + a;
             }
         }
@@ -12995,8 +12995,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       if (qs.call(o.handlers, f) && d) return d(o, c, h);
       if (o.options.passThrough && o.options.passThrough.includes(f)) {
         if ("children" in c) {
-          const { children: _, ...w } = c,
-            b = Vr(w);
+          const { children: _, ...y } = c,
+            b = Vr(y);
           return (b.children = o.all(c)), b;
         }
         return Vr(c);
@@ -13187,26 +13187,26 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           d,
           g,
           _ = arguments[0],
-          w = 1,
+          y = 1,
           b = arguments.length,
-          y = !1;
+          w = !1;
         for (
-          typeof _ == "boolean" && ((y = _), (_ = arguments[1] || {}), (w = 2)),
+          typeof _ == "boolean" && ((w = _), (_ = arguments[1] || {}), (y = 2)),
             (_ == null || (typeof _ != "object" && typeof _ != "function")) &&
               (_ = {});
-          w < b;
-          ++w
+          y < b;
+          ++y
         )
-          if (((u = arguments[w]), u != null))
+          if (((u = arguments[y]), u != null))
             for (c in u)
               (h = o(_, c)),
                 (f = o(u, c)),
                 _ !== f &&
-                  (y && f && (s(f) || (d = i(f)))
+                  (w && f && (s(f) || (d = i(f)))
                     ? (d
                         ? ((d = !1), (g = h && i(h) ? h : []))
                         : (g = h && s(h) ? h : {}),
-                      a(_, { name: c, newValue: l(y, g, f) }))
+                      a(_, { name: c, newValue: l(w, g, f) }))
                     : typeof f < "u" && a(_, { name: c, newValue: f }));
         return _;
       }),
@@ -13983,34 +13983,33 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       d = pf(null),
       g = wd(n),
       _ = () => {
-        var y;
-        (y = d.current) == null || y.scrollIntoView({ behavior: "smooth" });
+        d.current && (d.current.scrollTop = d.current.scrollHeight);
       };
     Zl(() => {
       _();
     }, [r]),
       Zl(() => {
-        u || (w(), c(!0));
+        u || (y(), c(!0));
       }, []);
-    const w = async () => {
-        const y = bd(t, e);
+    const y = async () => {
+        const w = bd(t, e);
         f(!0);
-        const x = await fs(g, o, y);
+        const x = await fs(g, o, w);
         if ((f(!1), x)) {
           const S = { role: "assistant", content: x };
           i((P) => [...P, S]),
-            l((P) => [...P, { role: "user", content: y }, S]);
+            l((P) => [...P, { role: "user", content: w }, S]);
         }
       },
       b = async () => {
         if (!s.trim()) return;
         f(!0);
-        const y = { role: "user", content: s };
-        i((S) => [...S, y]), a("");
-        const x = await fs(g, [...o, y], s);
+        const w = { role: "user", content: s };
+        i((S) => [...S, w]), a("");
+        const x = await fs(g, [...o, w], s);
         if ((f(!1), x)) {
           const S = { role: "assistant", content: x };
-          i((P) => [...P, S]), l((P) => [...P, y, S]);
+          i((P) => [...P, S]), l((P) => [...P, w, S]);
         }
       };
     return G("div", {
@@ -14020,23 +14019,18 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           style: { scrollbarWidth: "thin" },
           className:
             "h-300 p-3 overflow-y-auto  border-b border-gray-200 chat-bubble",
-          onWheel: (y) => {
-            y.stopPropagation();
-            const x = y.currentTarget,
-              S = y.deltaY;
-            (x.scrollTop += S), y.preventDefault();
-          },
+          ref: d,
           children: [
-            r.map((y, x) =>
+            r.map((w, x) =>
               G(
                 "div",
                 {
                   className: `flex ${
-                    y.role === "user" ? "justify-end" : "justify-start"
+                    w.role === "user" ? "justify-end" : "justify-start"
                   }`,
                   children: G("div", {
                     className: `p-2 rounded-md ${
-                      y.role === "user" ? "bg-dark text-white" : "bg-gray-100"
+                      w.role === "user" ? "bg-dark text-white" : "bg-gray-100"
                     }`,
                     style: {
                       maxWidth: "80%",
@@ -14053,14 +14047,13 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                             children: S.children,
                           }),
                       },
-                      children: y.content,
+                      children: w.content,
                     }),
                   }),
                 },
                 x
               )
             ),
-            G("div", { style: { display: "block" }, ref: d }),
             h &&
               G("div", {
                 className:
@@ -14077,12 +14070,12 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           className: "p-3 flex gap-3 items-center  chat-footer",
           children: [
             G("input", {
-              onKeyDown: (y) => {
-                y.key === "Enter" && b();
+              onKeyDown: (w) => {
+                w.key === "Enter" && b();
               },
               type: "text",
               value: s,
-              onChange: (y) => a(y.target.value),
+              onChange: (w) => a(w.target.value),
               placeholder: "Ask me anything about this product...",
               className: "flex-1 input-chat ",
             }),
@@ -14417,7 +14410,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           let d = null,
             g = null,
             _ = null,
-            w = u.status,
+            y = u.status,
             b = u.statusText;
           if (u.ok) {
             if (this.method !== "HEAD") {
@@ -14453,7 +14446,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                     }),
                     (g = null),
                     (_ = null),
-                    (w = 406),
+                    (y = 406),
                     (b = "Not Acceptable"))
                   : g.length === 1
                   ? (g = g[0])
@@ -14464,10 +14457,10 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
               (d = JSON.parse(x)),
                 Array.isArray(d) &&
                   u.status === 404 &&
-                  ((g = []), (d = null), (w = 200), (b = "OK"));
+                  ((g = []), (d = null), (y = 200), (b = "OK"));
             } catch {
               u.status === 404 && x === ""
-                ? ((w = 204), (b = "No Content"))
+                ? ((y = 204), (b = "No Content"))
                 : (d = { message: x });
             }
             if (
@@ -14477,12 +14470,12 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                   (f = d == null ? void 0 : d.details) === null || f === void 0
                 ) &&
                 f.includes("0 rows") &&
-                ((d = null), (w = 200), (b = "OK")),
+                ((d = null), (y = 200), (b = "OK")),
               d && this.shouldThrowOnError)
             )
               throw new n.default(d);
           }
-          return { error: d, data: g, count: _, status: w, statusText: b };
+          return { error: d, data: g, count: _, status: y, statusText: b };
         });
         return (
           this.shouldThrowOnError ||
@@ -14997,13 +14990,13 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         l || u
           ? ((h = l ? "HEAD" : "GET"),
             Object.entries(o)
-              .filter(([_, w]) => w !== void 0)
-              .map(([_, w]) => [
+              .filter(([_, y]) => y !== void 0)
+              .map(([_, y]) => [
                 _,
-                Array.isArray(w) ? `{${w.join(",")}}` : `${w}`,
+                Array.isArray(y) ? `{${y.join(",")}}` : `${y}`,
               ])
-              .forEach(([_, w]) => {
-                f.searchParams.append(_, w);
+              .forEach(([_, y]) => {
+                f.searchParams.append(_, y);
               }))
           : ((h = "POST"), (d = o));
         const g = Object.assign({}, this.headers);
@@ -15439,10 +15432,10 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         this.map(a, (u, c) => {
           const h = s[u];
           if (h) {
-            const f = c.map((w) => w.presence_ref),
-              d = h.map((w) => w.presence_ref),
-              g = c.filter((w) => d.indexOf(w.presence_ref) < 0),
-              _ = h.filter((w) => f.indexOf(w.presence_ref) < 0);
+            const f = c.map((y) => y.presence_ref),
+              d = h.map((y) => y.presence_ref),
+              g = c.filter((y) => d.indexOf(y.presence_ref) < 0),
+              _ = h.filter((y) => f.indexOf(y.presence_ref) < 0);
             g.length > 0 && (o[u] = g), _.length > 0 && (l[u] = _);
           } else o[u] = c;
         }),
@@ -15646,19 +15639,19 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                       : 0,
                   g = [];
                 for (let _ = 0; _ < d; _++) {
-                  const w = f[_],
+                  const y = f[_],
                     {
-                      filter: { event: b, schema: y, table: x, filter: S },
-                    } = w,
+                      filter: { event: b, schema: w, table: x, filter: S },
+                    } = y,
                     P = c && c[_];
                   if (
                     P &&
                     P.event === b &&
-                    P.schema === y &&
+                    P.schema === w &&
                     P.table === x &&
                     P.filter === S
                   )
-                    g.push(Object.assign(Object.assign({}, w), { id: P.id }));
+                    g.push(Object.assign(Object.assign({}, y), { id: P.id }));
                   else {
                     this.unsubscribe(),
                       e == null ||
@@ -15835,16 +15828,16 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           i === void 0 ||
           i
             .filter((d) => {
-              var g, _, w;
+              var g, _, y;
               return (
                 ((g = d.filter) === null || g === void 0 ? void 0 : g.event) ===
                   "*" ||
-                ((w =
+                ((y =
                   (_ = d.filter) === null || _ === void 0
                     ? void 0
-                    : _.event) === null || w === void 0
+                    : _.event) === null || y === void 0
                   ? void 0
-                  : w.toLocaleLowerCase()) === a
+                  : y.toLocaleLowerCase()) === a
               );
             })
             .map((d) => d.callback(f, r))
@@ -15852,7 +15845,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           s === void 0 ||
           s
             .filter((d) => {
-              var g, _, w, b, y, x;
+              var g, _, y, b, w, x;
               if (["broadcast", "presence", "postgres_changes"].includes(a))
                 if ("id" in d) {
                   const S = d.id,
@@ -15867,19 +15860,19 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                       : _.includes(S)) &&
                     (P === "*" ||
                       (P == null ? void 0 : P.toLocaleLowerCase()) ===
-                        ((w = n.data) === null || w === void 0
+                        ((y = n.data) === null || y === void 0
                           ? void 0
-                          : w.type.toLocaleLowerCase()))
+                          : y.type.toLocaleLowerCase()))
                   );
                 } else {
                   const S =
-                    (y =
+                    (w =
                       (b = d == null ? void 0 : d.filter) === null ||
                       b === void 0
                         ? void 0
-                        : b.event) === null || y === void 0
+                        : b.event) === null || w === void 0
                       ? void 0
-                      : y.toLocaleLowerCase();
+                      : w.toLocaleLowerCase();
                   return (
                     S === "*" ||
                     S ===
@@ -15896,9 +15889,9 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                 const g = f.data,
                   {
                     schema: _,
-                    table: w,
+                    table: y,
                     commit_timestamp: b,
-                    type: y,
+                    type: w,
                     errors: x,
                   } = g;
                 f = Object.assign(
@@ -15906,9 +15899,9 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                     {},
                     {
                       schema: _,
-                      table: w,
+                      table: y,
                       commit_timestamp: b,
-                      eventType: y,
+                      eventType: w,
                       new: {},
                       old: {},
                       errors: x,
@@ -17962,8 +17955,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           d.length > 0 &&
             (d.forEach((g) => {
               const _ = parseInt(g.split(";")[0].split("=")[1].substring(0, 1)),
-                w = JSON.parse(g.split(";")[1].split("=")[1]);
-              u[`${w}Page`] = _;
+                y = JSON.parse(g.split(";")[1].split("=")[1]);
+              u[`${y}Page`] = _;
             }),
             (u.total = parseInt(f))),
           { data: Object.assign(Object.assign({}, h), u), error: null }
@@ -19210,7 +19203,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
             !e.code)
           )
             throw new Bc("No code detected.");
-          const { data: y, error: x } = await this._exchangeCodeForSession(
+          const { data: w, error: x } = await this._exchangeCodeForSession(
             e.code
           );
           if (x) throw x;
@@ -19218,7 +19211,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           return (
             S.searchParams.delete("code"),
             window.history.replaceState(window.history.state, "", S.toString()),
-            { data: { session: y.session, redirectType: null }, error: null }
+            { data: { session: w.session, redirectType: null }, error: null }
           );
         }
         const {
@@ -19255,8 +19248,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
               f,
               c
             );
-        const { data: _, error: w } = await this._getUser(s);
-        if (w) throw w;
+        const { data: _, error: y } = await this._getUser(s);
+        if (y) throw y;
         const b = {
           provider_token: r,
           provider_refresh_token: i,
