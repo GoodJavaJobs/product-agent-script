@@ -800,7 +800,7 @@
           t.constructor.isBuffer(t)
         );
   }
-  function Da(t, e) {
+  function Na(t, e) {
     if (fh(t)) {
       const n = [];
       for (let r = 0; r < t.length; r += 1) n.push(e(t[r]));
@@ -809,7 +809,7 @@
     return e(t);
   }
   const gh = Object.prototype.hasOwnProperty,
-    Na = {
+    Da = {
       brackets(t) {
         return String(t) + "[]";
       },
@@ -878,7 +878,7 @@
         ? (w = f == null ? void 0 : f(w))
         : n === "comma" &&
           ze(w) &&
-          (w = Da(w, function (j) {
+          (w = Na(w, function (j) {
             return j instanceof Date ? (f == null ? void 0 : f(j)) : j;
           })),
       w === null)
@@ -903,7 +903,7 @@
     if (typeof w > "u") return v;
     let T;
     if (n === "comma" && ze(w))
-      _ && l && (w = Da(w, l)),
+      _ && l && (w = Na(w, l)),
         (T = [{ value: w.length > 0 ? w.join(",") || null : void 0 }]);
     else if (ze(u)) T = u;
     else {
@@ -924,8 +924,8 @@
             : O
           : O + (h ? "." + L : "[" + L + "]");
       b.set(t, S);
-      const N = new WeakMap();
-      N.set(di, b),
+      const D = new WeakMap();
+      D.set(di, b),
         Fa(
           v,
           Ma(
@@ -946,7 +946,7 @@
             g,
             _,
             y,
-            N
+            D
           )
         );
     }
@@ -990,7 +990,7 @@
     (typeof t.filter == "function" || ze(t.filter)) && (i = t.filter);
     let s;
     if (
-      (t.arrayFormat && t.arrayFormat in Na
+      (t.arrayFormat && t.arrayFormat in Da
         ? (s = t.arrayFormat)
         : "indices" in t
         ? (s = t.indices ? "indices" : "repeat")
@@ -1056,7 +1056,7 @@
       : ze(r.filter) && ((s = r.filter), (i = s));
     const a = [];
     if (typeof n != "object" || n === null) return "";
-    const o = Na[r.arrayFormat],
+    const o = Da[r.arrayFormat],
       l = o === "comma" && r.commaRoundTrip;
     i || (i = Object.keys(n)), r.sort && i.sort(r.sort);
     const u = new WeakMap();
@@ -1208,8 +1208,8 @@
     pn || xh(Sh(), { auto: !0 });
   };
   Ka();
-  class D extends Error {}
-  class de extends D {
+  class N extends Error {}
+  class de extends N {
     constructor(e, n, r, i) {
       super(`${de.makeMessage(e, n, r)}`),
         (this.status = e),
@@ -1282,12 +1282,12 @@
   class eo extends de {}
   class to extends de {}
   class no extends de {}
-  class ro extends D {
+  class ro extends N {
     constructor() {
       super("Could not parse response content as the length limit was reached");
     }
   }
-  class io extends D {
+  class io extends N {
     constructor() {
       super(
         "Could not parse response content as the request was rejected by the content filter"
@@ -1360,7 +1360,7 @@
       if (typeof Buffer < "u") {
         if (e instanceof Buffer) return e.toString();
         if (e instanceof Uint8Array) return Buffer.from(e).toString();
-        throw new D(
+        throw new N(
           `Unexpected: received non-Uint8Array (${e.constructor.name}) stream chunk in an environment with a global "Buffer" defined, which this library assumes to be Node. Please report this error.`
         );
       }
@@ -1370,11 +1370,11 @@
             this.textDecoder ?? (this.textDecoder = new TextDecoder("utf8")),
             this.textDecoder.decode(e)
           );
-        throw new D(
+        throw new N(
           `Unexpected: received non-Uint8Array/ArrayBuffer (${e.constructor.name}) in a web platform. Please report this error.`
         );
       }
-      throw new D(
+      throw new N(
         "Unexpected: neither Buffer nor TextDecoder are available as globals. Please report this error."
       );
     }
@@ -1585,7 +1585,7 @@
   async function* Ah(t, e) {
     if (!t.body)
       throw (
-        (e.abort(), new D("Attempted to iterate over a response with no body"))
+        (e.abort(), new N("Attempted to iterate over a response with no body"))
       );
     const n = new Th(),
       r = new ar(),
@@ -1729,10 +1729,10 @@
       t.body &&
       t[Symbol.toStringTag] === "MultipartBody",
     Ot = async (t) => {
-      const e = await Dh(t.body);
+      const e = await Nh(t.body);
       return Ha(e, t);
     },
-    Dh = async (t) => {
+    Nh = async (t) => {
       const e = new za();
       return (
         await Promise.all(Object.entries(t || {}).map(([n, r]) => gi(e, n, r))),
@@ -1766,7 +1766,7 @@
           );
       }
     };
-  var Nh = function (t, e, n, r, i) {
+  var Dh = function (t, e, n, r, i) {
       if (r === "m") throw new TypeError("Private method is not writable");
       if (r === "a" && !i)
         throw new TypeError("Private accessor was defined without a setter");
@@ -2101,7 +2101,7 @@
           )
             return `${encodeURIComponent(n)}=${encodeURIComponent(r)}`;
           if (r === null) return `${encodeURIComponent(n)}=`;
-          throw new D(
+          throw new N(
             `Cannot stringify type ${typeof r}; Expected string, number, boolean, or null. If you need to pass nested query parameters, you can manually encode them, e.g. { query: { 'foo[key1]': value1, 'foo[key2]': value2 } }, and please open a GitHub issue requesting better support for your use case.`
           );
         })
@@ -2161,7 +2161,7 @@
   class fo {
     constructor(e, n, r, i) {
       lr.set(this, void 0),
-        Nh(this, lr, e, "f"),
+        Dh(this, lr, e, "f"),
         (this.options = i),
         (this.response = n),
         (this.body = r);
@@ -2172,7 +2172,7 @@
     async getNextPage() {
       const e = this.nextPageInfo();
       if (!e)
-        throw new D(
+        throw new N(
           "No next page expected; please check `.hasNextPage()` before calling `.getNextPage()`."
         );
       const n = { ...this.options };
@@ -2360,8 +2360,8 @@
     mn = (t) => new Promise((e) => setTimeout(e, t)),
     _i = (t, e) => {
       if (typeof e != "number" || !Number.isInteger(e))
-        throw new D(`${t} must be an integer`);
-      if (e < 0) throw new D(`${t} must be a positive integer`);
+        throw new N(`${t} must be an integer`);
+      if (e < 0) throw new N(`${t} must be a positive integer`);
       return e;
     },
     yi = (t) => {
@@ -2807,12 +2807,12 @@
         e instanceof Re)
       )
         return $e(this, br, !0, "f"), this._emit("abort", e);
-      if (e instanceof D) return this._emit("error", e);
+      if (e instanceof N) return this._emit("error", e);
       if (e instanceof Error) {
-        const n = new D(e.message);
+        const n = new N(e.message);
         return (n.cause = e), this._emit("error", n);
       }
-      return this._emit("error", new D(String(e)));
+      return this._emit("error", new N(String(e)));
     });
   var $ = function (t, e, n, r) {
       if (n === "a" && !r)
@@ -3162,7 +3162,7 @@
       }
   }),
     (kn = function () {
-      if (this.ended) throw new D("stream has ended, this shouldn't happen");
+      if (this.ended) throw new N("stream has ended, this shouldn't happen");
       if (!$(this, vt, "f")) throw Error("Final run has not been received");
       return $(this, vt, "f");
     }),
@@ -3417,7 +3417,7 @@
   }
   const jt = (t) => (t == null ? void 0 : t.role) === "assistant",
     jo = (t) => (t == null ? void 0 : t.role) === "function",
-    Do = (t) => (t == null ? void 0 : t.role) === "tool";
+    No = (t) => (t == null ? void 0 : t.role) === "tool";
   function Ai(t) {
     return (t == null ? void 0 : t.$brand) === "auto-parseable-response-format";
   }
@@ -3425,7 +3425,7 @@
     return (t == null ? void 0 : t.$brand) === "auto-parseable-tool";
   }
   function Zh(t, e) {
-    return !e || !No(e)
+    return !e || !Do(e)
       ? {
           ...t,
           choices: t.choices.map((n) => ({
@@ -3514,7 +3514,7 @@
           });
     return Sn(n) || (n == null ? void 0 : n.function.strict) || !1;
   }
-  function No(t) {
+  function Do(t) {
     var e;
     return Ai(t.response_format)
       ? !0
@@ -3528,11 +3528,11 @@
   function rd(t) {
     for (const e of t ?? []) {
       if (e.type !== "function")
-        throw new D(
+        throw new N(
           `Currently only \`function\` tool types support auto-parsing; Received \`${e.type}\``
         );
       if (e.function.strict !== !0)
-        throw new D(
+        throw new N(
           `The \`${e.function.name}\` tool is not marked with \`strict: true\`. Only strict function tools can be auto-parsed`
         );
     }
@@ -3570,7 +3570,7 @@
     }
     _addMessage(e, n = !0) {
       if (("content" in e || (e.content = null), this.messages.push(e), n)) {
-        if ((this._emit("message", e), (jo(e) || Do(e)) && e.content))
+        if ((this._emit("message", e), (jo(e) || No(e)) && e.content))
           this._emit("functionCallResult", e.content);
         else if (jt(e) && e.function_call)
           this._emit("functionCall", e.function_call);
@@ -3582,7 +3582,7 @@
     async finalChatCompletion() {
       await this.done();
       const e = this._chatCompletions[this._chatCompletions.length - 1];
-      if (!e) throw new D("stream ended without producing a ChatCompletion");
+      if (!e) throw new N("stream ended without producing a ChatCompletion");
       return e;
     }
     async finalContent() {
@@ -3663,7 +3663,7 @@
           ).choices[0]) == null
             ? void 0
             : f.message;
-        if (!_) throw new D("missing message in ChatCompletion response");
+        if (!_) throw new N("missing message in ChatCompletion response");
         if (!_.function_call) return;
         const { name: y, arguments: b } = _.function_call,
           w = c[y];
@@ -3711,7 +3711,7 @@
         c = n.tools.map((y) => {
           if (Sn(y)) {
             if (!y.$callback)
-              throw new D(
+              throw new N(
                 "Tool given to `.runTools()` that does not have an associated function"
               );
             return {
@@ -3760,7 +3760,7 @@
           ).choices[0]) == null
             ? void 0
             : g.message;
-        if (!w) throw new D("missing message in ChatCompletion response");
+        if (!w) throw new N("missing message in ChatCompletion response");
         if (!((_ = w.tool_calls) != null && _.length)) return;
         for (const x of w.tool_calls) {
           if (x.type !== "function") continue;
@@ -3818,7 +3818,7 @@
           return r && (s.function_call = r), s;
         }
       }
-      throw new D(
+      throw new N(
         "stream ended without producing a ChatCompletionMessage with role=assistant"
       );
     }),
@@ -3840,7 +3840,7 @@
         const n = this.messages[e];
         if (
           (jo(n) && n.content != null) ||
-          (Do(n) &&
+          (No(n) &&
             n.content != null &&
             typeof n.content == "string" &&
             this.messages.some((r) => {
@@ -3869,7 +3869,7 @@
     }),
     (Fo = function (e) {
       if (e.n != null && e.n > 1)
-        throw new D(
+        throw new N(
           "ChatCompletion convenience helpers only support n=1 at this time. To use n>1, please use chat.completions.create() directly."
         );
     }),
@@ -4091,7 +4091,7 @@
       return a();
     },
     el = (t) => od(t, le.ALL ^ le.NUM);
-  var Dt = function (t, e, n, r, i) {
+  var Nt = function (t, e, n, r, i) {
       if (r === "m") throw new TypeError("Private method is not writable");
       if (r === "a" && !i)
         throw new TypeError("Private accessor was defined without a setter");
@@ -4112,13 +4112,13 @@
     },
     oe,
     Ye,
-    Nt,
+    Dt,
     st,
     Li,
     Cr,
     ji,
-    Di,
     Ni,
+    Di,
     Ar,
     Fi,
     tl;
@@ -4127,10 +4127,10 @@
       super(),
         oe.add(this),
         Ye.set(this, void 0),
-        Nt.set(this, void 0),
+        Dt.set(this, void 0),
         st.set(this, void 0),
-        Dt(this, Ye, e, "f"),
-        Dt(this, Nt, [], "f");
+        Nt(this, Ye, e, "f"),
+        Nt(this, Dt, [], "f");
     }
     get currentChatCompletionSnapshot() {
       return X(this, st, "f");
@@ -4195,14 +4195,14 @@
       return this._addChatCompletion(X(this, oe, "m", Ar).call(this));
     }
     [((Ye = new WeakMap()),
-    (Nt = new WeakMap()),
+    (Dt = new WeakMap()),
     (st = new WeakMap()),
     (oe = new WeakSet()),
     (Li = function () {
-      this.ended || Dt(this, st, void 0, "f");
+      this.ended || Nt(this, st, void 0, "f");
     }),
     (Cr = function (n) {
-      let r = X(this, Nt, "f")[n.index];
+      let r = X(this, Dt, "f")[n.index];
       return (
         r ||
         ((r = {
@@ -4213,7 +4213,7 @@
           done_tool_calls: new Set(),
           current_tool_call_index: null,
         }),
-        (X(this, Nt, "f")[n.index] = r),
+        (X(this, Dt, "f")[n.index] = r),
         r)
       );
     }),
@@ -4256,14 +4256,14 @@
             });
         const P = X(this, oe, "m", Cr).call(this, S);
         S.finish_reason &&
-          (X(this, oe, "m", Ni).call(this, S),
+          (X(this, oe, "m", Di).call(this, S),
           P.current_tool_call_index != null &&
-            X(this, oe, "m", Di).call(this, S, P.current_tool_call_index));
+            X(this, oe, "m", Ni).call(this, S, P.current_tool_call_index));
         for (const v of x.delta.tool_calls ?? [])
           P.current_tool_call_index !== v.index &&
-            (X(this, oe, "m", Ni).call(this, S),
+            (X(this, oe, "m", Di).call(this, S),
             P.current_tool_call_index != null &&
-              X(this, oe, "m", Di).call(this, S, P.current_tool_call_index)),
+              X(this, oe, "m", Ni).call(this, S, P.current_tool_call_index)),
             (P.current_tool_call_index = v.index);
         for (const v of x.delta.tool_calls ?? []) {
           const T = (y = S.message.tool_calls) == null ? void 0 : y[v.index];
@@ -4282,7 +4282,7 @@
         }
       }
     }),
-    (Di = function (n, r) {
+    (Ni = function (n, r) {
       var a, o, l;
       if (X(this, oe, "m", Cr).call(this, n).done_tool_calls.has(r)) return;
       const s = (a = n.message.tool_calls) == null ? void 0 : a[r];
@@ -4308,7 +4308,7 @@
         });
       } else s.type;
     }),
-    (Ni = function (n) {
+    (Di = function (n) {
       var i, s;
       const r = X(this, oe, "m", Cr).call(this, n);
       if (n.message.content && !r.content_done) {
@@ -4335,12 +4335,12 @@
           this._emit("logprobs.refusal.done", { refusal: n.logprobs.refusal }));
     }),
     (Ar = function () {
-      if (this.ended) throw new D("stream has ended, this shouldn't happen");
+      if (this.ended) throw new N("stream has ended, this shouldn't happen");
       const n = X(this, st, "f");
-      if (!n) throw new D("request ended without sending any chunks");
+      if (!n) throw new N("request ended without sending any chunks");
       return (
-        Dt(this, st, void 0, "f"),
-        Dt(this, Nt, [], "f"),
+        Nt(this, st, void 0, "f"),
+        Nt(this, Dt, [], "f"),
         ud(n, X(this, Ye, "f"))
       );
     }),
@@ -4353,7 +4353,7 @@
       var r, i, s, a;
       let o = X(this, st, "f");
       const { choices: l, ...u } = n;
-      o ? Object.assign(o, u) : (o = Dt(this, st, { ...u, choices: [] }, "f"));
+      o ? Object.assign(o, u) : (o = Nt(this, st, { ...u, choices: [] }, "f"));
       for (const {
         delta: c,
         finish_reason: h,
@@ -4381,7 +4381,7 @@
           }
         if (
           h &&
-          ((_.finish_reason = h), X(this, Ye, "f") && No(X(this, Ye, "f")))
+          ((_.finish_reason = h), X(this, Ye, "f") && Do(X(this, Ye, "f")))
         ) {
           if (h === "length") throw new ro();
           if (h === "content_filter") throw new io();
@@ -4493,7 +4493,7 @@
         id: n,
         choices: r.map(
           ({ message: u, finish_reason: c, index: h, logprobs: f, ...d }) => {
-            if (!c) throw new D(`missing finish_reason for choice ${h}`);
+            if (!c) throw new N(`missing finish_reason for choice ${h}`);
             const {
                 content: g = null,
                 function_call: _,
@@ -4501,12 +4501,12 @@
                 ...b
               } = u,
               w = u.role;
-            if (!w) throw new D(`missing role for choice ${h}`);
+            if (!w) throw new N(`missing role for choice ${h}`);
             if (_) {
               const { arguments: x, name: S } = _;
               if (x == null)
-                throw new D(`missing function_call.arguments for choice ${h}`);
-              if (!S) throw new D(`missing function_call.name for choice ${h}`);
+                throw new N(`missing function_call.arguments for choice ${h}`);
+              if (!S) throw new N(`missing function_call.name for choice ${h}`);
               return {
                 ...d,
                 message: {
@@ -4535,16 +4535,16 @@
                       const { function: P, type: v, id: T, ...V } = x,
                         { arguments: O, name: j, ...C } = P || {};
                       if (T == null)
-                        throw new D(`missing choices[${h}].tool_calls[${S}].id
+                        throw new N(`missing choices[${h}].tool_calls[${S}].id
 ${Pr(t)}`);
                       if (v == null)
-                        throw new D(`missing choices[${h}].tool_calls[${S}].type
+                        throw new N(`missing choices[${h}].tool_calls[${S}].type
 ${Pr(t)}`);
                       if (j == null)
-                        throw new D(`missing choices[${h}].tool_calls[${S}].function.name
+                        throw new N(`missing choices[${h}].tool_calls[${S}].function.name
 ${Pr(t)}`);
                       if (O == null)
-                        throw new D(`missing choices[${h}].tool_calls[${S}].function.arguments
+                        throw new N(`missing choices[${h}].tool_calls[${S}].function.arguments
 ${Pr(t)}`);
                       return {
                         ...V,
@@ -5453,12 +5453,12 @@ ${Pr(t)}`);
       switch ((this._emit("event", n), n.type)) {
         case "response.output_text.delta": {
           const i = r.output[n.output_index];
-          if (!i) throw new D(`missing output at index ${n.output_index}`);
+          if (!i) throw new N(`missing output at index ${n.output_index}`);
           if (i.type === "message") {
             const s = i.content[n.content_index];
-            if (!s) throw new D(`missing content at index ${n.content_index}`);
+            if (!s) throw new N(`missing content at index ${n.content_index}`);
             if (s.type !== "output_text")
-              throw new D(
+              throw new N(
                 `expected content to be 'output_text', got ${s.type}`
               );
             this._emit("response.output_text.delta", {
@@ -5470,7 +5470,7 @@ ${Pr(t)}`);
         }
         case "response.function_call_arguments.delta": {
           const i = r.output[n.output_index];
-          if (!i) throw new D(`missing output at index ${n.output_index}`);
+          if (!i) throw new N(`missing output at index ${n.output_index}`);
           i.type === "function_call" &&
             this._emit("response.function_call_arguments.delta", {
               ...n,
@@ -5484,9 +5484,9 @@ ${Pr(t)}`);
       }
     }),
     (_l = function () {
-      if (this.ended) throw new D("stream has ended, this shouldn't happen");
+      if (this.ended) throw new N("stream has ended, this shouldn't happen");
       const n = ot(this, lt, "f");
-      if (!n) throw new D("request ended without sending any events");
+      if (!n) throw new N("request ended without sending any events");
       zt(this, lt, void 0, "f");
       const r = gd(n, ot(this, Rr, "f"));
       return zt(this, Or, r, "f"), r;
@@ -5495,7 +5495,7 @@ ${Pr(t)}`);
       let r = ot(this, lt, "f");
       if (!r) {
         if (n.type !== "response.created")
-          throw new D(
+          throw new N(
             `When snapshot hasn't been set yet, expected 'response.created' event, got ${n.type}`
           );
         return (r = zt(this, lt, n.response, "f")), r;
@@ -5507,18 +5507,18 @@ ${Pr(t)}`);
         }
         case "response.content_part.added": {
           const i = r.output[n.output_index];
-          if (!i) throw new D(`missing output at index ${n.output_index}`);
+          if (!i) throw new N(`missing output at index ${n.output_index}`);
           i.type === "message" && i.content.push(n.part);
           break;
         }
         case "response.output_text.delta": {
           const i = r.output[n.output_index];
-          if (!i) throw new D(`missing output at index ${n.output_index}`);
+          if (!i) throw new N(`missing output at index ${n.output_index}`);
           if (i.type === "message") {
             const s = i.content[n.content_index];
-            if (!s) throw new D(`missing content at index ${n.content_index}`);
+            if (!s) throw new N(`missing content at index ${n.content_index}`);
             if (s.type !== "output_text")
-              throw new D(
+              throw new N(
                 `expected content to be 'output_text', got ${s.type}`
               );
             s.text += n.delta;
@@ -5527,7 +5527,7 @@ ${Pr(t)}`);
         }
         case "response.function_call_arguments.delta": {
           const i = r.output[n.output_index];
-          if (!i) throw new D(`missing output at index ${n.output_index}`);
+          if (!i) throw new N(`missing output at index ${n.output_index}`);
           i.type === "function_call" && (i.arguments += n.delta);
           break;
         }
@@ -5579,7 +5579,7 @@ ${Pr(t)}`);
     async finalResponse() {
       await this.done();
       const e = ot(this, Or, "f");
-      if (!e) throw new D("stream ended without producing a ChatCompletion");
+      if (!e) throw new N("stream ended without producing a ChatCompletion");
       return e;
     }
   }
@@ -5958,7 +5958,7 @@ ${Pr(t)}`);
       ...s
     } = {}) {
       if (n === void 0)
-        throw new D(
+        throw new N(
           "The OPENAI_API_KEY environment variable is missing or empty; either provide it, or instantiate the OpenAI client with an apiKey option, like new OpenAI({ apiKey: 'My API Key' })."
         );
       const a = {
@@ -5969,7 +5969,7 @@ ${Pr(t)}`);
         baseURL: e || "https://api.openai.com/v1",
       };
       if (!a.dangerouslyAllowBrowser && Gh())
-        throw new D(`It looks like you're running in a browser-like environment.
+        throw new N(`It looks like you're running in a browser-like environment.
 
 This is disabled by default, as it risks exposing your secret API credentials to attackers.
 If you understand the risks and have appropriate mitigations in place,
@@ -6028,7 +6028,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   (vl = U),
     (U.OpenAI = vl),
     (U.DEFAULT_TIMEOUT = 6e5),
-    (U.OpenAIError = D),
+    (U.OpenAIError = N),
     (U.APIError = de),
     (U.APIConnectionError = ir),
     (U.APIConnectionTimeoutError = pi),
@@ -6084,55 +6084,76 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     bd = (
       t,
       e
-    ) => `You are an AI assistant for a Shopify store, embedded on a product page. Your task is to answer customer questions accurately and provide product recommendations when appropriate.
-  
-  You are given a list of products from the store.
-  
-  You are also given a list of questions that customers have asked.
-  
-  You are to answer the questions accurately and provide product recommendations when appropriate.
-  
-  Here's the shopify store URL: ${t}
-  
-  The current product you are assisting with, here's it url: ${e}
-  
-  
-  Initial Response (Automatic):
-  - share a standout feature of the product using the product name in a simple, friendly sentence.
-  - Link directly to the product page when mentioning the product name.
-  
-  Example:
-  "Hey! Did you know the {{PRODUCT_NAME}} is perfect for your next adventure? It’s got plenty of space, top-notch durability, and it’s super easy to set up—perfect for a stress-free trip!"
-  
-  Ongoing Customer Interactions:
-  - If the customer asks about the product: Be clear and friendly, providing answers based on the product page details.
-  - If the customer asks to compare products: Help them by comparing the products in a simple, friendly way, pointing out the key differences.
-  - Always include direct links to both the product being asked about and the products being compared.
-  - If you’re not sure about something: Be honest, and suggest reaching out to customer support.
-  
-  Product Recommendations and Comparisons:
-  - If the customer asks for alternatives or similar products, recommend products that fit what they’re looking for. Keep it simple and helpful.
-  - When comparing products, highlight the main differences and what each product does best. Don’t forget to add links to each product.
-  - Always provide direct links to the recommended products or comparisons.
-  - You are to only recommend products that are in the store.
-  
-  Tone and Style:
-  - Keep things friendly, professional, and easy to understand.
-  
-  Always be helpful and provide clear, simple answers.
-  
-  Response Format:
-  Always respond in string format as follows -- dont add anything else to response:
+    ) => `You are a product assistant for Shopify store: ${t}, embedded on a product page or collection page. 
+
+  Customers engaging and talking to you usually fall into one of these categories:
+  - They are unsure if our store is the best place for them to buy from, or if they should buy the product from one of our competitors
+  - They are unsure if this product will help them achieve their goals
+  - They are unsure if this is the right product for them and their specific needs
+
+Your goal is to understand the customers needs and goals, and match them to the right product. We want the customer to get the perfect product for their needs. Your task is to answer customer questions about the product and the store accurately and provide product comparisons and product recommendations when appropriate. 
+
+You are to answer the questions accurately and provide product recommendations when appropriate.
+
+Here's the shopify store URL: ${t}
+
+The current product you are assisting with, here's it url:  ${e}
+
+Initial Response if on a product page (Automatic):
+- share a standout feature of the product using the product name in a simple, friendly sentence.
+- Link directly to the product page when mentioning the product name.
+
+Example: "Hey! Did you know the Bushveld Roof Top Tent is perfect for your next adventure? It’s got plenty of space, top-notch durability, and it’s super easy to set up—perfect for a stress-free trip!"
+
+Initial Response if on a collection page (Automatic):
+- share a standout feature of the product using the product name in a simple, friendly sentence.
+- Link directly to the collection page when mentioning the product name.
+
+Example: "Hey! Did you know the Bushveld Roof Top Tent is perfect for your next adventure? It’s got plenty of space, top-notch durability, and it’s super easy to set up—perfect for a stress-free trip!"
+
+
+Initial Response if on a collection page (Automatic):
+- share a standout feature of the product using the product name in a simple, friendly sentence.
+- Link directly to the collection page when mentioning the product name.
+
+Example: "Hey! Need any help finding the perfect {{COLLECTION_NAME}} product for your needs? I can help you find the perfect match for your specific needs, just ask!
+
+Ongoing Customer Interactions:
+
+- If the customer asks about the product: Be clear and friendly, providing answers based on the product page details.
+- If the customer asks to compare products: Help them by comparing the products in a simple, friendly way, pointing out the key differences. Use bullet points to compare similar features clearly in an easily readable way. Break chunks of text up so it is easy to read; use a maximum of two sentences per paragraph.
+- Always include direct links to both the product being asked about and the products being compared.
+- If you’re not sure about something: Be honest, and suggest reaching out to customer support.
+- Never ever include links to other websites or to products that are not listed on the store. We want to keep customers on our site and product page, not send them to competitors that sell the same product.
+
+Product Recommendations and Comparisons:
+
+- If the customer asks for alternatives or similar products, recommend products that fit what they’re looking for. Keep it simple and helpful. Use bullet points to summarise noteworthy features and benefits of your recommendations.
+- When comparing products, highlight the main differences and what each product does best using bullet points. Don’t forget to add links to each product.
+- Always provide direct links to the recommended products or comparisons.
+- You are to only recommend products that are in the store. 
+- Never ever include links to other websites or to products that are not listed on the store. We want to keep customers on our site and product page, not send them to competitors that sell the same product.
+- Many customers will not know what product they want or need, or what they should look for. To help them decide, we have created a variety of ‘best product’ roundup pages on our website to assist. These pages have the word ‘best’ in the url, here is an example for a ‘best exercise bikes’ page: https://cardioonline.com.au/pages/best-exercise-bikes-in-australia. Feel free to recommend these pages to customers that are unsure, you can also use the info on these pages to help provide recommendations. if the site doesn't have a page like this, then ignore this and recommend a product page.
+- When providing recommendations, it is very important to first understand the customers needs, space requirements, and budget. Ask questions like: what maximum weight capacity do you need, do you want incline, do you want connectivity to fitness apps, do you just want to walk or do you want to be able to jog or sprint, what is your maximum budget. You can then use their responses to compare against product specifications and metafields to filter to suitable products. 
+- You are not restricted to recommending alternative products from the same brand, you can recommend products from other brands as long as they meet the specific needs of the customer. The most important thing is to address the needs of the customer. If you are unsure which products to recommend, ask the customer more questions. Your goal is to match them to the perfect product for their needs.
+- When a customer requests alternative recommendations, you should be careful not to recommend products that are far outside their budget, too large for their space or overkill for their needs.
+- You can also use info from customer reviews on the product page should you wish. Customers are more likely to purchase products that others with similar needs have recommended.
+
+Tone and Style:
+- Keep things friendly, professional, and easy to understand.
+- Always be helpful and provide clear, simple answers.
+
+Response Format:
+  Always respond in string markdown format as follows -- dont add anything else to response:
   "response"
-  
-  
-  Example Initial String Response:
+
+Example Initial String Markdown Response:
   Hey! Did you know the [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushveld-tundra-roof-top-tent) is perfect for your next adventure? It’s got plenty of space, top-notch durability, and it’s super easy to set up—perfect for a stress-free trip!
   
-  
-  Example JSON Response for Product Comparison:
-  If the customer asks for a comparison between the Bushveld Tundra Roof Top Tent and another product:
-  Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushveld-tundra-roof-top-tent) is amazing for families—super spacious, durable, and easy to set up. But if you’re looking for something more rugged, the [Overland Explorer Roof Top Tent](https://www.example.com/product/overland-explorer-roof-top-tent) is a great choice. It's built for off-road adventures and is smaller, but perfect if you’re going for something compact. Both are awesome, just depends on what fits your needs better!
+- other than links, dont add any other formatting to the response.
+
+Example Response for Product Comparison, If the customer asks for a comparison between the Bushveld Tundra Roof Top Tent and another product:
+Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushveld-tundra-roof-top-tent) is amazing for families—super spacious, durable, and easy to set up. But if you’re looking for something more rugged, the [Overland Explorer Roof Top Tent](https://www.example.com/product/overland-explorer-roof-top-tent) is a great choice. It's built for off-road adventures and is smaller, but perfect if you’re going for something compact. Both are awesome, just depends on what fits your needs better!
   `;
   function dw() {}
   function fw() {}
@@ -7248,9 +7269,9 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   function jd(t) {
     return t.charAt(1).toUpperCase();
   }
-  const Dd = Sl([Cl, Pd, Tl, Il, Rl], "html"),
+  const Nd = Sl([Cl, Pd, Tl, Il, Rl], "html"),
     ws = Sl([Cl, Td, Tl, Il, Rl], "svg");
-  function Nd(t) {
+  function Dd(t) {
     return t.join(" ").trim();
   }
   function jr(t) {
@@ -7322,8 +7343,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       function x(L) {
         var R = L.match(e);
         R && (b += R.length);
-        var N = L.lastIndexOf(l);
-        w = ~N ? L.length - N : w + L.length;
+        var D = L.lastIndexOf(l);
+        w = ~D ? L.length - D : w + L.length;
       }
       function S() {
         var L = { line: b, column: w };
@@ -7352,8 +7373,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       function T(L) {
         var R = L.exec(_);
         if (R) {
-          var N = R[0];
-          return x(N), (_ = _.slice(N.length)), R;
+          var D = R[0];
+          return x(D), (_ = _.slice(D.length)), R;
         }
       }
       function V() {
@@ -7375,13 +7396,13 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
             ++R;
           if (((R += 2), h === _.charAt(R - 1)))
             return v("End of comment missing");
-          var N = _.slice(2, R - 2);
+          var D = _.slice(2, R - 2);
           return (
             (w += 2),
-            x(N),
+            x(D),
             (_ = _.slice(R)),
             (w += 2),
-            L({ type: f, comment: N })
+            L({ type: f, comment: D })
           );
         }
       }
@@ -7390,11 +7411,11 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           R = T(r);
         if (R) {
           if ((j(), !T(i))) return v("property missing ':'");
-          var N = T(s),
+          var D = T(s),
             he = L({
               type: d,
               property: g(R[0].replace(t, h)),
-              value: N ? g(N[0].replace(t, h)) : h,
+              value: D ? g(D[0].replace(t, h)) : h,
             });
           return T(a), he;
         }
@@ -7474,10 +7495,10 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       };
     return (Rn.camelCase = l), Rn;
   }
-  var On, Dl;
+  var On, Nl;
   function zd() {
-    if (Dl) return On;
-    Dl = 1;
+    if (Nl) return On;
+    Nl = 1;
     var t =
         (On && On.__importDefault) ||
         function (i) {
@@ -7500,7 +7521,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   }
   var qd = zd();
   const Hd = jr(qd),
-    Nl = Fl("end"),
+    Dl = Fl("end"),
     vs = Fl("start");
   function Fl(t) {
     return e;
@@ -7522,7 +7543,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   }
   function Vd(t) {
     const e = vs(t),
-      n = Nl(t);
+      n = Dl(t);
     if (e && n) return { start: e, end: n };
   }
   function $n(t) {
@@ -7645,7 +7666,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         ignoreInvalidStyle: e.ignoreInvalidStyle || !1,
         passKeys: e.passKeys !== !1,
         passNode: e.passNode || !1,
-        schema: e.space === "svg" ? ws : Dd,
+        schema: e.space === "svg" ? ws : Nd,
         stylePropertyNameCase: e.stylePropertyNameCase || "dom",
         tableCellAlignToStyle: e.tableCellAlignToStyle !== !1,
       },
@@ -7831,7 +7852,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     const r = $d(t.schema, e);
     if (!(n == null || (typeof n == "number" && Number.isNaN(n)))) {
       if (
-        (Array.isArray(n) && (n = r.commaSeparated ? vd(n) : Nd(n)),
+        (Array.isArray(n) && (n = r.commaSeparated ? vd(n) : Dd(n)),
         r.property === "style")
       ) {
         let i = typeof n == "object" ? n : uf(t, String(n));
@@ -7951,7 +7972,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     re,
     As,
     Vl,
-    Dr = 0,
+    Nr = 0,
     Wl = [],
     se = z,
     Jl = se.__b,
@@ -7961,12 +7982,12 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     Ql = se.unmount,
     Yl = se.__;
   function Ps(t, e) {
-    se.__h && se.__h(re, t, Dr || e), (Dr = 0);
+    se.__h && se.__h(re, t, Nr || e), (Nr = 0);
     var n = re.__H || (re.__H = { __: [], __h: [] });
     return t >= n.__.length && n.__.push({}), n.__[t];
   }
-  function Dn(t) {
-    return (Dr = 1), ff(nu, t);
+  function Nn(t) {
+    return (Nr = 1), ff(nu, t);
   }
   function ff(t, e, n) {
     var r = Ps(jn++, 2);
@@ -8026,7 +8047,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   }
   function pf(t) {
     return (
-      (Dr = 5),
+      (Nr = 5),
       mf(function () {
         return { current: t };
       }, [])
@@ -8040,7 +8061,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     for (var t; (t = Wl.shift()); )
       if (t.__P && t.__H)
         try {
-          t.__H.__h.forEach(Nr), t.__H.__h.forEach(Ts), (t.__H.__h = []);
+          t.__H.__h.forEach(Dr), t.__H.__h.forEach(Ts), (t.__H.__h = []);
         } catch (e) {
           (t.__H.__h = []), se.__e(e, t.__v);
         }
@@ -8061,7 +8082,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
             e.__.forEach(function (n) {
               n.__N && (n.__ = n.__N), (n.u = n.__N = void 0);
             }))
-          : (e.__h.forEach(Nr), e.__h.forEach(Ts), (e.__h = []), (jn = 0))),
+          : (e.__h.forEach(Dr), e.__h.forEach(Ts), (e.__h = []), (jn = 0))),
         (As = re);
     }),
     (se.diffed = function (t) {
@@ -8080,7 +8101,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     (se.__c = function (t, e) {
       e.some(function (n) {
         try {
-          n.__h.forEach(Nr),
+          n.__h.forEach(Dr),
             (n.__h = n.__h.filter(function (r) {
               return !r.__ || Ts(r);
             }));
@@ -8102,7 +8123,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         n.__H &&
         (n.__H.__.forEach(function (r) {
           try {
-            Nr(r);
+            Dr(r);
           } catch (i) {
             e = i;
           }
@@ -8119,7 +8140,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       r = setTimeout(n, 100);
     eu && (e = requestAnimationFrame(n));
   }
-  function Nr(t) {
+  function Dr(t) {
     var e = re,
       n = t.__c;
     typeof n == "function" && ((t.__c = void 0), n()), (re = e);
@@ -8546,12 +8567,12 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   }
   const We = ct(/[A-Za-z]/),
     Pe = ct(/[\dA-Za-z]/),
-    Df = ct(/[#-'*+\--9=?A-Z^-~]/);
+    Nf = ct(/[#-'*+\--9=?A-Z^-~]/);
   function Os(t) {
     return t !== null && (t < 32 || t === 127);
   }
   const $s = ct(/\d/),
-    Nf = ct(/[\dA-Fa-f]/),
+    Df = ct(/[\dA-Fa-f]/),
     Ff = ct(/[!-/:-@[-`{-~]/);
   function F(t) {
     return t !== null && t < -2;
@@ -8978,7 +8999,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         : (t.consume(d), l);
     }
     function u(d) {
-      return d === 64 ? (t.consume(d), c) : Df(d) ? (t.consume(d), u) : n(d);
+      return d === 64 ? (t.consume(d), c) : Nf(d) ? (t.consume(d), u) : n(d);
     }
     function c(d) {
       return Pe(d) ? h(d) : n(d);
@@ -9121,7 +9142,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           t.exit("characterReferenceMarkerHexadecimal"),
           t.enter("characterReferenceValue"),
           (s = 6),
-          (a = Nf),
+          (a = Df),
           c)
         : (t.enter("characterReferenceValue"), (s = 7), (a = $s), c(h));
     }
@@ -9230,13 +9251,13 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     function P(v, T, V) {
       let O = 0;
       return j;
-      function j(N) {
-        return v.enter("lineEnding"), v.consume(N), v.exit("lineEnding"), C;
+      function j(D) {
+        return v.enter("lineEnding"), v.consume(D), v.exit("lineEnding"), C;
       }
-      function C(N) {
+      function C(D) {
         return (
           v.enter("codeFencedFence"),
-          K(N)
+          K(D)
             ? Z(
                 v,
                 I,
@@ -9244,23 +9265,23 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                 r.parser.constructs.disable.null.includes("codeIndented")
                   ? void 0
                   : 4
-              )(N)
-            : I(N)
+              )(D)
+            : I(D)
         );
       }
-      function I(N) {
-        return N === o ? (v.enter("codeFencedFenceSequence"), L(N)) : V(N);
+      function I(D) {
+        return D === o ? (v.enter("codeFencedFenceSequence"), L(D)) : V(D);
       }
-      function L(N) {
-        return N === o
-          ? (O++, v.consume(N), L)
+      function L(D) {
+        return D === o
+          ? (O++, v.consume(D), L)
           : O >= a
           ? (v.exit("codeFencedFenceSequence"),
-            K(N) ? Z(v, R, "whitespace")(N) : R(N))
-          : V(N);
+            K(D) ? Z(v, R, "whitespace")(D) : R(D))
+          : V(D);
       }
-      function R(N) {
-        return N === null || F(N) ? (v.exit("codeFencedFence"), T(N)) : V(N);
+      function R(D) {
+        return D === null || F(D) ? (v.exit("codeFencedFence"), T(D)) : V(D);
       }
     }
   }
@@ -9276,7 +9297,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return r.parser.lazy[r.now().line] ? n(a) : e(a);
     }
   }
-  const Ds = { name: "codeIndented", tokenize: sp },
+  const Ns = { name: "codeIndented", tokenize: sp },
     ip = { partial: !0, tokenize: ap };
   function sp(t, e, n) {
     const r = this;
@@ -9453,7 +9474,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         this.right.length - i,
         Number.POSITIVE_INFINITY
       );
-      return r && Nn(this.left, r), s.reverse();
+      return r && Dn(this.left, r), s.reverse();
     }
     pop() {
       return this.setCursor(Number.POSITIVE_INFINITY), this.left.pop();
@@ -9462,13 +9483,13 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       this.setCursor(Number.POSITIVE_INFINITY), this.left.push(e);
     }
     pushMany(e) {
-      this.setCursor(Number.POSITIVE_INFINITY), Nn(this.left, e);
+      this.setCursor(Number.POSITIVE_INFINITY), Dn(this.left, e);
     }
     unshift(e) {
       this.setCursor(0), this.right.push(e);
     }
     unshiftMany(e) {
-      this.setCursor(0), Nn(this.right, e.reverse());
+      this.setCursor(0), Dn(this.right, e.reverse());
     }
     setCursor(e) {
       if (
@@ -9480,17 +9501,17 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       )
         if (e < this.left.length) {
           const n = this.left.splice(e, Number.POSITIVE_INFINITY);
-          Nn(this.right, n.reverse());
+          Dn(this.right, n.reverse());
         } else {
           const n = this.right.splice(
             this.left.length + this.right.length - e,
             Number.POSITIVE_INFINITY
           );
-          Nn(this.left, n.reverse());
+          Dn(this.left, n.reverse());
         }
     }
   }
-  function Nn(t, e) {
+  function Dn(t, e) {
     let n = 0;
     if (e.length < 1e4) t.push(...e);
     else for (; n < e.length; ) t.push(...e.slice(n, n + 1e4)), (n += 1e4);
@@ -10179,24 +10200,24 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return t.check(Ip, R, tt)(m);
     }
     function R(m) {
-      return t.enter("lineEnding"), t.consume(m), t.exit("lineEnding"), N;
+      return t.enter("lineEnding"), t.consume(m), t.exit("lineEnding"), D;
     }
-    function N(m) {
+    function D(m) {
       return m === null || F(m) ? L(m) : (t.enter("htmlFlowData"), I(m));
     }
     function he(m) {
       return m === 45 ? (t.consume(m), p) : I(m);
     }
     function me(m) {
-      return m === 47 ? (t.consume(m), (a = ""), Ne) : I(m);
+      return m === 47 ? (t.consume(m), (a = ""), De) : I(m);
     }
-    function Ne(m) {
+    function De(m) {
       if (m === 62) {
         const Me = a.toLowerCase();
         return Ou.includes(Me) ? (t.consume(m), Fe) : I(m);
       }
       return We(m) && a.length < 8
-        ? (t.consume(m), (a += String.fromCharCode(m)), Ne)
+        ? (t.consume(m), (a += String.fromCharCode(m)), De)
         : I(m);
     }
     function et(m) {
@@ -10241,8 +10262,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       );
     }
   }
-  const jp = { name: "htmlText", tokenize: Dp };
-  function Dp(t, e, n) {
+  const jp = { name: "htmlText", tokenize: Np };
+  function Np(t, e, n) {
     const r = this;
     let i, s, a;
     return o;
@@ -10381,7 +10402,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     }
     function L(p) {
       return p === i
-        ? (t.consume(p), (i = void 0), N)
+        ? (t.consume(p), (i = void 0), D)
         : p === null
         ? n(p)
         : F(p)
@@ -10400,7 +10421,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         ? O(p)
         : (t.consume(p), R);
     }
-    function N(p) {
+    function D(p) {
       return p === 47 || p === 62 || ve(p) ? O(p) : n(p);
     }
     function he(p) {
@@ -10414,10 +10435,10 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         t.enter("lineEnding"),
         t.consume(p),
         t.exit("lineEnding"),
-        Ne
+        De
       );
     }
-    function Ne(p) {
+    function De(p) {
       return K(p)
         ? Z(
             t,
@@ -10433,8 +10454,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return t.enter("htmlTextData"), a(p);
     }
   }
-  const Ns = { name: "labelEnd", resolveAll: Bp, resolveTo: Up, tokenize: zp },
-    Np = { tokenize: qp },
+  const Ds = { name: "labelEnd", resolveAll: Bp, resolveTo: Up, tokenize: zp },
+    Dp = { tokenize: qp },
     Fp = { tokenize: Hp },
     Mp = { tokenize: Vp };
   function Bp(t) {
@@ -10541,7 +10562,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     }
     function l(f) {
       return f === 40
-        ? t.attempt(Np, c, a ? c : h)(f)
+        ? t.attempt(Dp, c, a ? c : h)(f)
         : f === 91
         ? t.attempt(Fp, c, a ? u : h)(f)
         : a
@@ -10666,7 +10687,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   }
   const Wp = {
     name: "labelStartImage",
-    resolveAll: Ns.resolveAll,
+    resolveAll: Ds.resolveAll,
     tokenize: Jp,
   };
   function Jp(t, e, n) {
@@ -10698,7 +10719,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   }
   const Kp = {
     name: "labelStartLink",
-    resolveAll: Ns.resolveAll,
+    resolveAll: Ds.resolveAll,
     tokenize: Gp,
   };
   function Gp(t, e, n) {
@@ -11140,7 +11161,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           96: Au,
           126: Au,
         },
-        flowInitial: { [-2]: Ds, [-1]: Ds, 32: Ds },
+        flowInitial: { [-2]: Ns, [-1]: Ns, 32: Ns },
         insideSpan: { null: [js, um] },
         string: { 38: Eu, 92: Su },
         text: {
@@ -11153,7 +11174,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           60: [Kf, jp],
           91: Kp,
           92: [xp, Su],
-          93: Ns,
+          93: Ds,
           95: js,
           96: op,
         },
@@ -11212,8 +11233,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return mm(a, C);
     }
     function g() {
-      const { _bufferIndex: C, _index: I, line: L, column: R, offset: N } = r;
-      return { _bufferIndex: C, _index: I, line: L, column: R, offset: N };
+      const { _bufferIndex: C, _index: I, line: L, column: R, offset: D } = r;
+      return { _bufferIndex: C, _index: I, line: L, column: R, offset: D };
     }
     function _(C) {
       (i[C.line] = C.column), j();
@@ -11268,8 +11289,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     }
     function T(C, I) {
       return L;
-      function L(R, N, he) {
-        let me, Ne, et, p;
+      function L(R, D, he) {
+        let me, De, et, p;
         return Array.isArray(R) ? tt(R) : "tokenize" in R ? tt([R]) : Fe(R);
         function Fe(ge) {
           return Xn;
@@ -11284,7 +11305,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           }
         }
         function tt(ge) {
-          return (me = ge), (Ne = 0), ge.length === 0 ? he : m(ge[Ne]);
+          return (me = ge), (De = 0), ge.length === 0 ? he : m(ge[De]);
         }
         function m(ge) {
           return Xn;
@@ -11305,10 +11326,10 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           }
         }
         function Me(ge) {
-          return C(et, p), N;
+          return C(et, p), D;
         }
         function Pt(ge) {
-          return p.restore(), ++Ne < me.length ? m(me[Ne]) : he;
+          return p.restore(), ++De < me.length ? m(me[De]) : he;
         }
       }
     }
@@ -11323,14 +11344,14 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         I = u.previous,
         L = u.currentConstruct,
         R = u.events.length,
-        N = Array.from(o);
+        D = Array.from(o);
       return { from: R, restore: he };
       function he() {
         (r = C),
           (u.previous = I),
           (u.currentConstruct = L),
           (u.events.length = R),
-          (o = N),
+          (o = D),
           j();
       }
     }
@@ -11419,7 +11440,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     for (; !Pu(t); );
     return t;
   }
-  const Du = /[\0\t\n\r]/g;
+  const Nu = /[\0\t\n\r]/g;
   function wm() {
     let t = 1,
       e = "",
@@ -11442,8 +11463,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
 
       ) {
         if (
-          ((Du.lastIndex = h),
-          (u = Du.exec(s)),
+          ((Nu.lastIndex = h),
+          (u = Nu.exec(s)),
           (f = u && u.index !== void 0 ? u.index : s.length),
           (d = s.charCodeAt(f)),
           !u)
@@ -11492,7 +11513,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     }
     return Rs(n) || t;
   }
-  const Nu = {}.hasOwnProperty;
+  const Du = {}.hasOwnProperty;
   function km(t, e, n) {
     return (
       typeof e != "string" && ((n = e), (e = void 0)),
@@ -11570,7 +11591,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         codeFencedFenceMeta: g,
         codeFlowValue: j,
         codeIndented: l(b),
-        codeText: l(N),
+        codeText: l(D),
         codeTextData: j,
         data: j,
         definition: l(),
@@ -11586,7 +11607,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         htmlTextData: j,
         image: l(me),
         label: et,
-        labelText: Ne,
+        labelText: De,
         lineEnding: C,
         link: l(he),
         listItem: l(),
@@ -11630,7 +11651,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           }
       for (Q = -1; ++Q < k.length; ) {
         const Be = e[k[Q][0]];
-        Nu.call(Be, k[Q][1].type) &&
+        Du.call(Be, k[Q][1].type) &&
           Be[k[Q][1].type].call(
             Object.assign({ sliceSerialize: k[Q][2].sliceSerialize }, B),
             k[Q][1]
@@ -11886,7 +11907,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         A = this.stack[this.stack.length - 1];
       A.value = k;
     }
-    function N() {
+    function D() {
       const k = this.resume(),
         A = this.stack[this.stack.length - 1];
       A.value = k;
@@ -11913,7 +11934,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       } else delete k.identifier, delete k.label;
       this.data.referenceType = void 0;
     }
-    function Ne(k) {
+    function De(k) {
       const A = this.sliceSerialize(k),
         B = this.stack[this.stack.length - 2];
       (B.label = vm(A)), (B.identifier = Jt(A).toLowerCase());
@@ -12057,7 +12078,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   function Em(t, e) {
     let n;
     for (n in e)
-      if (Nu.call(e, n))
+      if (Du.call(e, n))
         switch (n) {
           case "canContainEols": {
             const r = e[n];
@@ -12256,14 +12277,14 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     const s = { type: "element", tagName: "img", properties: i, children: [] };
     return t.patch(e, s), t.applyData(e, s);
   }
-  function Dm(t, e) {
+  function Nm(t, e) {
     const n = { src: Kt(e.url) };
     e.alt !== null && e.alt !== void 0 && (n.alt = e.alt),
       e.title !== null && e.title !== void 0 && (n.title = e.title);
     const r = { type: "element", tagName: "img", properties: n, children: [] };
     return t.patch(e, r), t.applyData(e, r);
   }
-  function Nm(t, e) {
+  function Dm(t, e) {
     const n = { type: "text", value: e.value.replace(/\r?\n|\r/g, " ") };
     t.patch(e, n);
     const r = {
@@ -12436,7 +12457,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           children: t.wrap(n, !0),
         },
         o = vs(e.children[1]),
-        l = Nl(e.children[e.children.length - 1]);
+        l = Dl(e.children[e.children.length - 1]);
       o && l && (a.position = { start: o, end: l }), i.push(a);
     }
     const s = {
@@ -12525,8 +12546,8 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     heading: $m,
     html: Lm,
     imageReference: jm,
-    image: Dm,
-    inlineCode: Nm,
+    image: Nm,
+    inlineCode: Dm,
     linkReference: Fm,
     link: Mm,
     listItem: Bm,
@@ -13494,7 +13515,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       e
         ? Js(e)
           ? (n = { path: e })
-          : typeof e == "string" || Dg(e)
+          : typeof e == "string" || Ng(e)
           ? (n = { value: e })
           : (n = e)
         : (n = {}),
@@ -13601,7 +13622,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     if (!t)
       throw new Error("Setting `" + e + "` requires `path` to be set too");
   }
-  function Dg(t) {
+  function Ng(t) {
     return !!(
       t &&
       typeof t == "object" &&
@@ -13609,7 +13630,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       "byteOffset" in t
     );
   }
-  const Ng = function (t) {
+  const Dg = function (t) {
       const r = this.constructor.prototype,
         i = r[t],
         s = function () {
@@ -13618,7 +13639,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return Object.setPrototypeOf(s, r), s;
     },
     Fg = {}.hasOwnProperty;
-  class Qs extends Ng {
+  class Qs extends Dg {
     constructor() {
       super("copy"),
         (this.Compiler = void 0),
@@ -13976,11 +13997,11 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       : "";
   }
   function Qg({ site: t, productURL: e, openKey: n }) {
-    const [r, i] = Dn([]),
-      [s, a] = Dn(""),
-      [o, l] = Dn([]),
-      [u, c] = Dn(!1),
-      [h, f] = Dn(!1),
+    const [r, i] = Nn([]),
+      [s, a] = Nn(""),
+      [o, l] = Nn([]),
+      [u, c] = Nn(!1),
+      [h, f] = Nn(!1),
       d = pf(null),
       g = wd(n),
       _ = () => {
@@ -15088,7 +15109,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       (t.joining = "joining"),
       (t.leaving = "leaving");
   })(Te || (Te = {}));
-  var De;
+  var Ne;
   (function (t) {
     (t.close = "phx_close"),
       (t.error = "phx_error"),
@@ -15096,7 +15117,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       (t.reply = "phx_reply"),
       (t.leave = "phx_leave"),
       (t.access_token = "access_token");
-  })(De || (De = {}));
+  })(Ne || (Ne = {}));
   var ia;
   (function (t) {
     t.websocket = "websocket";
@@ -15554,7 +15575,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           n.config
         )),
         (this.timeout = this.socket.timeout),
-        (this.joinPush = new aa(this, De.join, this.params, this.timeout)),
+        (this.joinPush = new aa(this, Ne.join, this.params, this.timeout)),
         (this.rejoinTimer = new Ac(
           () => this._rejoinUntilConnected(),
           this.socket.reconnectAfterMs
@@ -15591,7 +15612,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
             (this.state = Te.errored),
             this.rejoinTimer.scheduleTimeout());
         }),
-        this._on(De.reply, {}, (i, s) => {
+        this._on(Ne.reply, {}, (i, s) => {
           this._trigger(this._replyEventName(s), i);
         }),
         (this.presence = new Hn(this)),
@@ -15766,13 +15787,13 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       this.state = Te.leaving;
       const n = () => {
         this.socket.log("channel", `leave ${this.topic}`),
-          this._trigger(De.close, "leave", this._joinRef());
+          this._trigger(Ne.close, "leave", this._joinRef());
       };
       return (
         this.rejoinTimer.reset(),
         this.joinPush.destroy(),
         new Promise((r) => {
-          const i = new aa(this, De.leave, {}, e);
+          const i = new aa(this, Ne.leave, {}, e);
           i
             .receive("ok", () => {
               n(), r("ok");
@@ -15820,7 +15841,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     _trigger(e, n, r) {
       var i, s;
       const a = e.toLocaleLowerCase(),
-        { close: o, error: l, leave: u, join: c } = De;
+        { close: o, error: l, leave: u, join: c } = Ne;
       if (r && [o, l, u, c].indexOf(a) >= 0 && r !== this._joinRef()) return;
       let f = this._onMessage(a, n, r);
       if (n && !f)
@@ -15962,10 +15983,10 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         this.socket.isConnected() && this._rejoin();
     }
     _onClose(e) {
-      this._on(De.close, {}, e);
+      this._on(Ne.close, {}, e);
     }
     _onError(e) {
-      this._on(De.error, {}, (n) => e(n));
+      this._on(Ne.error, {}, (n) => e(n));
     }
     _canPush() {
       return this.socket.isConnected() && this._isJoined();
@@ -16192,7 +16213,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
             n && i.updateJoinPayload({ access_token: n }),
               i.joinedOnce &&
                 i._isJoined() &&
-                i._push(De.access_token, { access_token: n });
+                i._push(Ne.access_token, { access_token: n });
           });
       }
     }
@@ -16314,7 +16335,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         this.stateChangeCallbacks.error.forEach((n) => n(e));
     }
     _triggerChanError() {
-      this.channels.forEach((e) => e._trigger(De.error));
+      this.channels.forEach((e) => e._trigger(Ne.error));
     }
     _appendParams(e, n) {
       if (Object.keys(n).length === 0) return e;
@@ -16475,7 +16496,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
               })
           : e(new ua(ha(t), t));
       }),
-    D_ = (t, e, n, r) => {
+    N_ = (t, e, n, r) => {
       const i = { method: t, headers: (e == null ? void 0 : e.headers) || {} };
       return t === "GET"
         ? i
@@ -16489,7 +16510,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   function Vn(t, e, n, r, i, s) {
     return Et(this, void 0, void 0, function* () {
       return new Promise((a, o) => {
-        t(n, D_(e, r, i, s))
+        t(n, N_(e, r, i, s))
           .then((l) => {
             if (!l.ok) throw l;
             return r != null && r.noResolveJson ? l : l.json();
@@ -16509,7 +16530,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return Vn(t, "POST", e, r, i, n);
     });
   }
-  function N_(t, e, n, r, i) {
+  function D_(t, e, n, r, i) {
     return Et(this, void 0, void 0, function* () {
       return Vn(t, "PUT", e, r, i, n);
     });
@@ -16564,7 +16585,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       offset: 0,
       sortBy: { column: "name", order: "asc" },
     },
-    Dc = {
+    Nc = {
       cacheControl: "3600",
       contentType: "text/plain;charset=UTF-8",
       upsert: !1,
@@ -16580,7 +16601,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return ke(this, void 0, void 0, function* () {
         try {
           let s;
-          const a = Object.assign(Object.assign({}, Dc), i);
+          const a = Object.assign(Object.assign({}, Nc), i);
           let o = Object.assign(
             Object.assign({}, this.headers),
             e === "POST" && { "x-upsert": String(a.upsert) }
@@ -16634,7 +16655,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         o.searchParams.set("token", n);
         try {
           let l;
-          const u = Object.assign({ upsert: Dc.upsert }, i),
+          const u = Object.assign({ upsert: Nc.upsert }, i),
             c = Object.assign(Object.assign({}, this.headers), {
               "x-upsert": String(u.upsert),
             });
@@ -17035,7 +17056,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return sn(this, void 0, void 0, function* () {
         try {
           return {
-            data: yield N_(
+            data: yield D_(
               this.fetch,
               `${this.url}/bucket/${e}`,
               {
@@ -17219,13 +17240,13 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       t.accessToken ? (c.accessToken = t.accessToken) : delete c.accessToken, c
     );
   }
-  const Nc = "2.69.1",
+  const Dc = "2.69.1",
     an = 30 * 1e3,
     da = 3,
     fa = da * an,
     ny = "http://localhost:9999",
     ry = "supabase.auth.token",
-    iy = { "X-Client-Info": `gotrue-js/${Nc}` },
+    iy = { "X-Client-Info": `gotrue-js/${Dc}` },
     pa = "X-Supabase-Api-Version",
     Fc = {
       "2024-01-01": {
@@ -17800,7 +17821,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
   function jy(t) {
     return { data: t, error: null };
   }
-  function Dy(t) {
+  function Ny(t) {
     const {
         action_link: e,
         email_otp: n,
@@ -17825,7 +17846,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       l = Object.assign({}, a);
     return { data: { properties: o, user: l }, error: null };
   }
-  function Ny(t) {
+  function Dy(t) {
     return t;
   }
   function Fy(t) {
@@ -17894,7 +17915,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           await W(this.fetch, "POST", `${this.url}/admin/generate_link`, {
             body: i,
             headers: this.headers,
-            xform: Dy,
+            xform: Ny,
             redirectTo: n == null ? void 0 : n.redirectTo,
           })
         );
@@ -17938,7 +17959,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
                   ? s
                   : "",
             },
-            xform: Ny,
+            xform: Dy,
           });
         if (c.error) throw c.error;
         const h = await c.json(),
@@ -18287,7 +18308,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           this.logger(
             `GoTrueClient@${
               this.instanceID
-            } (${Nc}) ${new Date().toISOString()}`,
+            } (${Dc}) ${new Date().toISOString()}`,
             ...e
           ),
         this
