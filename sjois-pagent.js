@@ -13,7 +13,7 @@
     ii,
     dn = {},
     Ca = [],
-    sh = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,
+    ah = /acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i,
     fn = Array.isArray;
   function Ge(t, e) {
     for (var n in e) t[n] = e[n];
@@ -121,11 +121,11 @@
       g,
       _,
       y,
-      b = (r && r.__k) || Ca,
-      w = e.length;
-    for (l = ah(n, e, b, l, w), h = 0; h < w; h++)
+      w = (r && r.__k) || Ca,
+      b = e.length;
+    for (l = oh(n, e, w, l, b), h = 0; h < b; h++)
       (d = n.__k[h]) != null &&
-        ((f = d.__i == -1 ? dn : b[d.__i] || dn),
+        ((f = d.__i == -1 ? dn : w[d.__i] || dn),
         (d.__i = h),
         (y = oi(t, d, f, i, s, a, o, l, u, c)),
         (g = d.__e),
@@ -141,7 +141,7 @@
         (d.__u &= -7));
     return (n.__e = _), l;
   }
-  function ah(t, e, n, r, i) {
+  function oh(t, e, n, r, i) {
     var s,
       a,
       o,
@@ -166,7 +166,7 @@
               : a).__ = t),
           (a.__b = t.__b + 1),
           (o = null),
-          (u = a.__i = oh(a, n, l, h)) != -1 &&
+          (u = a.__i = lh(a, n, l, h)) != -1 &&
             (h--, (o = n[u]) && (o.__u |= 2)),
           o == null || o.__v == null
             ? (u == -1 && (i > c ? f-- : i < c && f++),
@@ -213,7 +213,7 @@
       e
     );
   }
-  function oh(t, e, n, r) {
+  function lh(t, e, n, r) {
     var i,
       s,
       a = t.key,
@@ -243,7 +243,7 @@
     e[0] == "-"
       ? t.setProperty(e, n ?? "")
       : (t[e] =
-          n == null ? "" : typeof n != "number" || sh.test(e) ? n : n + "px");
+          n == null ? "" : typeof n != "number" || ah.test(e) ? n : n + "px");
   }
   function rr(t, e, n, r, i) {
     var s;
@@ -312,11 +312,11 @@
       g,
       _,
       y,
-      b,
       w,
+      b,
       x,
       S,
-      P,
+      A,
       v,
       T,
       V,
@@ -329,70 +329,70 @@
     e: if (typeof C == "function")
       try {
         if (
-          ((b = e.props),
-          (w = "prototype" in C && C.prototype.render),
+          ((w = e.props),
+          (b = "prototype" in C && C.prototype.render),
           (x = (c = C.contextType) && r[c.__c]),
           (S = c ? (x ? x.props.value : c.__) : r),
           n.__c
             ? (y = (h = e.__c = n.__c).__ = h.__E)
-            : (w
-                ? (e.__c = h = new C(b, S))
-                : ((e.__c = h = new Xe(b, S)),
+            : (b
+                ? (e.__c = h = new C(w, S))
+                : ((e.__c = h = new Xe(w, S)),
                   (h.constructor = C),
-                  (h.render = uh)),
+                  (h.render = ch)),
               x && x.sub(h),
-              (h.props = b),
+              (h.props = w),
               h.state || (h.state = {}),
               (h.context = S),
               (h.__n = r),
               (f = h.__d = !0),
               (h.__h = []),
               (h._sb = [])),
-          w && h.__s == null && (h.__s = h.state),
-          w &&
+          b && h.__s == null && (h.__s = h.state),
+          b &&
             C.getDerivedStateFromProps != null &&
             (h.__s == h.state && (h.__s = Ge({}, h.__s)),
-            Ge(h.__s, C.getDerivedStateFromProps(b, h.__s))),
+            Ge(h.__s, C.getDerivedStateFromProps(w, h.__s))),
           (d = h.props),
           (g = h.state),
           (h.__v = e),
           f)
         )
-          w &&
+          b &&
             C.getDerivedStateFromProps == null &&
             h.componentWillMount != null &&
             h.componentWillMount(),
-            w && h.componentDidMount != null && h.__h.push(h.componentDidMount);
+            b && h.componentDidMount != null && h.__h.push(h.componentDidMount);
         else {
           if (
-            (w &&
+            (b &&
               C.getDerivedStateFromProps == null &&
-              b !== d &&
+              w !== d &&
               h.componentWillReceiveProps != null &&
-              h.componentWillReceiveProps(b, S),
+              h.componentWillReceiveProps(w, S),
             (!h.__e &&
               h.shouldComponentUpdate != null &&
-              h.shouldComponentUpdate(b, h.__s, S) === !1) ||
+              h.shouldComponentUpdate(w, h.__s, S) === !1) ||
               e.__v == n.__v)
           ) {
             for (
               e.__v != n.__v &&
-                ((h.props = b), (h.state = h.__s), (h.__d = !1)),
+                ((h.props = w), (h.state = h.__s), (h.__d = !1)),
                 e.__e = n.__e,
                 e.__k = n.__k,
                 e.__k.some(function (I) {
                   I && (I.__ = e);
                 }),
-                P = 0;
-              P < h._sb.length;
-              P++
+                A = 0;
+              A < h._sb.length;
+              A++
             )
-              h.__h.push(h._sb[P]);
+              h.__h.push(h._sb[A]);
             (h._sb = []), h.__h.length && a.push(h);
             break e;
           }
-          h.componentWillUpdate != null && h.componentWillUpdate(b, h.__s, S),
-            w &&
+          h.componentWillUpdate != null && h.componentWillUpdate(w, h.__s, S),
+            b &&
               h.componentDidUpdate != null &&
               h.__h.push(function () {
                 h.componentDidUpdate(d, g, _);
@@ -400,12 +400,12 @@
         }
         if (
           ((h.context = S),
-          (h.props = b),
+          (h.props = w),
           (h.__P = t),
           (h.__e = !1),
           (v = z.__r),
           (T = 0),
-          w)
+          b)
         ) {
           for (
             h.state = h.__s,
@@ -427,7 +427,7 @@
           while (h.__d && ++T < 25);
         (h.state = h.__s),
           h.getChildContext != null && (r = Ge(Ge({}, r), h.getChildContext())),
-          w &&
+          b &&
             !f &&
             h.getSnapshotBeforeUpdate != null &&
             (_ = h.getSnapshotBeforeUpdate(d, g)),
@@ -458,7 +458,7 @@
     else
       s == null && e.__v == n.__v
         ? ((e.__k = n.__k), (e.__e = n.__e))
-        : (o = e.__e = lh(n.__e, e, n, r, i, s, a, l, u));
+        : (o = e.__e = uh(n.__e, e, n, r, i, s, a, l, u));
     return (c = z.diffed) && c(e), 128 & e.__u ? void 0 : o;
   }
   function $a(t, e, n) {
@@ -483,7 +483,7 @@
       ? t.map(La)
       : Ge({}, t);
   }
-  function lh(t, e, n, r, i, s, a, o, l) {
+  function uh(t, e, n, r, i, s, a, o, l) {
     var u,
       c,
       h,
@@ -492,12 +492,12 @@
       g,
       _,
       y = n.props,
-      b = e.props,
-      w = e.type;
+      w = e.props,
+      b = e.type;
     if (
-      (w == "svg"
+      (b == "svg"
         ? (i = "http://www.w3.org/2000/svg")
-        : w == "math"
+        : b == "math"
         ? (i = "http://www.w3.org/1998/Math/MathML")
         : i || (i = "http://www.w3.org/1999/xhtml"),
       s != null)
@@ -505,20 +505,20 @@
       for (u = 0; u < s.length; u++)
         if (
           (d = s[u]) &&
-          "setAttribute" in d == !!w &&
-          (w ? d.localName == w : d.nodeType == 3)
+          "setAttribute" in d == !!b &&
+          (b ? d.localName == b : d.nodeType == 3)
         ) {
           (t = d), (s[u] = null);
           break;
         }
     }
     if (t == null) {
-      if (w == null) return document.createTextNode(b);
-      (t = document.createElementNS(i, w, b.is && b)),
+      if (b == null) return document.createTextNode(w);
+      (t = document.createElementNS(i, b, w.is && w)),
         o && (z.__m && z.__m(e, s), (o = !1)),
         (s = null);
     }
-    if (w == null) y === b || (o && t.data == b) || (t.data = b);
+    if (b == null) y === w || (o && t.data == w) || (t.data = w);
     else {
       if (
         ((s = s && Zn.call(t.childNodes)), (y = n.props || dn), !o && s != null)
@@ -528,17 +528,17 @@
       for (u in y)
         if (((d = y[u]), u != "children")) {
           if (u == "dangerouslySetInnerHTML") h = d;
-          else if (!(u in b)) {
+          else if (!(u in w)) {
             if (
-              (u == "value" && "defaultValue" in b) ||
-              (u == "checked" && "defaultChecked" in b)
+              (u == "value" && "defaultValue" in w) ||
+              (u == "checked" && "defaultChecked" in w)
             )
               continue;
             rr(t, u, null, d, i);
           }
         }
-      for (u in b)
-        (d = b[u]),
+      for (u in w)
+        (d = w[u]),
           u == "children"
             ? (f = d)
             : u == "dangerouslySetInnerHTML"
@@ -563,7 +563,7 @@
           e,
           n,
           r,
-          w == "foreignObject" ? "http://www.w3.org/1999/xhtml" : i,
+          b == "foreignObject" ? "http://www.w3.org/1999/xhtml" : i,
           s,
           a,
           s ? s[0] : n.__k && It(n, 0),
@@ -575,12 +575,12 @@
         for (u = s.length; u--; ) si(s[u]);
       o ||
         ((u = "value"),
-        w == "progress" && g == null
+        b == "progress" && g == null
           ? t.removeAttribute("value")
           : g != null &&
             (g !== t[u] ||
-              (w == "progress" && !g) ||
-              (w == "option" && g != y[u])) &&
+              (b == "progress" && !g) ||
+              (b == "option" && g != y[u])) &&
             rr(t, u, g, y[u], i),
         (u = "checked"),
         _ != null && _ != t[u] && rr(t, u, _, y[u], i));
@@ -617,10 +617,10 @@
         r[i] && ja(r[i], e, n || typeof t.type != "function");
     n || si(t.__e), (t.__c = t.__ = t.__e = void 0);
   }
-  function uh(t, e, n) {
+  function ch(t, e, n) {
     return this.constructor(t, n);
   }
-  function ch(t, e, n) {
+  function hh(t, e, n) {
     var r, i, s, a;
     e == document && (e = document.documentElement),
       z.__ && z.__(t, e),
@@ -690,7 +690,7 @@
     (ni = 0),
     (ri = Oa(!1)),
     (ii = Oa(!0));
-  var hh = 0;
+  var dh = 0;
   function G(t, e, n, r, i, s) {
     e || (e = {});
     var a,
@@ -709,7 +709,7 @@
       __e: null,
       __c: null,
       constructor: void 0,
-      __v: --hh,
+      __v: --dh,
       __i: -1,
       __u: 0,
       __source: i,
@@ -724,8 +724,8 @@
       RFC1738: (t) => String(t).replace(/%20/g, "+"),
       RFC3986: (t) => String(t),
     },
-    dh = "RFC1738",
-    fh = Array.isArray,
+    fh = "RFC1738",
+    ph = Array.isArray,
     Ue = (() => {
       const t = [];
       for (let e = 0; e < 256; ++e)
@@ -733,7 +733,7 @@
       return t;
     })(),
     hi = 1024,
-    ph = (t, e, n, r, i) => {
+    mh = (t, e, n, r, i) => {
       if (t.length === 0) return t;
       let s = t;
       if (
@@ -759,7 +759,7 @@
             (h >= 48 && h <= 57) ||
             (h >= 65 && h <= 90) ||
             (h >= 97 && h <= 122) ||
-            (i === dh && (h === 40 || h === 41))
+            (i === fh && (h === 40 || h === 41))
           ) {
             u[u.length] = l.charAt(c);
             continue;
@@ -791,7 +791,7 @@
       }
       return a;
     };
-  function mh(t) {
+  function gh(t) {
     return !t || typeof t != "object"
       ? !1
       : !!(
@@ -801,14 +801,14 @@
         );
   }
   function Na(t, e) {
-    if (fh(t)) {
+    if (ph(t)) {
       const n = [];
       for (let r = 0; r < t.length; r += 1) n.push(e(t[r]));
       return n;
     }
     return e(t);
   }
-  const gh = Object.prototype.hasOwnProperty,
+  const _h = Object.prototype.hasOwnProperty,
     Da = {
       brackets(t) {
         return String(t) + "[]";
@@ -822,11 +822,11 @@
       },
     },
     ze = Array.isArray,
-    _h = Array.prototype.push,
+    yh = Array.prototype.push,
     Fa = function (t, e) {
-      _h.apply(t, ze(e) ? e : [e]);
+      yh.apply(t, ze(e) ? e : [e]);
     },
-    yh = Date.prototype.toISOString,
+    wh = Date.prototype.toISOString,
     ae = {
       addQueryPrefix: !1,
       allowDots: !1,
@@ -837,18 +837,18 @@
       delimiter: "&",
       encode: !0,
       encodeDotInKeys: !1,
-      encoder: ph,
+      encoder: mh,
       encodeValuesOnly: !1,
       format: ui,
       formatter: ci[ui],
       indices: !1,
       serializeDate(t) {
-        return yh.call(t);
+        return wh.call(t);
       },
       skipNulls: !1,
       strictNullHandling: !1,
     };
-  function wh(t) {
+  function bh(t) {
     return (
       typeof t == "string" ||
       typeof t == "number" ||
@@ -858,74 +858,74 @@
     );
   }
   const di = {};
-  function Ma(t, e, n, r, i, s, a, o, l, u, c, h, f, d, g, _, y, b) {
-    let w = t,
-      x = b,
+  function Ma(t, e, n, r, i, s, a, o, l, u, c, h, f, d, g, _, y, w) {
+    let b = t,
+      x = w,
       S = 0,
-      P = !1;
-    for (; (x = x.get(di)) !== void 0 && !P; ) {
+      A = !1;
+    for (; (x = x.get(di)) !== void 0 && !A; ) {
       const j = x.get(t);
       if (((S += 1), typeof j < "u")) {
         if (j === S) throw new RangeError("Cyclic object value");
-        P = !0;
+        A = !0;
       }
       typeof x.get(di) > "u" && (S = 0);
     }
     if (
       (typeof u == "function"
-        ? (w = u(e, w))
-        : w instanceof Date
-        ? (w = f == null ? void 0 : f(w))
+        ? (b = u(e, b))
+        : b instanceof Date
+        ? (b = f == null ? void 0 : f(b))
         : n === "comma" &&
-          ze(w) &&
-          (w = Na(w, function (j) {
+          ze(b) &&
+          (b = Na(b, function (j) {
             return j instanceof Date ? (f == null ? void 0 : f(j)) : j;
           })),
-      w === null)
+      b === null)
     ) {
       if (s) return l && !_ ? l(e, ae.encoder, y, "key", d) : e;
-      w = "";
+      b = "";
     }
-    if (wh(w) || mh(w)) {
+    if (bh(b) || gh(b)) {
       if (l) {
         const j = _ ? e : l(e, ae.encoder, y, "key", d);
         return [
           (g == null ? void 0 : g(j)) +
             "=" +
-            (g == null ? void 0 : g(l(w, ae.encoder, y, "value", d))),
+            (g == null ? void 0 : g(l(b, ae.encoder, y, "value", d))),
         ];
       }
       return [
-        (g == null ? void 0 : g(e)) + "=" + (g == null ? void 0 : g(String(w))),
+        (g == null ? void 0 : g(e)) + "=" + (g == null ? void 0 : g(String(b))),
       ];
     }
     const v = [];
-    if (typeof w > "u") return v;
+    if (typeof b > "u") return v;
     let T;
-    if (n === "comma" && ze(w))
-      _ && l && (w = Na(w, l)),
-        (T = [{ value: w.length > 0 ? w.join(",") || null : void 0 }]);
+    if (n === "comma" && ze(b))
+      _ && l && (b = Na(b, l)),
+        (T = [{ value: b.length > 0 ? b.join(",") || null : void 0 }]);
     else if (ze(u)) T = u;
     else {
-      const j = Object.keys(w);
+      const j = Object.keys(b);
       T = c ? j.sort(c) : j;
     }
     const V = o ? String(e).replace(/\./g, "%2E") : String(e),
-      O = r && ze(w) && w.length === 1 ? V + "[]" : V;
-    if (i && ze(w) && w.length === 0) return O + "[]";
+      O = r && ze(b) && b.length === 1 ? V + "[]" : V;
+    if (i && ze(b) && b.length === 0) return O + "[]";
     for (let j = 0; j < T.length; ++j) {
       const C = T[j],
-        I = typeof C == "object" && typeof C.value < "u" ? C.value : w[C];
+        I = typeof C == "object" && typeof C.value < "u" ? C.value : b[C];
       if (a && I === null) continue;
       const L = h && o ? C.replace(/\./g, "%2E") : C,
-        R = ze(w)
+        R = ze(b)
           ? typeof n == "function"
             ? n(O, L)
             : O
           : O + (h ? "." + L : "[" + L + "]");
-      b.set(t, S);
+      w.set(t, S);
       const D = new WeakMap();
-      D.set(di, b),
+      D.set(di, w),
         Fa(
           v,
           Ma(
@@ -937,7 +937,7 @@
             s,
             a,
             o,
-            n === "comma" && _ && ze(w) ? null : l,
+            n === "comma" && _ && ze(b) ? null : l,
             u,
             c,
             h,
@@ -952,7 +952,7 @@
     }
     return v;
   }
-  function bh(t = ae) {
+  function vh(t = ae) {
     if (
       typeof t.allowEmptyArrays < "u" &&
       typeof t.allowEmptyArrays != "boolean"
@@ -981,7 +981,7 @@
       );
     let n = ui;
     if (typeof t.format < "u") {
-      if (!gh.call(ci, t.format))
+      if (!_h.call(ci, t.format))
         throw new TypeError("Unknown format option provided.");
       n = t.format;
     }
@@ -1047,9 +1047,9 @@
           : ae.strictNullHandling,
     };
   }
-  function vh(t, e = {}) {
+  function xh(t, e = {}) {
     let n = t;
-    const r = bh(e);
+    const r = vh(e);
     let i, s;
     typeof r.filter == "function"
       ? ((s = r.filter), (n = s("", n)))
@@ -1108,7 +1108,7 @@
     Va,
     Wa,
     Ja;
-  function xh(t, e = { auto: !1 }) {
+  function kh(t, e = { auto: !1 }) {
     if (Ba)
       throw new Error(
         `you must \`import 'openai/shims/${t.kind}'\` before importing anything else from openai`
@@ -1128,7 +1128,7 @@
       (Wa = t.fileFromPath),
       (Ja = t.isFsReadStream);
   }
-  class kh {
+  class Sh {
     constructor(e) {
       this.body = e;
     }
@@ -1136,7 +1136,7 @@
       return "MultipartBody";
     }
   }
-  function Sh({ manuallyImported: t } = {}) {
+  function Eh({ manuallyImported: t } = {}) {
     const e = t
       ? "You may need to use polyfills"
       : "Add one of these imports before your first `import … from 'openai'`:\n- `import 'openai/shims/node'` (if you're running on Node)\n- `import 'openai/shims/web'` (otherwise)\n";
@@ -1194,7 +1194,7 @@
                 );
               }
             },
-      getMultipartRequestOptions: async (a, o) => ({ ...o, body: new kh(a) }),
+      getMultipartRequestOptions: async (a, o) => ({ ...o, body: new Sh(a) }),
       getDefaultAgent: (a) => {},
       fileFromPath: () => {
         throw new Error(
@@ -1205,7 +1205,7 @@
     };
   }
   const Ka = () => {
-    pn || xh(Sh(), { auto: !0 });
+    pn || kh(Eh(), { auto: !0 });
   };
   Ka();
   class N extends Error {}
@@ -1332,7 +1332,7 @@
       r.set(this.buffer), r.set(n, this.buffer.length), (this.buffer = r);
       const i = [];
       let s;
-      for (; (s = Eh(this.buffer, bt(this, Se, "f"))) != null; ) {
+      for (; (s = Ch(this.buffer, bt(this, Se, "f"))) != null; ) {
         if (s.carriage && bt(this, Se, "f") == null) {
           sr(this, Se, s.index, "f");
           continue;
@@ -1392,14 +1392,14 @@
       "\r",
     ])),
     (ar.NEWLINE_REGEXP = /\r\n|[\n\r]/g);
-  function Eh(t, e) {
+  function Ch(t, e) {
     for (let i = e ?? 0; i < t.length; i++) {
       if (t[i] === 10) return { preceding: i, index: i + 1, carriage: !1 };
       if (t[i] === 13) return { preceding: i, index: i + 1, carriage: !0 };
     }
     return null;
   }
-  function Ch(t) {
+  function Ah(t) {
     for (let r = 0; r < t.length - 1; r++) {
       if ((t[r] === 10 && t[r + 1] === 10) || (t[r] === 13 && t[r + 1] === 13))
         return r + 2;
@@ -1449,7 +1449,7 @@
         r = !0;
         let s = !1;
         try {
-          for await (const a of Ah(e, n))
+          for await (const a of Ph(e, n))
             if (!s) {
               if (a.data.startsWith("[DONE]")) {
                 s = !0;
@@ -1582,15 +1582,15 @@
       });
     }
   }
-  async function* Ah(t, e) {
+  async function* Ph(t, e) {
     if (!t.body)
       throw (
         (e.abort(), new N("Attempted to iterate over a response with no body"))
       );
-    const n = new Th(),
+    const n = new Ih(),
       r = new ar(),
       i = so(t.body);
-    for await (const s of Ph(i))
+    for await (const s of Th(i))
       for (const a of r.decode(s)) {
         const o = n.decode(a);
         o && (yield o);
@@ -1600,7 +1600,7 @@
       a && (yield a);
     }
   }
-  async function* Ph(t) {
+  async function* Th(t) {
     let e = new Uint8Array();
     for await (const n of t) {
       if (n == null) continue;
@@ -1613,11 +1613,11 @@
       let i = new Uint8Array(e.length + r.length);
       i.set(e), i.set(r, e.length), (e = i);
       let s;
-      for (; (s = Ch(e)) !== -1; ) yield e.slice(0, s), (e = e.slice(s));
+      for (; (s = Ah(e)) !== -1; ) yield e.slice(0, s), (e = e.slice(s));
     }
     e.length > 0 && (yield e);
   }
-  class Th {
+  class Ih {
     constructor() {
       (this.event = null), (this.data = []), (this.chunks = []);
     }
@@ -1633,7 +1633,7 @@
         return (this.event = null), (this.data = []), (this.chunks = []), s;
       }
       if ((this.chunks.push(e), e.startsWith(":"))) return null;
-      let [n, r, i] = Ih(e, ":");
+      let [n, r, i] = Rh(e, ":");
       return (
         i.startsWith(" ") && (i = i.substring(1)),
         n === "event" ? (this.event = i) : n === "data" && this.data.push(i),
@@ -1641,7 +1641,7 @@
       );
     }
   }
-  function Ih(t, e) {
+  function Rh(t, e) {
     const n = t.indexOf(e);
     return n !== -1
       ? [t.substring(0, n), e, t.substring(n + e.length)]
@@ -1666,7 +1666,7 @@
       typeof t.text == "function" &&
       typeof t.slice == "function" &&
       typeof t.arrayBuffer == "function",
-    Rh = (t) => oo(t) || ao(t) || Ja(t);
+    Oh = (t) => oo(t) || ao(t) || Ja(t);
   async function lo(t, e, n) {
     var i;
     if (((t = await t), oo(t))) return t;
@@ -1676,14 +1676,14 @@
       const a = or(s) ? [await s.arrayBuffer()] : [s];
       return new fi(a, e, n);
     }
-    const r = await Oh(t);
-    if ((e || (e = Lh(t) ?? "unknown_file"), !(n != null && n.type))) {
+    const r = await $h(t);
+    if ((e || (e = jh(t) ?? "unknown_file"), !(n != null && n.type))) {
       const s = (i = r[0]) == null ? void 0 : i.type;
       typeof s == "string" && (n = { ...n, type: s });
     }
     return new fi(r, e, n);
   }
-  async function Oh(t) {
+  async function $h(t) {
     var n;
     let e = [];
     if (
@@ -1693,21 +1693,21 @@
     )
       e.push(t);
     else if (or(t)) e.push(await t.arrayBuffer());
-    else if (jh(t)) for await (const r of t) e.push(r);
+    else if (Nh(t)) for await (const r of t) e.push(r);
     else
       throw new Error(
         `Unexpected data type: ${typeof t}; constructor: ${
           (n = t == null ? void 0 : t.constructor) == null ? void 0 : n.name
-        }; props: ${$h(t)}`
+        }; props: ${Lh(t)}`
       );
     return e;
   }
-  function $h(t) {
+  function Lh(t) {
     return `[${Object.getOwnPropertyNames(t)
       .map((n) => `"${n}"`)
       .join(", ")}]`;
   }
-  function Lh(t) {
+  function jh(t) {
     var e;
     return (
       mi(t.name) ||
@@ -1719,7 +1719,7 @@
       if (typeof t == "string") return t;
       if (typeof Buffer < "u" && t instanceof Buffer) return String(t);
     },
-    jh = (t) =>
+    Nh = (t) =>
       t != null &&
       typeof t == "object" &&
       typeof t[Symbol.asyncIterator] == "function",
@@ -1729,10 +1729,10 @@
       t.body &&
       t[Symbol.toStringTag] === "MultipartBody",
     Ot = async (t) => {
-      const e = await Nh(t.body);
+      const e = await Dh(t.body);
       return Ha(e, t);
     },
-    Nh = async (t) => {
+    Dh = async (t) => {
       const e = new za();
       return (
         await Promise.all(Object.entries(t || {}).map(([n, r]) => gi(e, n, r))),
@@ -1751,7 +1751,7 @@
           typeof n == "boolean"
         )
           t.append(e, String(n));
-        else if (Rh(n)) {
+        else if (Oh(n)) {
           const r = await lo(n);
           t.append(e, r);
         } else if (Array.isArray(n))
@@ -1766,7 +1766,7 @@
           );
       }
     };
-  var Dh = function (t, e, n, r, i) {
+  var Fh = function (t, e, n, r, i) {
       if (r === "m") throw new TypeError("Private method is not writable");
       if (r === "a" && !i)
         throw new TypeError("Private accessor was defined without a setter");
@@ -1776,7 +1776,7 @@
         );
       return r === "a" ? i.call(t, n) : i ? (i.value = n) : e.set(t, n), n;
     },
-    Fh = function (t, e, n, r) {
+    Mh = function (t, e, n, r) {
       if (n === "a" && !r)
         throw new TypeError("Private accessor was defined without a getter");
       if (typeof e == "function" ? t !== e || !r : !e.has(t))
@@ -1861,7 +1861,7 @@
       return this.parse().finally(e);
     }
   }
-  class Mh {
+  class Bh {
     constructor({
       baseURL: e,
       maxRetries: n = 2,
@@ -1883,13 +1883,13 @@
         Accept: "application/json",
         "Content-Type": "application/json",
         "User-Agent": this.getUserAgent(),
-        ...Hh(),
+        ...Vh(),
         ...this.authHeaders(e),
       };
     }
     validateHeaders(e, n) {}
     defaultIdempotencyKey() {
-      return `stainless-node-retry-${Kh()}`;
+      return `stainless-node-retry-${Gh()}`;
     }
     get(e, n) {
       return this.methodRequest("get", e, n);
@@ -2043,14 +2043,14 @@
       const c = po(u.headers);
       if (!u.ok) {
         if (n && this.shouldRetry(u)) {
-          const w = `retrying, ${n} attempts remaining`;
+          const b = `retrying, ${n} attempts remaining`;
           return (
-            it(`response (error; ${w})`, u.status, a, c),
+            it(`response (error; ${b})`, u.status, a, c),
             this.retryRequest(r, n, c)
           );
         }
-        const d = await u.text().catch((w) => yi(w).message),
-          g = Vh(d),
+        const d = await u.text().catch((b) => yi(b).message),
+          g = Wh(d),
           _ = g ? void 0 : d;
         throw (
           (it(
@@ -2069,10 +2069,10 @@
     }
     requestAPIList(e, n) {
       const r = this.makeRequest(n, null);
-      return new Bh(this, r, e);
+      return new Uh(this, r, e);
     }
     buildURL(e, n) {
-      const r = Jh(e)
+      const r = Kh(e)
           ? new URL(e)
           : new URL(
               this.baseURL +
@@ -2161,7 +2161,7 @@
   class fo {
     constructor(e, n, r, i) {
       lr.set(this, void 0),
-        Dh(this, lr, e, "f"),
+        Fh(this, lr, e, "f"),
         (this.options = i),
         (this.response = n),
         (this.body = r);
@@ -2186,7 +2186,7 @@
         for (const [i, s] of r) e.url.searchParams.set(i, s);
         (n.query = void 0), (n.path = e.url.toString());
       }
-      return await Fh(this, lr, "f").requestAPIList(this.constructor, n);
+      return await Mh(this, lr, "f").requestAPIList(this.constructor, n);
     }
     async *iterPages() {
       let e = this;
@@ -2197,7 +2197,7 @@
         for (const n of e.getPaginatedItems()) yield n;
     }
   }
-  class Bh extends ur {
+  class Uh extends ur {
     constructor(e, n, r) {
       super(n, async (i) => new r(e, i.response, await co(i), i.options));
     }
@@ -2213,7 +2213,7 @@
           return e[r.toLowerCase()] || e[r];
         },
       }),
-    Uh = {
+    zh = {
       method: !0,
       path: !0,
       query: !0,
@@ -2234,8 +2234,8 @@
       typeof t == "object" &&
       t !== null &&
       !yo(t) &&
-      Object.keys(t).every((e) => wo(Uh, e)),
-    zh = () => {
+      Object.keys(t).every((e) => wo(zh, e)),
+    qh = () => {
       var e;
       if (typeof Deno < "u" && Deno.build != null)
         return {
@@ -2270,7 +2270,7 @@
           "X-Stainless-Runtime": "node",
           "X-Stainless-Runtime-Version": process.version,
         };
-      const t = qh();
+      const t = Hh();
       return t
         ? {
             "X-Stainless-Lang": "js",
@@ -2289,7 +2289,7 @@
             "X-Stainless-Runtime-Version": "unknown",
           };
     };
-  function qh() {
+  function Hh() {
     if (typeof navigator > "u" || !navigator) return null;
     const t = [
       { key: "edge", pattern: /Edge(?:\W+(\d+)\.(\d+)(?:\.(\d+))?)?/ },
@@ -2347,16 +2347,16 @@
         : "Unknown"
     );
   let _o;
-  const Hh = () => _o ?? (_o = zh()),
-    Vh = (t) => {
+  const Vh = () => _o ?? (_o = qh()),
+    Wh = (t) => {
       try {
         return JSON.parse(t);
       } catch {
         return;
       }
     },
-    Wh = /^[a-z][a-z0-9+.-]*:/i,
-    Jh = (t) => Wh.test(t),
+    Jh = /^[a-z][a-z0-9+.-]*:/i,
+    Kh = (t) => Jh.test(t),
     mn = (t) => new Promise((e) => setTimeout(e, t)),
     _i = (t, e) => {
       if (typeof e != "number" || !Number.isInteger(e))
@@ -2430,20 +2430,20 @@
       console.log(`OpenAI:DEBUG:${t}`, ...r);
     }
   }
-  const Kh = () =>
+  const Gh = () =>
       "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (t) => {
         const e = (Math.random() * 16) | 0;
         return (t === "x" ? e : (e & 3) | 8).toString(16);
       }),
-    Gh = () =>
+    Xh = () =>
       typeof window < "u" &&
       typeof window.document < "u" &&
       typeof navigator < "u",
-    Xh = (t) => typeof (t == null ? void 0 : t.get) == "function",
+    Qh = (t) => typeof (t == null ? void 0 : t.get) == "function",
     hr = (t, e) => {
       var r;
       const n = e.toLowerCase();
-      if (Xh(t)) {
+      if (Qh(t)) {
         const i =
           ((r = e[0]) == null ? void 0 : r.toUpperCase()) +
           e
@@ -2464,7 +2464,7 @@
               s[0])
             : s;
     },
-    Qh = (t) => {
+    Yh = (t) => {
       if (typeof Buffer < "u") {
         const e = Buffer.from(t, "base64");
         return Array.from(
@@ -2535,7 +2535,7 @@
       list(e, n = {}, r) {
         return ne(n)
           ? this.list(e, {}, n)
-          : this._client.getAPIList(`/chat/completions/${e}/messages`, Yh, {
+          : this._client.getAPIList(`/chat/completions/${e}/messages`, Zh, {
               query: n,
               ...r,
             });
@@ -2571,7 +2571,7 @@
       }
     };
   class pr extends fe {}
-  class Yh extends fe {}
+  class Zh extends fe {}
   (fr.ChatCompletionsPage = pr), (fr.Messages = xo);
   let mr = class extends M {
     constructor() {
@@ -3424,7 +3424,7 @@
   function Sn(t) {
     return (t == null ? void 0 : t.$brand) === "auto-parseable-tool";
   }
-  function Zh(t, e) {
+  function ed(t, e) {
     return !e || !Do(e)
       ? {
           ...t,
@@ -3455,19 +3455,19 @@
                 tool_calls:
                   ((i = r.message.tool_calls) == null
                     ? void 0
-                    : i.map((s) => td(e, s))) ?? void 0,
+                    : i.map((s) => nd(e, s))) ?? void 0,
               }
             : void 0),
           parsed:
             r.message.content && !r.message.refusal
-              ? ed(e, r.message.content)
+              ? td(e, r.message.content)
               : null,
         },
       };
     });
     return { ...t, choices: n };
   }
-  function ed(t, e) {
+  function td(t, e) {
     var n, r;
     return ((n = t.response_format) == null ? void 0 : n.type) !== "json_schema"
       ? null
@@ -3477,7 +3477,7 @@
         : JSON.parse(e)
       : null;
   }
-  function td(t, e) {
+  function nd(t, e) {
     var r;
     const n =
       (r = t.tools) == null
@@ -3500,7 +3500,7 @@
       },
     };
   }
-  function nd(t, e) {
+  function rd(t, e) {
     var r;
     if (!t) return !1;
     const n =
@@ -3525,7 +3525,7 @@
                 Sn(n) || (n.type === "function" && n.function.strict === !0)
             )) ?? !1;
   }
-  function rd(t) {
+  function id(t) {
     for (const e of t ?? []) {
       if (e.type !== "function")
         throw new N(
@@ -3665,9 +3665,9 @@
             : f.message;
         if (!_) throw new N("missing message in ChatCompletion response");
         if (!_.function_call) return;
-        const { name: y, arguments: b } = _.function_call,
-          w = c[y];
-        if (w) {
+        const { name: y, arguments: w } = _.function_call,
+          b = c[y];
+        if (b) {
           if (l && l !== y) {
             const v = `Invalid function_call: ${JSON.stringify(
               y
@@ -3686,7 +3686,7 @@
         }
         let x;
         try {
-          x = Lo(w) ? await w.parse(b) : b;
+          x = Lo(b) ? await b.parse(w) : w;
         } catch (v) {
           this._addMessage({
             role: i,
@@ -3695,9 +3695,9 @@
           });
           continue;
         }
-        const S = await w.function(x, this),
-          P = we(this, _e, "m", $i).call(this, S);
-        if ((this._addMessage({ role: i, name: y, content: P }), l)) return;
+        const S = await b.function(x, this),
+          A = we(this, _e, "m", $i).call(this, S);
+        if ((this._addMessage({ role: i, name: y, content: A }), l)) return;
       }
     }
     async _runTools(e, n, r) {
@@ -3750,7 +3750,7 @@
           : void 0;
       for (const y of n.messages) this._addMessage(y, !1);
       for (let y = 0; y < u; ++y) {
-        const w =
+        const b =
           (g = (
             await this._createChatCompletion(
               e,
@@ -3760,24 +3760,24 @@
           ).choices[0]) == null
             ? void 0
             : g.message;
-        if (!w) throw new N("missing message in ChatCompletion response");
-        if (!((_ = w.tool_calls) != null && _.length)) return;
-        for (const x of w.tool_calls) {
+        if (!b) throw new N("missing message in ChatCompletion response");
+        if (!((_ = b.tool_calls) != null && _.length)) return;
+        for (const x of b.tool_calls) {
           if (x.type !== "function") continue;
           const S = x.id,
-            { name: P, arguments: v } = x.function,
-            T = h[P];
+            { name: A, arguments: v } = x.function,
+            T = h[A];
           if (T) {
-            if (l && l !== P) {
+            if (l && l !== A) {
               const C = `Invalid tool_call: ${JSON.stringify(
-                P
+                A
               )}. ${JSON.stringify(l)} requested. Please try again`;
               this._addMessage({ role: i, tool_call_id: S, content: C });
               continue;
             }
           } else {
             const C = `Invalid tool_call: ${JSON.stringify(
-              P
+              A
             )}. Available options are: ${Object.keys(h)
               .map((I) => JSON.stringify(I))
               .join(", ")}. Please try again`;
@@ -3921,7 +3921,7 @@
     Qo = Vo | Wo | Xo | Jo,
     Yo = Uo | zo | Qo,
     Zo = qo | Ho,
-    id = Yo | Zo,
+    sd = Yo | Zo,
     le = {
       STR: Uo,
       NUM: zo,
@@ -3936,24 +3936,24 @@
       SPECIAL: Qo,
       ATOM: Yo,
       COLLECTION: Zo,
-      ALL: id,
+      ALL: sd,
     };
-  class sd extends Error {}
   class ad extends Error {}
-  function od(t, e = le.ALL) {
+  class od extends Error {}
+  function ld(t, e = le.ALL) {
     if (typeof t != "string")
       throw new TypeError(`expecting str, got ${typeof t}`);
     if (!t.trim()) throw new Error(`${t} is empty`);
-    return ld(t.trim(), e);
+    return ud(t.trim(), e);
   }
-  const ld = (t, e) => {
+  const ud = (t, e) => {
       const n = t.length;
       let r = 0;
       const i = (f) => {
-          throw new sd(`${f} at position ${r}`);
+          throw new ad(`${f} at position ${r}`);
         },
         s = (f) => {
-          throw new ad(`${f} at position ${r}`);
+          throw new od(`${f} at position ${r}`);
         },
         a = () => (
           h(),
@@ -4090,7 +4090,7 @@
         };
       return a();
     },
-    el = (t) => od(t, le.ALL ^ le.NUM);
+    el = (t) => ld(t, le.ALL ^ le.NUM);
   var Nt = function (t, e, n, r, i) {
       if (r === "m") throw new TypeError("Private method is not writable");
       if (r === "a" && !i)
@@ -4218,7 +4218,7 @@
       );
     }),
     (ji = function (n) {
-      var i, s, a, o, l, u, c, h, f, d, g, _, y, b, w;
+      var i, s, a, o, l, u, c, h, f, d, g, _, y, w, b;
       if (this.ended) return;
       const r = X(this, oe, "m", tl).call(this, n);
       this._emit("chunk", n, r);
@@ -4254,29 +4254,29 @@
               refusal: (g = x.logprobs) == null ? void 0 : g.refusal,
               snapshot: ((_ = S.logprobs) == null ? void 0 : _.refusal) ?? [],
             });
-        const P = X(this, oe, "m", Cr).call(this, S);
+        const A = X(this, oe, "m", Cr).call(this, S);
         S.finish_reason &&
           (X(this, oe, "m", Di).call(this, S),
-          P.current_tool_call_index != null &&
-            X(this, oe, "m", Ni).call(this, S, P.current_tool_call_index));
+          A.current_tool_call_index != null &&
+            X(this, oe, "m", Ni).call(this, S, A.current_tool_call_index));
         for (const v of x.delta.tool_calls ?? [])
-          P.current_tool_call_index !== v.index &&
+          A.current_tool_call_index !== v.index &&
             (X(this, oe, "m", Di).call(this, S),
-            P.current_tool_call_index != null &&
-              X(this, oe, "m", Ni).call(this, S, P.current_tool_call_index)),
-            (P.current_tool_call_index = v.index);
+            A.current_tool_call_index != null &&
+              X(this, oe, "m", Ni).call(this, S, A.current_tool_call_index)),
+            (A.current_tool_call_index = v.index);
         for (const v of x.delta.tool_calls ?? []) {
           const T = (y = S.message.tool_calls) == null ? void 0 : y[v.index];
           T != null &&
             T.type &&
             ((T == null ? void 0 : T.type) === "function"
               ? this._emit("tool_calls.function.arguments.delta", {
-                  name: (b = T.function) == null ? void 0 : b.name,
+                  name: (w = T.function) == null ? void 0 : w.name,
                   index: v.index,
                   arguments: T.function.arguments,
                   parsed_arguments: T.function.parsed_arguments,
                   arguments_delta:
-                    ((w = v.function) == null ? void 0 : w.arguments) ?? "",
+                    ((b = v.function) == null ? void 0 : b.arguments) ?? "",
                 })
               : (T == null || T.type, void 0));
         }
@@ -4341,7 +4341,7 @@
       return (
         Nt(this, st, void 0, "f"),
         Nt(this, Dt, [], "f"),
-        ud(n, X(this, Ye, "f"))
+        cd(n, X(this, Ye, "f"))
       );
     }),
     (Fi = function () {
@@ -4389,24 +4389,24 @@
         if ((Object.assign(_, g), !c)) continue;
         const {
           content: y,
-          refusal: b,
-          function_call: w,
+          refusal: w,
+          function_call: b,
           role: x,
           tool_calls: S,
-          ...P
+          ...A
         } = c;
         if (
-          (Object.assign(_.message, P),
-          b && (_.message.refusal = (_.message.refusal || "") + b),
+          (Object.assign(_.message, A),
+          w && (_.message.refusal = (_.message.refusal || "") + w),
           x && (_.message.role = x),
-          w &&
+          b &&
             (_.message.function_call
-              ? (w.name && (_.message.function_call.name = w.name),
-                w.arguments &&
+              ? (b.name && (_.message.function_call.name = b.name),
+                b.arguments &&
                   ((s = _.message.function_call).arguments ??
                     (s.arguments = ""),
-                  (_.message.function_call.arguments += w.arguments)))
-              : (_.message.function_call = w)),
+                  (_.message.function_call.arguments += b.arguments)))
+              : (_.message.function_call = b)),
           y &&
             ((_.message.content = (_.message.content || "") + y),
             !_.message.refusal &&
@@ -4427,7 +4427,7 @@
               O != null &&
                 O.arguments &&
                 ((C.function.arguments += O.arguments),
-                nd(X(this, Ye, "f"), C) &&
+                rd(X(this, Ye, "f"), C) &&
                   (C.function.parsed_arguments = el(C.function.arguments)));
           }
         }
@@ -4479,7 +4479,7 @@
       ).toReadableStream();
     }
   }
-  function ud(t, e) {
+  function cd(t, e) {
     const {
         id: n,
         choices: r,
@@ -4498,10 +4498,10 @@
                 content: g = null,
                 function_call: _,
                 tool_calls: y,
-                ...b
+                ...w
               } = u,
-              w = u.role;
-            if (!w) throw new N(`missing role for choice ${h}`);
+              b = u.role;
+            if (!b) throw new N(`missing role for choice ${h}`);
             if (_) {
               const { arguments: x, name: S } = _;
               if (x == null)
@@ -4512,7 +4512,7 @@
                 message: {
                   content: g,
                   function_call: { arguments: x, name: S },
-                  role: w,
+                  role: b,
                   refusal: u.refusal ?? null,
                 },
                 finish_reason: c,
@@ -4527,13 +4527,13 @@
                   finish_reason: c,
                   logprobs: f,
                   message: {
-                    ...b,
-                    role: w,
+                    ...w,
+                    role: b,
                     content: g,
                     refusal: u.refusal ?? null,
                     tool_calls: y.map((x, S) => {
-                      const { function: P, type: v, id: T, ...V } = x,
-                        { arguments: O, name: j, ...C } = P || {};
+                      const { function: A, type: v, id: T, ...V } = x,
+                        { arguments: O, name: j, ...C } = A || {};
                       if (T == null)
                         throw new N(`missing choices[${h}].tool_calls[${S}].id
 ${Pr(t)}`);
@@ -4558,9 +4558,9 @@ ${Pr(t)}`);
               : {
                   ...d,
                   message: {
-                    ...b,
+                    ...w,
                     content: g,
-                    role: w,
+                    role: b,
                     refusal: u.refusal ?? null,
                   },
                   finish_reason: c,
@@ -4574,12 +4574,12 @@ ${Pr(t)}`);
         object: "chat.completion",
         ...(a ? { system_fingerprint: a } : {}),
       };
-    return Zh(l, e);
+    return ed(l, e);
   }
   function Pr(t) {
     return JSON.stringify(t);
   }
-  function hw(t) {}
+  function fw(t) {}
   class Ft extends Cn {
     static fromReadableStream(e) {
       const n = new Ft(null);
@@ -4611,7 +4611,7 @@ ${Pr(t)}`);
   let nl = class extends M {
     parse(e, n) {
       return (
-        rd(e.tools),
+        id(e.tools),
         this._client.chat.completions
           .create(e, {
             ...n,
@@ -5003,7 +5003,7 @@ ${Pr(t)}`);
                 a.data &&
                 a.data.forEach((o) => {
                   const l = o.embedding;
-                  o.embedding = Qh(l);
+                  o.embedding = Yh(l);
                 }),
               a
             )
@@ -5276,8 +5276,8 @@ ${Pr(t)}`);
       return this._client.post("/moderations", { body: e, ...n });
     }
   }
-  function cd(t, e) {
-    return !e || !dd(e)
+  function hd(t, e) {
+    return !e || !fd(e)
       ? {
           ...t,
           output_parsed: null,
@@ -5297,10 +5297,10 @@ ${Pr(t)}`);
   function dl(t, e) {
     const n = t.output.map((i) => {
         if (i.type === "function_call")
-          return { ...i, parsed_arguments: md(e, i) };
+          return { ...i, parsed_arguments: gd(e, i) };
         if (i.type === "message") {
           const s = i.content.map((a) =>
-            a.type === "output_text" ? { ...a, parsed: hd(e, a.text) } : a
+            a.type === "output_text" ? { ...a, parsed: dd(e, a.text) } : a
           );
           return { ...i, content: s };
         }
@@ -5324,7 +5324,7 @@ ${Pr(t)}`);
       r
     );
   }
-  function hd(t, e) {
+  function dd(t, e) {
     var n, r, i, s;
     return ((r = (n = t.text) == null ? void 0 : n.format) == null
       ? void 0
@@ -5334,22 +5334,22 @@ ${Pr(t)}`);
       ? ((s = t.text) == null ? void 0 : s.format).$parseRaw(e)
       : JSON.parse(e);
   }
-  function dd(t) {
+  function fd(t) {
     var e;
     return !!Ai((e = t.text) == null ? void 0 : e.format);
   }
-  function fd(t) {
+  function pd(t) {
     return (t == null ? void 0 : t.$brand) === "auto-parseable-tool";
   }
-  function pd(t, e) {
+  function md(t, e) {
     return t.find((n) => n.type === "function" && n.name === e);
   }
-  function md(t, e) {
-    const n = pd(t.tools ?? [], e.name);
+  function gd(t, e) {
+    const n = md(t.tools ?? [], e.name);
     return {
       ...e,
       ...e,
-      parsed_arguments: fd(n)
+      parsed_arguments: pd(n)
         ? n.$parseRaw(e.arguments)
         : n != null && n.strict
         ? JSON.parse(e.arguments)
@@ -5367,7 +5367,7 @@ ${Pr(t)}`);
     list(e, n = {}, r) {
       return ne(n)
         ? this.list(e, {}, n)
-        : this._client.getAPIList(`/responses/${e}/input_items`, _d, {
+        : this._client.getAPIList(`/responses/${e}/input_items`, yd, {
             query: n,
             ...r,
           });
@@ -5488,7 +5488,7 @@ ${Pr(t)}`);
       const n = ot(this, lt, "f");
       if (!n) throw new N("request ended without sending any events");
       zt(this, lt, void 0, "f");
-      const r = gd(n, ot(this, Rr, "f"));
+      const r = _d(n, ot(this, Rr, "f"));
       return zt(this, Or, r, "f"), r;
     }),
     (yl = function (n) {
@@ -5583,8 +5583,8 @@ ${Pr(t)}`);
       return e;
     }
   }
-  function gd(t, e) {
-    return cd(t, e);
+  function _d(t, e) {
+    return hd(t, e);
   }
   class ls extends M {
     constructor() {
@@ -5615,7 +5615,7 @@ ${Pr(t)}`);
       return os.createResponse(this._client, e, n);
     }
   }
-  class _d extends fe {}
+  class yd extends fe {}
   ls.InputItems = pl;
   class wl extends M {
     create(e, n, r) {
@@ -5637,7 +5637,7 @@ ${Pr(t)}`);
     }
   }
   us.Parts = wl;
-  const yd = async (t) => {
+  const wd = async (t) => {
     const e = await Promise.allSettled(t),
       n = e.filter((i) => i.status === "rejected");
     if (n.length) {
@@ -5869,7 +5869,7 @@ ${Pr(t)}`);
         }
       }
       const h = Array(a).fill(l).map(c);
-      return await yd(h), await this.createAndPoll(e, { file_ids: u });
+      return await wd(h), await this.createAndPoll(e, { file_ids: u });
     }
   }
   class ut extends M {
@@ -5949,7 +5949,7 @@ ${Pr(t)}`);
     (ut.FileContentResponsesPage = cs),
     (ut.FileBatches = bl);
   var vl;
-  class U extends Mh {
+  class U extends Bh {
     constructor({
       baseURL: e = cr("OPENAI_BASE_URL"),
       apiKey: n = cr("OPENAI_API_KEY"),
@@ -5968,7 +5968,7 @@ ${Pr(t)}`);
         ...s,
         baseURL: e || "https://api.openai.com/v1",
       };
-      if (!a.dangerouslyAllowBrowser && Gh())
+      if (!a.dangerouslyAllowBrowser && Xh())
         throw new N(`It looks like you're running in a browser-like environment.
 
 This is disabled by default, as it risks exposing your secret API credentials to attackers.
@@ -6022,7 +6022,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       return { Authorization: `Bearer ${this.apiKey}` };
     }
     stringifyQuery(e) {
-      return vh(e, { arrayFormat: "brackets" });
+      return xh(e, { arrayFormat: "brackets" });
     }
   }
   (vl = U),
@@ -6066,7 +6066,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
     (U.Responses = ls),
     (U.Evals = Tn),
     (U.EvalListResponsesPage = Ki);
-  const wd = (t) => new U({ apiKey: t, dangerouslyAllowBrowser: !0 }),
+  const bd = (t) => new U({ apiKey: t, dangerouslyAllowBrowser: !0 }),
     fs = async (t, e, n) => {
       let r = 0;
       try {
@@ -6081,7 +6081,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         return console.log(i), r < 2 && (r++, fs(e, n)), null;
       }
     },
-    bd = (
+    vd = (
       t,
       e
     ) => `You are a product assistant for Shopify store: ${t}, embedded on a product page or collection page. 
@@ -6155,22 +6155,22 @@ Example Initial String Markdown Response:
 Example Response for Product Comparison, If the customer asks for a comparison between the Bushveld Tundra Roof Top Tent and another product:
 Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushveld-tundra-roof-top-tent) is amazing for families—super spacious, durable, and easy to set up. But if you’re looking for something more rugged, the [Overland Explorer Roof Top Tent](https://www.example.com/product/overland-explorer-roof-top-tent) is a great choice. It's built for off-road adventures and is smaller, but perfect if you’re going for something compact. Both are awesome, just depends on what fits your needs better!
   `;
-  function dw() {}
-  function fw() {}
-  function vd(t, e) {
+  function pw() {}
+  function mw() {}
+  function xd(t, e) {
     const n = {};
     return (t[t.length - 1] === "" ? [...t, ""] : t)
       .join((n.padRight ? " " : "") + "," + (n.padLeft === !1 ? "" : " "))
       .trim();
   }
-  const xd = /^[$_\p{ID_Start}][$_\u{200C}\u{200D}\p{ID_Continue}]*$/u,
-    kd = /^[$_\p{ID_Start}][-$_\u{200C}\u{200D}\p{ID_Continue}]*$/u,
-    Sd = {};
+  const kd = /^[$_\p{ID_Start}][$_\u{200C}\u{200D}\p{ID_Continue}]*$/u,
+    Sd = /^[$_\p{ID_Start}][-$_\u{200C}\u{200D}\p{ID_Continue}]*$/u,
+    Ed = {};
   function xl(t, e) {
-    return (Sd.jsx ? kd : xd).test(t);
+    return (Ed.jsx ? Sd : kd).test(t);
   }
-  const Ed = /[ \t\n\f\r]/g;
-  function Cd(t) {
+  const Cd = /[ \t\n\f\r]/g;
+  function Ad(t) {
     return typeof t == "object"
       ? t.type === "text"
         ? kl(t.value)
@@ -6178,7 +6178,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       : kl(t);
   }
   function kl(t) {
-    return t.replace(Ed, "") === "";
+    return t.replace(Cd, "") === "";
   }
   class In {
     constructor(e, n, r) {
@@ -6214,7 +6214,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     (be.prototype.property = ""),
     (be.prototype.spaceSeparated = !1),
     (be.prototype.space = void 0);
-  let Ad = 0;
+  let Pd = 0;
   const q = kt(),
     ie = kt(),
     ms = kt(),
@@ -6223,7 +6223,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     Ht = kt(),
     Ae = kt();
   function kt() {
-    return 2 ** ++Ad;
+    return 2 ** ++Pd;
   }
   const gs = Object.freeze(
       Object.defineProperty(
@@ -6332,7 +6332,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   function Pl(t, e) {
     return Al(t, e.toLowerCase());
   }
-  const Pd = Vt({
+  const Td = Vt({
       attributes: {
         acceptcharset: "accept-charset",
         classname: "class",
@@ -6637,7 +6637,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       space: "html",
       transform: Pl,
     }),
-    Td = Vt({
+    Id = Vt({
       attributes: {
         accentHeight: "accent-height",
         alignmentBaseline: "alignment-baseline",
@@ -7221,7 +7221,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         return "xml:" + e.slice(3).toLowerCase();
       },
     }),
-    Id = {
+    Rd = {
       classId: "classID",
       dataType: "datatype",
       itemId: "itemID",
@@ -7240,22 +7240,22 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       xLinkType: "xlinkType",
       xmlnsXLink: "xmlnsXlink",
     },
-    Rd = /[A-Z]/g,
+    Od = /[A-Z]/g,
     Ol = /-[a-z]/g,
-    Od = /^data[-\w.:]+$/i;
-  function $d(t, e) {
+    $d = /^data[-\w.:]+$/i;
+  function Ld(t, e) {
     const n = ps(e);
     let r = e,
       i = be;
     if (n in t.normal) return t.property[t.normal[n]];
-    if (n.length > 4 && n.slice(0, 4) === "data" && Od.test(e)) {
+    if (n.length > 4 && n.slice(0, 4) === "data" && $d.test(e)) {
       if (e.charAt(4) === "-") {
-        const s = e.slice(5).replace(Ol, jd);
+        const s = e.slice(5).replace(Ol, Nd);
         r = "data" + s.charAt(0).toUpperCase() + s.slice(1);
       } else {
         const s = e.slice(4);
         if (!Ol.test(s)) {
-          let a = s.replace(Rd, Ld);
+          let a = s.replace(Od, jd);
           a.charAt(0) !== "-" && (a = "-" + a), (e = "data" + a);
         }
       }
@@ -7263,15 +7263,15 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return new i(r, e);
   }
-  function Ld(t) {
+  function jd(t) {
     return "-" + t.toLowerCase();
   }
-  function jd(t) {
+  function Nd(t) {
     return t.charAt(1).toUpperCase();
   }
-  const Nd = Sl([Cl, Pd, Tl, Il, Rl], "html"),
-    ws = Sl([Cl, Td, Tl, Il, Rl], "svg");
-  function Dd(t) {
+  const Dd = Sl([Cl, Td, Tl, Il, Rl], "html"),
+    ws = Sl([Cl, Id, Tl, Il, Rl], "svg");
+  function Fd(t) {
     return t.join(" ").trim();
   }
   function jr(t) {
@@ -7281,7 +7281,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       ? t.default
       : t;
   }
-  function Fd(t) {
+  function Md(t) {
     if (Object.prototype.hasOwnProperty.call(t, "__esModule")) return t;
     var e = t.default;
     if (typeof e == "function") {
@@ -7315,7 +7315,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   var Wt = {},
     bs,
     $l;
-  function Md() {
+  function Bd() {
     if ($l) return bs;
     $l = 1;
     var t = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g,
@@ -7338,33 +7338,33 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         throw new TypeError("First argument must be a string");
       if (!_) return [];
       y = y || {};
-      var b = 1,
-        w = 1;
+      var w = 1,
+        b = 1;
       function x(L) {
         var R = L.match(e);
-        R && (b += R.length);
+        R && (w += R.length);
         var D = L.lastIndexOf(l);
-        w = ~D ? L.length - D : w + L.length;
+        b = ~D ? L.length - D : b + L.length;
       }
       function S() {
-        var L = { line: b, column: w };
+        var L = { line: w, column: b };
         return function (R) {
-          return (R.position = new P(L)), V(), R;
+          return (R.position = new A(L)), V(), R;
         };
       }
-      function P(L) {
+      function A(L) {
         (this.start = L),
-          (this.end = { line: b, column: w }),
+          (this.end = { line: w, column: b }),
           (this.source = y.source);
       }
-      P.prototype.content = _;
+      A.prototype.content = _;
       function v(L) {
-        var R = new Error(y.source + ":" + b + ":" + w + ": " + L);
+        var R = new Error(y.source + ":" + w + ":" + b + ": " + L);
         if (
           ((R.reason = L),
           (R.filename = y.source),
-          (R.line = b),
-          (R.column = w),
+          (R.line = w),
+          (R.column = b),
           (R.source = _),
           !y.silent)
         )
@@ -7398,10 +7398,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             return v("End of comment missing");
           var D = _.slice(2, R - 2);
           return (
-            (w += 2),
+            (b += 2),
             x(D),
             (_ = _.slice(R)),
-            (w += 2),
+            (b += 2),
             L({ type: f, comment: D })
           );
         }
@@ -7434,7 +7434,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     return bs;
   }
   var Ll;
-  function Bd() {
+  function Ud() {
     if (Ll) return Wt;
     Ll = 1;
     var t =
@@ -7443,7 +7443,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         return r && r.__esModule ? r : { default: r };
       };
     Object.defineProperty(Wt, "__esModule", { value: !0 }), (Wt.default = n);
-    var e = t(Md());
+    var e = t(Bd());
     function n(r, i) {
       var s = null;
       if (!r || typeof r != "string") return s;
@@ -7464,7 +7464,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   }
   var Rn = {},
     jl;
-  function Ud() {
+  function zd() {
     if (jl) return Rn;
     (jl = 1),
       Object.defineProperty(Rn, "__esModule", { value: !0 }),
@@ -7496,7 +7496,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     return (Rn.camelCase = l), Rn;
   }
   var On, Nl;
-  function zd() {
+  function qd() {
     if (Nl) return On;
     Nl = 1;
     var t =
@@ -7504,8 +7504,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         function (i) {
           return i && i.__esModule ? i : { default: i };
         },
-      e = t(Bd()),
-      n = Ud();
+      e = t(Ud()),
+      n = zd();
     function r(i, s) {
       var a = {};
       return (
@@ -7519,8 +7519,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return (r.default = r), (On = r), On;
   }
-  var qd = zd();
-  const Hd = jr(qd),
+  var Hd = qd();
+  const Vd = jr(Hd),
     Dl = Fl("end"),
     vs = Fl("start");
   function Fl(t) {
@@ -7541,7 +7541,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         };
     }
   }
-  function Vd(t) {
+  function Wd(t) {
     const e = vs(t),
       n = Dl(t);
     if (e && n) return { start: e, end: n };
@@ -7632,12 +7632,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     (ye.prototype.ruleId = void 0),
     (ye.prototype.source = void 0);
   const ks = {}.hasOwnProperty,
-    Wd = new Map(),
-    Jd = /[A-Z]/g,
-    Kd = new Set(["table", "tbody", "thead", "tfoot", "tr"]),
-    Gd = new Set(["td", "th"]),
+    Jd = new Map(),
+    Kd = /[A-Z]/g,
+    Gd = new Set(["table", "tbody", "thead", "tfoot", "tr"]),
+    Xd = new Set(["td", "th"]),
     Ul = "https://github.com/syntax-tree/hast-util-to-jsx-runtime";
-  function Xd(t, e) {
+  function Qd(t, e) {
     if (!e || e.Fragment === void 0)
       throw new TypeError("Expected `Fragment` in options");
     const n = e.filePath || void 0;
@@ -7647,13 +7647,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         throw new TypeError(
           "Expected `jsxDEV` in options when `development: true`"
         );
-      r = sf(n, e.jsxDEV);
+      r = af(n, e.jsxDEV);
     } else {
       if (typeof e.jsx != "function")
         throw new TypeError("Expected `jsx` in production options");
       if (typeof e.jsxs != "function")
         throw new TypeError("Expected `jsxs` in production options");
-      r = rf(n, e.jsx, e.jsxs);
+      r = sf(n, e.jsx, e.jsxs);
     }
     const i = {
         Fragment: e.Fragment,
@@ -7666,7 +7666,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         ignoreInvalidStyle: e.ignoreInvalidStyle || !1,
         passKeys: e.passKeys !== !1,
         passNode: e.passNode || !1,
-        schema: e.space === "svg" ? ws : Nd,
+        schema: e.space === "svg" ? ws : Dd,
         stylePropertyNameCase: e.stylePropertyNameCase || "dom",
         tableCellAlignToStyle: e.tableCellAlignToStyle !== !1,
       },
@@ -7676,16 +7676,16 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       : i.create(t, i.Fragment, { children: s || void 0 }, void 0);
   }
   function zl(t, e, n) {
-    if (e.type === "element") return Qd(t, e, n);
+    if (e.type === "element") return Yd(t, e, n);
     if (e.type === "mdxFlowExpression" || e.type === "mdxTextExpression")
-      return Yd(t, e);
+      return Zd(t, e);
     if (e.type === "mdxJsxFlowElement" || e.type === "mdxJsxTextElement")
-      return ef(t, e, n);
-    if (e.type === "mdxjsEsm") return Zd(t, e);
-    if (e.type === "root") return tf(t, e, n);
-    if (e.type === "text") return nf(t, e);
+      return tf(t, e, n);
+    if (e.type === "mdxjsEsm") return ef(t, e);
+    if (e.type === "root") return nf(t, e, n);
+    if (e.type === "text") return rf(t, e);
   }
-  function Qd(t, e, n) {
+  function Yd(t, e, n) {
     const r = t.schema;
     let i = r;
     e.tagName.toLowerCase() === "svg" &&
@@ -7693,12 +7693,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       ((i = ws), (t.schema = i)),
       t.ancestors.push(e);
     const s = Hl(t, e.tagName, !1),
-      a = af(t, e);
+      a = of(t, e);
     let o = Es(t, e);
     return (
-      Kd.has(e.tagName) &&
+      Gd.has(e.tagName) &&
         (o = o.filter(function (l) {
-          return typeof l == "string" ? !Cd(l) : !0;
+          return typeof l == "string" ? !Ad(l) : !0;
         })),
       ql(t, a, s, e),
       Ss(a, o),
@@ -7707,25 +7707,25 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       t.create(e, s, a, n)
     );
   }
-  function Yd(t, e) {
+  function Zd(t, e) {
     if (e.data && e.data.estree && t.evaluater) {
       const r = e.data.estree.body[0];
       return r.type, t.evaluater.evaluateExpression(r.expression);
     }
     Ln(t, e.position);
   }
-  function Zd(t, e) {
+  function ef(t, e) {
     if (e.data && e.data.estree && t.evaluater)
       return t.evaluater.evaluateProgram(e.data.estree);
     Ln(t, e.position);
   }
-  function ef(t, e, n) {
+  function tf(t, e, n) {
     const r = t.schema;
     let i = r;
     e.name === "svg" && r.space === "html" && ((i = ws), (t.schema = i)),
       t.ancestors.push(e);
     const s = e.name === null ? t.Fragment : Hl(t, e.name, !0),
-      a = of(t, e),
+      a = lf(t, e),
       o = Es(t, e);
     return (
       ql(t, a, s, e),
@@ -7735,11 +7735,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       t.create(e, s, a, n)
     );
   }
-  function tf(t, e, n) {
+  function nf(t, e, n) {
     const r = {};
     return Ss(r, Es(t, e)), t.create(e, t.Fragment, r, n);
   }
-  function nf(t, e) {
+  function rf(t, e) {
     return e.value;
   }
   function ql(t, e, n, r) {
@@ -7751,14 +7751,14 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       n && (t.children = n);
     }
   }
-  function rf(t, e, n) {
+  function sf(t, e, n) {
     return r;
     function r(i, s, a, o) {
       const u = Array.isArray(a.children) ? n : e;
       return o ? u(s, a, o) : u(s, a);
     }
   }
-  function sf(t, e) {
+  function af(t, e) {
     return n;
     function n(r, i, s, a) {
       const o = Array.isArray(s.children),
@@ -7777,18 +7777,18 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
   }
-  function af(t, e) {
+  function of(t, e) {
     const n = {};
     let r, i;
     for (i in e.properties)
       if (i !== "children" && ks.call(e.properties, i)) {
-        const s = lf(t, i, e.properties[i]);
+        const s = uf(t, i, e.properties[i]);
         if (s) {
           const [a, o] = s;
           t.tableCellAlignToStyle &&
           a === "align" &&
           typeof o == "string" &&
-          Gd.has(e.tagName)
+          Xd.has(e.tagName)
             ? (r = o)
             : (n[a] = o);
         }
@@ -7799,7 +7799,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return n;
   }
-  function of(t, e) {
+  function lf(t, e) {
     const n = {};
     for (const r of e.attributes)
       if (r.type === "mdxJsxExpressionAttribute")
@@ -7827,7 +7827,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   function Es(t, e) {
     const n = [];
     let r = -1;
-    const i = t.passKeys ? new Map() : Wd;
+    const i = t.passKeys ? new Map() : Jd;
     for (; ++r < e.children.length; ) {
       const s = e.children[r];
       let a;
@@ -7848,27 +7848,27 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return n;
   }
-  function lf(t, e, n) {
-    const r = $d(t.schema, e);
+  function uf(t, e, n) {
+    const r = Ld(t.schema, e);
     if (!(n == null || (typeof n == "number" && Number.isNaN(n)))) {
       if (
-        (Array.isArray(n) && (n = r.commaSeparated ? vd(n) : Dd(n)),
+        (Array.isArray(n) && (n = r.commaSeparated ? xd(n) : Fd(n)),
         r.property === "style")
       ) {
-        let i = typeof n == "object" ? n : uf(t, String(n));
-        return t.stylePropertyNameCase === "css" && (i = cf(i)), ["style", i];
+        let i = typeof n == "object" ? n : cf(t, String(n));
+        return t.stylePropertyNameCase === "css" && (i = hf(i)), ["style", i];
       }
       return [
         t.elementAttributeNameCase === "react" && r.space
-          ? Id[r.property] || r.property
+          ? Rd[r.property] || r.property
           : r.attribute,
         n,
       ];
     }
   }
-  function uf(t, e) {
+  function cf(t, e) {
     try {
-      return Hd(e, { reactCompat: !0 });
+      return Vd(e, { reactCompat: !0 });
     } catch (n) {
       if (t.ignoreInvalidStyle) return {};
       const r = n,
@@ -7932,17 +7932,17 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       n)
     );
   }
-  function cf(t) {
+  function hf(t) {
     const e = {};
     let n;
-    for (n in t) ks.call(t, n) && (e[hf(n)] = t[n]);
+    for (n in t) ks.call(t, n) && (e[df(n)] = t[n]);
     return e;
   }
-  function hf(t) {
-    let e = t.replace(Jd, df);
+  function df(t) {
+    let e = t.replace(Kd, ff);
     return e.slice(0, 3) === "ms-" && (e = "-" + e), e;
   }
-  function df(t) {
+  function ff(t) {
     return "-" + t.toLowerCase();
   }
   const Cs = {
@@ -7987,9 +7987,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     return t >= n.__.length && n.__.push({}), n.__[t];
   }
   function Nn(t) {
-    return (Nr = 1), ff(nu, t);
+    return (Nr = 1), pf(nu, t);
   }
-  function ff(t, e, n) {
+  function pf(t, e, n) {
     var r = Ps(jn++, 2);
     if (
       ((r.t = t),
@@ -8045,19 +8045,19 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     var n = Ps(jn++, 3);
     !se.__s && tu(n.__H, e) && ((n.__ = t), (n.u = e), re.__H.__h.push(n));
   }
-  function pf(t) {
+  function mf(t) {
     return (
       (Nr = 5),
-      mf(function () {
+      gf(function () {
         return { current: t };
       }, [])
     );
   }
-  function mf(t, e) {
+  function gf(t, e) {
     var n = Ps(jn++, 7);
     return tu(n.__H, e) && ((n.__ = t()), (n.__H = e), (n.__h = t)), n.__;
   }
-  function gf() {
+  function _f() {
     for (var t; (t = Wl.shift()); )
       if (t.__P && t.__H)
         try {
@@ -8092,7 +8092,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         e.__H &&
         (e.__H.__h.length &&
           ((Wl.push(e) !== 1 && Vl === se.requestAnimationFrame) ||
-            ((Vl = se.requestAnimationFrame) || _f)(gf)),
+            ((Vl = se.requestAnimationFrame) || yf)(_f)),
         e.__H.__.forEach(function (n) {
           n.u && (n.__H = n.u), (n.u = void 0);
         })),
@@ -8132,7 +8132,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         e && se.__e(e, n.__v));
     });
   var eu = typeof requestAnimationFrame == "function";
-  function _f(t) {
+  function yf(t) {
     var e,
       n = function () {
         clearTimeout(r), eu && cancelAnimationFrame(e), setTimeout(t);
@@ -8161,7 +8161,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   function nu(t, e) {
     return typeof e == "function" ? e(t) : e;
   }
-  function yf(t, e) {
+  function wf(t, e) {
     for (var n in e) t[n] = e[n];
     return t;
   }
@@ -8182,7 +8182,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     t.type && t.type.__f && t.ref && ((t.props.ref = t.ref), (t.ref = null)),
       su && su(t);
   };
-  var wf = z.__e;
+  var bf = z.__e;
   z.__e = function (t, e, n, r) {
     if (t.then) {
       for (var i, s = e; (s = s.__); )
@@ -8191,7 +8191,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             e.__e == null && ((e.__e = n.__e), (e.__k = n.__k)), i.__c(t, e)
           );
     }
-    wf(t, e, n, r);
+    bf(t, e, n, r);
   };
   var au = z.unmount;
   function ou(t, e, n) {
@@ -8203,7 +8203,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             typeof r.__c == "function" && r.__c();
           }),
           (t.__c.__H = null)),
-        (t = yf({}, t)).__c != null &&
+        (t = wf({}, t)).__c != null &&
           (t.__c.__P === n && (t.__c.__P = e),
           (t.__c.__e = !0),
           (t.__c = null)),
@@ -8323,15 +8323,15 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           cu(t, n, e);
         });
       });
-  var bf =
+  var vf =
       (typeof Symbol < "u" && Symbol.for && Symbol.for("react.element")) ||
       60103,
-    vf =
+    xf =
       /^(?:accent|alignment|arabic|baseline|cap|clip(?!PathU)|color|dominant|fill|flood|font|glyph(?!R)|horiz|image(!S)|letter|lighting|marker(?!H|W|U)|overline|paint|pointer|shape|stop|strikethrough|stroke|text(?!L)|transform|underline|unicode|units|v|vector|vert|word|writing|x(?!C))[A-Z]/,
-    xf = /^on(Ani|Tra|Tou|BeforeInp|Compo)/,
-    kf = /[A-Z0-9]/g,
-    Sf = typeof document < "u",
-    Ef = function (t) {
+    kf = /^on(Ani|Tra|Tou|BeforeInp|Compo)/,
+    Sf = /[A-Z0-9]/g,
+    Ef = typeof document < "u",
+    Cf = function (t) {
       return (
         typeof Symbol < "u" && typeof Symbol() == "symbol"
           ? /fil|che|rad/
@@ -8359,23 +8359,23 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       });
     });
   var hu = z.event;
-  function Cf() {}
-  function Af() {
+  function Af() {}
+  function Pf() {
     return this.cancelBubble;
   }
-  function Pf() {
+  function Tf() {
     return this.defaultPrevented;
   }
   z.event = function (t) {
     return (
       hu && (t = hu(t)),
-      (t.persist = Cf),
-      (t.isPropagationStopped = Af),
-      (t.isDefaultPrevented = Pf),
+      (t.persist = Af),
+      (t.isPropagationStopped = Pf),
+      (t.isDefaultPrevented = Tf),
       (t.nativeEvent = t)
     );
   };
-  var Tf = {
+  var If = {
       enumerable: !1,
       configurable: !0,
       get: function () {
@@ -8395,7 +8395,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           if (
             !(
               (a === "value" && "defaultValue" in n && o == null) ||
-              (Sf && a === "children" && r === "noscript") ||
+              (Ef && a === "children" && r === "noscript") ||
               a === "class" ||
               a === "className"
             )
@@ -8412,15 +8412,15 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
                 ? (a = "ondblclick")
                 : l !== "onchange" ||
                   (r !== "input" && r !== "textarea") ||
-                  Ef(n.type)
+                  Cf(n.type)
                 ? l === "onfocus"
                   ? (a = "onfocusin")
                   : l === "onblur"
                   ? (a = "onfocusout")
-                  : xf.test(a) && (a = l)
+                  : kf.test(a) && (a = l)
                 : (l = a = "oninput")
-              : s && vf.test(a)
-              ? (a = a.replace(kf, "-$&").toLowerCase())
+              : s && xf.test(a)
+              ? (a = a.replace(Sf, "-$&").toLowerCase())
               : o === null && (o = void 0),
               l === "oninput" && i[(a = l)] && (a = "oninputCapture"),
               (i[a] = o);
@@ -8440,12 +8440,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
                 : i.defaultValue == u.props.value;
             })),
           n.class && !n.className
-            ? ((i.class = n.class), Object.defineProperty(i, "className", Tf))
+            ? ((i.class = n.class), Object.defineProperty(i, "className", If))
             : ((n.className && !n.class) || (n.class && n.className)) &&
               (i.class = i.className = n.className),
           (e.props = i);
       })(t),
-      (t.$$typeof = bf),
+      (t.$$typeof = vf),
       du && du(t);
   };
   var fu = z.__r;
@@ -8463,15 +8463,15 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       e.value !== n.value &&
       (n.value = e.value == null ? "" : e.value);
   };
-  const If = {};
-  function Rf(t, e) {
-    const n = If,
+  const Rf = {};
+  function Of(t, e) {
+    const n = Rf,
       r = typeof n.includeImageAlt == "boolean" ? n.includeImageAlt : !0,
       i = typeof n.includeHtml == "boolean" ? n.includeHtml : !0;
     return mu(t, r, i);
   }
   function mu(t, e, n) {
-    if (Of(t)) {
+    if ($f(t)) {
       if ("value" in t) return t.type === "html" && !n ? "" : t.value;
       if (e && "alt" in t && t.alt) return t.alt;
       if ("children" in t) return gu(t.children, e, n);
@@ -8484,7 +8484,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     for (; ++i < t.length; ) r[i] = mu(t[i], e, n);
     return r.join("");
   }
-  function Of(t) {
+  function $f(t) {
     return !!(t && typeof t == "object");
   }
   const _u = document.createElement("i");
@@ -8518,13 +8518,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     return t.length > 0 ? (Ve(t, t.length, 0, e), t) : e;
   }
   const yu = {}.hasOwnProperty;
-  function $f(t) {
+  function Lf(t) {
     const e = {};
     let n = -1;
-    for (; ++n < t.length; ) Lf(e, t[n]);
+    for (; ++n < t.length; ) jf(e, t[n]);
     return e;
   }
-  function Lf(t, e) {
+  function jf(t, e) {
     let n;
     for (n in e) {
       const i = (yu.call(t, n) ? t[n] : void 0) || (t[n] = {}),
@@ -8534,11 +8534,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         for (a in s) {
           yu.call(i, a) || (i[a] = []);
           const o = s[a];
-          jf(i[a], Array.isArray(o) ? o : o ? [o] : []);
+          Nf(i[a], Array.isArray(o) ? o : o ? [o] : []);
         }
     }
   }
-  function jf(t, e) {
+  function Nf(t, e) {
     let n = -1;
     const r = [];
     for (; ++n < e.length; ) (e[n].add === "after" ? t : r).push(e[n]);
@@ -8567,13 +8567,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   }
   const We = ct(/[A-Za-z]/),
     Pe = ct(/[\dA-Za-z]/),
-    Nf = ct(/[#-'*+\--9=?A-Z^-~]/);
+    Df = ct(/[#-'*+\--9=?A-Z^-~]/);
   function Os(t) {
     return t !== null && (t < 32 || t === 127);
   }
   const $s = ct(/\d/),
-    Df = ct(/[\dA-Fa-f]/),
-    Ff = ct(/[!-/:-@[-`{-~]/);
+    Ff = ct(/[\dA-Fa-f]/),
+    Mf = ct(/[!-/:-@[-`{-~]/);
   function F(t) {
     return t !== null && t < -2;
   }
@@ -8583,8 +8583,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   function K(t) {
     return t === -2 || t === -1 || t === 32;
   }
-  const Mf = ct(new RegExp("\\p{P}|\\p{S}", "u")),
-    Bf = ct(/\s/);
+  const Bf = ct(new RegExp("\\p{P}|\\p{S}", "u")),
+    Uf = ct(/\s/);
   function ct(t) {
     return e;
     function e(n) {
@@ -8628,8 +8628,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return K(l) && s++ < i ? (t.consume(l), o) : (t.exit(n), e(l));
     }
   }
-  const Uf = { tokenize: zf };
-  function zf(t) {
+  const zf = { tokenize: qf };
+  function qf(t) {
     const e = t.attempt(this.parser.constructs.contentInitial, r, i);
     let n;
     return e;
@@ -8660,9 +8660,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return F(o) ? (t.consume(o), t.exit("chunkText"), s) : (t.consume(o), a);
     }
   }
-  const qf = { tokenize: Hf },
-    bu = { tokenize: Vf };
-  function Hf(t) {
+  const Hf = { tokenize: Vf },
+    bu = { tokenize: Wf };
+  function Vf(t) {
     const e = this,
       n = [];
     let r = 0,
@@ -8679,23 +8679,23 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     function l(x) {
       if ((r++, e.containerState._closeFlow)) {
-        (e.containerState._closeFlow = void 0), i && w();
+        (e.containerState._closeFlow = void 0), i && b();
         const S = e.events.length;
-        let P = S,
+        let A = S,
           v;
-        for (; P--; )
+        for (; A--; )
           if (
-            e.events[P][0] === "exit" &&
-            e.events[P][1].type === "chunkFlow"
+            e.events[A][0] === "exit" &&
+            e.events[A][1].type === "chunkFlow"
           ) {
-            v = e.events[P][1].end;
+            v = e.events[A][1].end;
             break;
           }
-        b(r);
+        w(r);
         let T = S;
         for (; T < e.events.length; ) (e.events[T][1].end = { ...v }), T++;
         return (
-          Ve(e.events, P + 1, 0, e.events.slice(S)), (e.events.length = T), u(x)
+          Ve(e.events, A + 1, 0, e.events.slice(S)), (e.events.length = T), u(x)
         );
       }
       return o(x);
@@ -8711,7 +8711,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return (e.containerState = {}), t.check(bu, c, h)(x);
     }
     function c(x) {
-      return i && w(), b(r), f(x);
+      return i && b(), w(r), f(x);
     }
     function h(x) {
       return (
@@ -8728,7 +8728,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     function g(x) {
       if (x === null) {
-        i && w(), b(0), t.consume(x);
+        i && b(), w(0), t.consume(x);
         return;
       }
       return (
@@ -8743,7 +8743,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     function _(x) {
       if (x === null) {
-        y(t.exit("chunkFlow"), !0), b(0), t.consume(x);
+        y(t.exit("chunkFlow"), !0), w(0), t.consume(x);
         return;
       }
       return F(x)
@@ -8755,14 +8755,14 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : (t.consume(x), _);
     }
     function y(x, S) {
-      const P = e.sliceStream(x);
+      const A = e.sliceStream(x);
       if (
-        (S && P.push(null),
+        (S && A.push(null),
         (x.previous = s),
         s && (s.next = x),
         (s = x),
         i.defineSkip(x.start),
-        i.write(P),
+        i.write(A),
         e.parser.lazy[x.start.line])
       ) {
         let v = i.events.length;
@@ -8787,27 +8787,27 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             }
             O = !0;
           }
-        for (b(r), v = T; v < e.events.length; )
+        for (w(r), v = T; v < e.events.length; )
           (e.events[v][1].end = { ...j }), v++;
         Ve(e.events, V + 1, 0, e.events.slice(T)), (e.events.length = v);
       }
     }
-    function b(x) {
+    function w(x) {
       let S = n.length;
       for (; S-- > x; ) {
-        const P = n[S];
-        (e.containerState = P[1]), P[0].exit.call(e, t);
+        const A = n[S];
+        (e.containerState = A[1]), A[0].exit.call(e, t);
       }
       n.length = x;
     }
-    function w() {
+    function b() {
       i.write([null]),
         (s = void 0),
         (i = void 0),
         (e.containerState._closeFlow = void 0);
     }
   }
-  function Vf(t, e, n) {
+  function Wf(t, e, n) {
     return Z(
       t,
       t.attempt(this.parser.constructs.document, e, n),
@@ -8816,8 +8816,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     );
   }
   function vu(t) {
-    if (t === null || ve(t) || Bf(t)) return 1;
-    if (Mf(t)) return 2;
+    if (t === null || ve(t) || Uf(t)) return 1;
+    if (Bf(t)) return 2;
   }
   function Ls(t, e, n) {
     const r = [];
@@ -8828,8 +8828,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return e;
   }
-  const js = { name: "attention", resolveAll: Wf, tokenize: Jf };
-  function Wf(t, e) {
+  const js = { name: "attention", resolveAll: Jf, tokenize: Kf };
+  function Jf(t, e) {
     let n = -1,
       r,
       i,
@@ -8934,7 +8934,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       t[n][1].type === "attentionSequence" && (t[n][1].type = "data");
     return t;
   }
-  function Jf(t, e) {
+  function Kf(t, e) {
     const n = this.parser.constructs.attentionMarkers.null,
       r = this.previous,
       i = vu(r);
@@ -8959,8 +8959,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   function xu(t, e) {
     (t.column += e), (t.offset += e), (t._bufferIndex += e);
   }
-  const Kf = { name: "autolink", tokenize: Gf };
-  function Gf(t, e, n) {
+  const Gf = { name: "autolink", tokenize: Xf };
+  function Xf(t, e, n) {
     let r = 0;
     return i;
     function i(d) {
@@ -8999,7 +8999,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : (t.consume(d), l);
     }
     function u(d) {
-      return d === 64 ? (t.consume(d), c) : Nf(d) ? (t.consume(d), u) : n(d);
+      return d === 64 ? (t.consume(d), c) : Df(d) ? (t.consume(d), u) : n(d);
     }
     function c(d) {
       return Pe(d) ? h(d) : n(d);
@@ -9024,8 +9024,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return n(d);
     }
   }
-  const Mr = { partial: !0, tokenize: Xf };
-  function Xf(t, e, n) {
+  const Mr = { partial: !0, tokenize: Qf };
+  function Qf(t, e, n) {
     return r;
     function r(s) {
       return K(s) ? Z(t, i, "linePrefix")(s) : i(s);
@@ -9035,12 +9035,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
   }
   const ku = {
-    continuation: { tokenize: Yf },
-    exit: Zf,
+    continuation: { tokenize: Zf },
+    exit: ep,
     name: "blockQuote",
-    tokenize: Qf,
+    tokenize: Yf,
   };
-  function Qf(t, e, n) {
+  function Yf(t, e, n) {
     const r = this;
     return i;
     function i(a) {
@@ -9067,7 +9067,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : (t.exit("blockQuotePrefix"), e(a));
     }
   }
-  function Yf(t, e, n) {
+  function Zf(t, e, n) {
     const r = this;
     return i;
     function i(a) {
@@ -9086,11 +9086,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return t.attempt(ku, e, n)(a);
     }
   }
-  function Zf(t) {
+  function ep(t) {
     t.exit("blockQuote");
   }
-  const Su = { name: "characterEscape", tokenize: ep };
-  function ep(t, e, n) {
+  const Su = { name: "characterEscape", tokenize: tp };
+  function tp(t, e, n) {
     return r;
     function r(s) {
       return (
@@ -9102,7 +9102,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
     function i(s) {
-      return Ff(s)
+      return Mf(s)
         ? (t.enter("characterEscapeValue"),
           t.consume(s),
           t.exit("characterEscapeValue"),
@@ -9111,8 +9111,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : n(s);
     }
   }
-  const Eu = { name: "characterReference", tokenize: tp };
-  function tp(t, e, n) {
+  const Eu = { name: "characterReference", tokenize: np };
+  function np(t, e, n) {
     const r = this;
     let i = 0,
       s,
@@ -9142,7 +9142,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           t.exit("characterReferenceMarkerHexadecimal"),
           t.enter("characterReferenceValue"),
           (s = 6),
-          (a = Df),
+          (a = Ff),
           c)
         : (t.enter("characterReferenceValue"), (s = 7), (a = $s), c(h));
     }
@@ -9160,11 +9160,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return a(h) && i++ < s ? (t.consume(h), c) : n(h);
     }
   }
-  const Cu = { partial: !0, tokenize: rp },
-    Au = { concrete: !0, name: "codeFenced", tokenize: np };
-  function np(t, e, n) {
+  const Cu = { partial: !0, tokenize: ip },
+    Au = { concrete: !0, name: "codeFenced", tokenize: rp };
+  function rp(t, e, n) {
     const r = this,
-      i = { partial: !0, tokenize: P };
+      i = { partial: !0, tokenize: A };
     let s = 0,
       a = 0,
       o;
@@ -9230,25 +9230,25 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return t.attempt(i, S, y)(v);
     }
     function y(v) {
-      return t.enter("lineEnding"), t.consume(v), t.exit("lineEnding"), b;
-    }
-    function b(v) {
-      return s > 0 && K(v) ? Z(t, w, "linePrefix", s + 1)(v) : w(v);
+      return t.enter("lineEnding"), t.consume(v), t.exit("lineEnding"), w;
     }
     function w(v) {
+      return s > 0 && K(v) ? Z(t, b, "linePrefix", s + 1)(v) : b(v);
+    }
+    function b(v) {
       return v === null || F(v)
         ? t.check(Cu, _, S)(v)
         : (t.enter("codeFlowValue"), x(v));
     }
     function x(v) {
       return v === null || F(v)
-        ? (t.exit("codeFlowValue"), w(v))
+        ? (t.exit("codeFlowValue"), b(v))
         : (t.consume(v), x);
     }
     function S(v) {
       return t.exit("codeFenced"), e(v);
     }
-    function P(v, T, V) {
+    function A(v, T, V) {
       let O = 0;
       return j;
       function j(D) {
@@ -9285,7 +9285,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       }
     }
   }
-  function rp(t, e, n) {
+  function ip(t, e, n) {
     const r = this;
     return i;
     function i(a) {
@@ -9297,9 +9297,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return r.parser.lazy[r.now().line] ? n(a) : e(a);
     }
   }
-  const Ns = { name: "codeIndented", tokenize: sp },
-    ip = { partial: !0, tokenize: ap };
-  function sp(t, e, n) {
+  const Ns = { name: "codeIndented", tokenize: ap },
+    sp = { partial: !0, tokenize: op };
+  function ap(t, e, n) {
     const r = this;
     return i;
     function i(u) {
@@ -9317,7 +9317,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return u === null
         ? l(u)
         : F(u)
-        ? t.attempt(ip, a, l)(u)
+        ? t.attempt(sp, a, l)(u)
         : (t.enter("codeFlowValue"), o(u));
     }
     function o(u) {
@@ -9329,7 +9329,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return t.exit("codeIndented"), e(u);
     }
   }
-  function ap(t, e, n) {
+  function op(t, e, n) {
     const r = this;
     return i;
     function i(a) {
@@ -9350,8 +9350,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : n(a);
     }
   }
-  const op = { name: "codeText", previous: up, resolve: lp, tokenize: cp };
-  function lp(t) {
+  const lp = { name: "codeText", previous: cp, resolve: up, tokenize: hp };
+  function up(t) {
     let e = t.length - 4,
       n = 3,
       r,
@@ -9382,13 +9382,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           (i = void 0));
     return t;
   }
-  function up(t) {
+  function cp(t) {
     return (
       t !== 96 ||
       this.events[this.events.length - 1][1].type === "characterEscape"
     );
   }
-  function cp(t, e, n) {
+  function hp(t, e, n) {
     let r = 0,
       i,
       s;
@@ -9425,7 +9425,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : ((s.type = "codeTextData"), u(h));
     }
   }
-  class hp {
+  class dp {
     constructor(e) {
       (this.left = e ? [...e] : []), (this.right = []);
     }
@@ -9526,7 +9526,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       o,
       l,
       u;
-    const c = new hp(t);
+    const c = new dp(t);
     for (; ++n < c.length; ) {
       for (; n in e; ) n = e[n];
       if (
@@ -9543,7 +9543,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           l[s][1].type === "chunkText" &&
             ((l[s][1]._isInFirstContentOfListItem = !0), s++);
       if (r[0] === "enter")
-        r[1].contentType && (Object.assign(e, dp(c, n)), (n = e[n]), (u = !0));
+        r[1].contentType && (Object.assign(e, fp(c, n)), (n = e[n]), (u = !0));
       else if (r[1]._container) {
         for (s = n, i = void 0; s--; )
           if (
@@ -9567,7 +9567,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return Ve(t, 0, Number.POSITIVE_INFINITY, c.slice(0)), !u;
   }
-  function dp(t, e) {
+  function fp(t, e) {
     const n = t.get(e)[1],
       r = t.get(e)[2];
     let i = e - 1;
@@ -9618,20 +9618,20 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       f--;
 
     ) {
-      const b = o.slice(y[f], y[f + 1]),
-        w = s.pop();
-      l.push([w, w + b.length - 1]), t.splice(w, 2, b);
+      const w = o.slice(y[f], y[f + 1]),
+        b = s.pop();
+      l.push([b, b + w.length - 1]), t.splice(b, 2, w);
     }
     for (l.reverse(), f = -1; ++f < l.length; )
       (u[g + l[f][0]] = g + l[f][1]), (g += l[f][1] - l[f][0] - 1);
     return u;
   }
-  const fp = { resolve: mp, tokenize: gp },
-    pp = { partial: !0, tokenize: _p };
-  function mp(t) {
+  const pp = { resolve: gp, tokenize: _p },
+    mp = { partial: !0, tokenize: yp };
+  function gp(t) {
     return Pu(t), t;
   }
-  function gp(t, e) {
+  function _p(t, e) {
     let n;
     return r;
     function r(o) {
@@ -9645,7 +9645,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return o === null
         ? s(o)
         : F(o)
-        ? t.check(pp, a, s)(o)
+        ? t.check(mp, a, s)(o)
         : (t.consume(o), i);
     }
     function s(o) {
@@ -9664,7 +9664,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
   }
-  function _p(t, e, n) {
+  function yp(t, e, n) {
     const r = this;
     return i;
     function i(a) {
@@ -9691,45 +9691,45 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     const u = l || Number.POSITIVE_INFINITY;
     let c = 0;
     return h;
-    function h(b) {
-      return b === 60
-        ? (t.enter(r), t.enter(i), t.enter(s), t.consume(b), t.exit(s), f)
-        : b === null || b === 32 || b === 41 || Os(b)
-        ? n(b)
+    function h(w) {
+      return w === 60
+        ? (t.enter(r), t.enter(i), t.enter(s), t.consume(w), t.exit(s), f)
+        : w === null || w === 32 || w === 41 || Os(w)
+        ? n(w)
         : (t.enter(r),
           t.enter(a),
           t.enter(o),
           t.enter("chunkString", { contentType: "string" }),
-          _(b));
+          _(w));
     }
-    function f(b) {
-      return b === 62
-        ? (t.enter(s), t.consume(b), t.exit(s), t.exit(i), t.exit(r), e)
-        : (t.enter(o), t.enter("chunkString", { contentType: "string" }), d(b));
+    function f(w) {
+      return w === 62
+        ? (t.enter(s), t.consume(w), t.exit(s), t.exit(i), t.exit(r), e)
+        : (t.enter(o), t.enter("chunkString", { contentType: "string" }), d(w));
     }
-    function d(b) {
-      return b === 62
-        ? (t.exit("chunkString"), t.exit(o), f(b))
-        : b === null || b === 60 || F(b)
-        ? n(b)
-        : (t.consume(b), b === 92 ? g : d);
+    function d(w) {
+      return w === 62
+        ? (t.exit("chunkString"), t.exit(o), f(w))
+        : w === null || w === 60 || F(w)
+        ? n(w)
+        : (t.consume(w), w === 92 ? g : d);
     }
-    function g(b) {
-      return b === 60 || b === 62 || b === 92 ? (t.consume(b), d) : d(b);
+    function g(w) {
+      return w === 60 || w === 62 || w === 92 ? (t.consume(w), d) : d(w);
     }
-    function _(b) {
-      return !c && (b === null || b === 41 || ve(b))
-        ? (t.exit("chunkString"), t.exit(o), t.exit(a), t.exit(r), e(b))
-        : c < u && b === 40
-        ? (t.consume(b), c++, _)
-        : b === 41
-        ? (t.consume(b), c--, _)
-        : b === null || b === 32 || b === 40 || Os(b)
-        ? n(b)
-        : (t.consume(b), b === 92 ? y : _);
+    function _(w) {
+      return !c && (w === null || w === 41 || ve(w))
+        ? (t.exit("chunkString"), t.exit(o), t.exit(a), t.exit(r), e(w))
+        : c < u && w === 40
+        ? (t.consume(w), c++, _)
+        : w === 41
+        ? (t.consume(w), c--, _)
+        : w === null || w === 32 || w === 40 || Os(w)
+        ? n(w)
+        : (t.consume(w), w === 92 ? y : _);
     }
-    function y(b) {
-      return b === 40 || b === 41 || b === 92 ? (t.consume(b), _) : _(b);
+    function y(w) {
+      return w === 40 || w === 41 || w === 92 ? (t.consume(w), _) : _(w);
     }
   }
   function Iu(t, e, n, r, i, s) {
@@ -9816,9 +9816,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : e(i);
     }
   }
-  const yp = { name: "definition", tokenize: bp },
-    wp = { partial: !0, tokenize: vp };
-  function bp(t, e, n) {
+  const wp = { name: "definition", tokenize: vp },
+    bp = { partial: !0, tokenize: xp };
+  function vp(t, e, n) {
     const r = this;
     let i;
     return s;
@@ -9865,7 +9865,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       )(d);
     }
     function c(d) {
-      return t.attempt(wp, h, h)(d);
+      return t.attempt(bp, h, h)(d);
     }
     function h(d) {
       return K(d) ? Z(t, f, "whitespace")(d) : f(d);
@@ -9876,7 +9876,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : n(d);
     }
   }
-  function vp(t, e, n) {
+  function xp(t, e, n) {
     return r;
     function r(o) {
       return ve(o) ? Fn(t, i)(o) : n(o);
@@ -9898,8 +9898,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return o === null || F(o) ? e(o) : n(o);
     }
   }
-  const xp = { name: "hardBreakEscape", tokenize: kp };
-  function kp(t, e, n) {
+  const kp = { name: "hardBreakEscape", tokenize: Sp };
+  function Sp(t, e, n) {
     return r;
     function r(s) {
       return t.enter("hardBreakEscape"), t.consume(s), i;
@@ -9908,8 +9908,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return F(s) ? (t.exit("hardBreakEscape"), e(s)) : n(s);
     }
   }
-  const Sp = { name: "headingAtx", resolve: Ep, tokenize: Cp };
-  function Ep(t, e) {
+  const Ep = { name: "headingAtx", resolve: Cp, tokenize: Ap };
+  function Cp(t, e) {
     let n = t.length - 2,
       r = 3,
       i,
@@ -9941,7 +9941,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       t
     );
   }
-  function Cp(t, e, n) {
+  function Ap(t, e, n) {
     let r = 0;
     return i;
     function i(c) {
@@ -9977,7 +9977,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : (t.consume(c), u);
     }
   }
-  const Ap = [
+  const Pp = [
       "address",
       "article",
       "aside",
@@ -10042,10 +10042,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       "ul",
     ],
     Ou = ["pre", "script", "style", "textarea"],
-    Pp = { concrete: !0, name: "htmlFlow", resolveTo: Rp, tokenize: Op },
-    Tp = { partial: !0, tokenize: Lp },
-    Ip = { partial: !0, tokenize: $p };
-  function Rp(t) {
+    Tp = { concrete: !0, name: "htmlFlow", resolveTo: Op, tokenize: $p },
+    Ip = { partial: !0, tokenize: jp },
+    Rp = { partial: !0, tokenize: Lp };
+  function Op(t) {
     let e = t.length;
     for (; e-- && !(t[e][0] === "enter" && t[e][1].type === "htmlFlow"); );
     return (
@@ -10057,7 +10057,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       t
     );
   }
-  function Op(t, e, n) {
+  function $p(t, e, n) {
     const r = this;
     let i, s, a, o, l;
     return u;
@@ -10105,24 +10105,24 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           Pt = a.toLowerCase();
         return !Me && !s && Ou.includes(Pt)
           ? ((i = 1), r.interrupt ? e(m) : I(m))
-          : Ap.includes(a.toLowerCase())
-          ? ((i = 6), Me ? (t.consume(m), b) : r.interrupt ? e(m) : I(m))
+          : Pp.includes(a.toLowerCase())
+          ? ((i = 6), Me ? (t.consume(m), w) : r.interrupt ? e(m) : I(m))
           : ((i = 7),
             r.interrupt && !r.parser.lazy[r.now().line]
               ? n(m)
               : s
-              ? w(m)
+              ? b(m)
               : x(m));
       }
       return m === 45 || Pe(m)
         ? (t.consume(m), (a += String.fromCharCode(m)), y)
         : n(m);
     }
-    function b(m) {
+    function w(m) {
       return m === 62 ? (t.consume(m), r.interrupt ? e : I) : n(m);
     }
-    function w(m) {
-      return K(m) ? (t.consume(m), w) : j(m);
+    function b(m) {
+      return K(m) ? (t.consume(m), b) : j(m);
     }
     function x(m) {
       return m === 47
@@ -10136,10 +10136,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     function S(m) {
       return m === 45 || m === 46 || m === 58 || m === 95 || Pe(m)
         ? (t.consume(m), S)
-        : P(m);
+        : A(m);
     }
-    function P(m) {
-      return m === 61 ? (t.consume(m), v) : K(m) ? (t.consume(m), P) : x(m);
+    function A(m) {
+      return m === 61 ? (t.consume(m), v) : K(m) ? (t.consume(m), A) : x(m);
     }
     function v(m) {
       return m === null || m === 60 || m === 61 || m === 62 || m === 96
@@ -10167,7 +10167,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         m === 62 ||
         m === 96 ||
         ve(m)
-        ? P(m)
+        ? A(m)
         : (t.consume(m), V);
     }
     function O(m) {
@@ -10191,13 +10191,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : m === 93 && i === 5
         ? (t.consume(m), et)
         : F(m) && (i === 6 || i === 7)
-        ? (t.exit("htmlFlowData"), t.check(Tp, tt, L)(m))
+        ? (t.exit("htmlFlowData"), t.check(Ip, tt, L)(m))
         : m === null || F(m)
         ? (t.exit("htmlFlowData"), L(m))
         : (t.consume(m), I);
     }
     function L(m) {
-      return t.check(Ip, R, tt)(m);
+      return t.check(Rp, R, tt)(m);
     }
     function R(m) {
       return t.enter("lineEnding"), t.consume(m), t.exit("lineEnding"), D;
@@ -10239,7 +10239,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return t.exit("htmlFlow"), e(m);
     }
   }
-  function $p(t, e, n) {
+  function Lp(t, e, n) {
     const r = this;
     return i;
     function i(a) {
@@ -10251,7 +10251,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return r.parser.lazy[r.now().line] ? n(a) : e(a);
     }
   }
-  function Lp(t, e, n) {
+  function jp(t, e, n) {
     return r;
     function r(i) {
       return (
@@ -10262,8 +10262,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
   }
-  const jp = { name: "htmlText", tokenize: Np };
-  function Np(t, e, n) {
+  const Np = { name: "htmlText", tokenize: Dp };
+  function Dp(t, e, n) {
     const r = this;
     let i, s, a;
     return o;
@@ -10274,7 +10274,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return p === 33
         ? (t.consume(p), u)
         : p === 47
-        ? (t.consume(p), P)
+        ? (t.consume(p), A)
         : p === 63
         ? (t.consume(p), x)
         : We(p)
@@ -10287,7 +10287,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : p === 91
         ? (t.consume(p), (s = 0), g)
         : We(p)
-        ? (t.consume(p), w)
+        ? (t.consume(p), b)
         : n(p);
     }
     function c(p) {
@@ -10324,17 +10324,17 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : (t.consume(p), _);
     }
     function y(p) {
-      return p === 93 ? (t.consume(p), b) : _(p);
-    }
-    function b(p) {
-      return p === 62 ? he(p) : p === 93 ? (t.consume(p), b) : _(p);
+      return p === 93 ? (t.consume(p), w) : _(p);
     }
     function w(p) {
+      return p === 62 ? he(p) : p === 93 ? (t.consume(p), w) : _(p);
+    }
+    function b(p) {
       return p === null || p === 62
         ? he(p)
         : F(p)
-        ? ((a = w), me(p))
-        : (t.consume(p), w);
+        ? ((a = b), me(p))
+        : (t.consume(p), b);
     }
     function x(p) {
       return p === null
@@ -10348,7 +10348,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     function S(p) {
       return p === 62 ? he(p) : x(p);
     }
-    function P(p) {
+    function A(p) {
       return We(p) ? (t.consume(p), v) : n(p);
     }
     function v(p) {
@@ -10454,11 +10454,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return t.enter("htmlTextData"), a(p);
     }
   }
-  const Ds = { name: "labelEnd", resolveAll: Bp, resolveTo: Up, tokenize: zp },
-    Dp = { tokenize: qp },
+  const Ds = { name: "labelEnd", resolveAll: Up, resolveTo: zp, tokenize: qp },
     Fp = { tokenize: Hp },
-    Mp = { tokenize: Vp };
-  function Bp(t) {
+    Mp = { tokenize: Vp },
+    Bp = { tokenize: Wp };
+  function Up(t) {
     let e = -1;
     const n = [];
     for (; ++e < t.length; ) {
@@ -10475,7 +10475,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return t.length !== n.length && Ve(t, 0, t.length, n), t;
   }
-  function Up(t, e) {
+  function zp(t, e) {
     let n = t.length,
       r = 0,
       i,
@@ -10530,7 +10530,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       t
     );
   }
-  function zp(t, e, n) {
+  function qp(t, e, n) {
     const r = this;
     let i = r.events.length,
       s,
@@ -10562,15 +10562,15 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     function l(f) {
       return f === 40
-        ? t.attempt(Dp, c, a ? c : h)(f)
+        ? t.attempt(Fp, c, a ? c : h)(f)
         : f === 91
-        ? t.attempt(Fp, c, a ? u : h)(f)
+        ? t.attempt(Mp, c, a ? u : h)(f)
         : a
         ? c(f)
         : h(f);
     }
     function u(f) {
-      return t.attempt(Mp, c, h)(f);
+      return t.attempt(Bp, c, h)(f);
     }
     function c(f) {
       return e(f);
@@ -10579,7 +10579,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return (s._balanced = !0), n(f);
     }
   }
-  function qp(t, e, n) {
+  function Hp(t, e, n) {
     return r;
     function r(h) {
       return (
@@ -10639,7 +10639,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : n(h);
     }
   }
-  function Hp(t, e, n) {
+  function Vp(t, e, n) {
     const r = this;
     return i;
     function i(o) {
@@ -10664,7 +10664,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return n(o);
     }
   }
-  function Vp(t, e, n) {
+  function Wp(t, e, n) {
     return r;
     function r(s) {
       return (
@@ -10685,12 +10685,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : n(s);
     }
   }
-  const Wp = {
+  const Jp = {
     name: "labelStartImage",
     resolveAll: Ds.resolveAll,
-    tokenize: Jp,
+    tokenize: Kp,
   };
-  function Jp(t, e, n) {
+  function Kp(t, e, n) {
     const r = this;
     return i;
     function i(o) {
@@ -10717,12 +10717,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : e(o);
     }
   }
-  const Kp = {
+  const Gp = {
     name: "labelStartLink",
     resolveAll: Ds.resolveAll,
-    tokenize: Gp,
+    tokenize: Xp,
   };
-  function Gp(t, e, n) {
+  function Xp(t, e, n) {
     const r = this;
     return i;
     function i(a) {
@@ -10741,8 +10741,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : e(a);
     }
   }
-  const Fs = { name: "lineEnding", tokenize: Xp };
-  function Xp(t, e) {
+  const Fs = { name: "lineEnding", tokenize: Qp };
+  function Qp(t, e) {
     return n;
     function n(r) {
       return (
@@ -10753,8 +10753,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
   }
-  const Br = { name: "thematicBreak", tokenize: Qp };
-  function Qp(t, e, n) {
+  const Br = { name: "thematicBreak", tokenize: Yp };
+  function Yp(t, e, n) {
     let r = 0,
       i;
     return s;
@@ -10779,14 +10779,14 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
   }
   const xe = {
-      continuation: { tokenize: tm },
-      exit: rm,
+      continuation: { tokenize: nm },
+      exit: im,
       name: "list",
-      tokenize: em,
+      tokenize: tm,
     },
-    Yp = { partial: !0, tokenize: im },
-    Zp = { partial: !0, tokenize: nm };
-  function em(t, e, n) {
+    Zp = { partial: !0, tokenize: sm },
+    em = { partial: !0, tokenize: rm };
+  function tm(t, e, n) {
     const r = this,
       i = r.events[r.events.length - 1];
     let s =
@@ -10834,7 +10834,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         t.consume(d),
         t.exit("listItemMarker"),
         (r.containerState.marker = r.containerState.marker || d),
-        t.check(Mr, r.interrupt ? n : c, t.attempt(Yp, f, h))
+        t.check(Mr, r.interrupt ? n : c, t.attempt(Zp, f, h))
       );
     }
     function c(d) {
@@ -10856,7 +10856,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
   }
-  function tm(t, e, n) {
+  function nm(t, e, n) {
     const r = this;
     return (r.containerState._closeFlow = void 0), t.check(Mr, i, s);
     function i(o) {
@@ -10874,7 +10874,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           a(o))
         : ((r.containerState.furtherBlankLines = void 0),
           (r.containerState.initialBlankLine = void 0),
-          t.attempt(Zp, e, a)(o));
+          t.attempt(em, e, a)(o));
     }
     function a(o) {
       return (
@@ -10889,7 +10889,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
   }
-  function nm(t, e, n) {
+  function rm(t, e, n) {
     const r = this;
     return Z(t, i, "listItemIndent", r.containerState.size + 1);
     function i(s) {
@@ -10901,10 +10901,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : n(s);
     }
   }
-  function rm(t) {
+  function im(t) {
     t.exit(this.containerState.type);
   }
-  function im(t, e, n) {
+  function sm(t, e, n) {
     const r = this;
     return Z(
       t,
@@ -10919,8 +10919,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : n(s);
     }
   }
-  const $u = { name: "setextUnderline", resolveTo: sm, tokenize: am };
-  function sm(t, e) {
+  const $u = { name: "setextUnderline", resolveTo: am, tokenize: om };
+  function am(t, e) {
     let n = t.length,
       r,
       i,
@@ -10951,7 +10951,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       t
     );
   }
-  function am(t, e, n) {
+  function om(t, e, n) {
     const r = this;
     let i;
     return s;
@@ -10984,8 +10984,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return u === null || F(u) ? (t.exit("setextHeadingLine"), e(u)) : n(u);
     }
   }
-  const om = { tokenize: lm };
-  function lm(t) {
+  const lm = { tokenize: um };
+  function um(t) {
     const e = this,
       n = t.attempt(
         Mr,
@@ -10995,7 +10995,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           i,
           Z(
             t,
-            t.attempt(this.parser.constructs.flow, i, t.attempt(fp, i)),
+            t.attempt(this.parser.constructs.flow, i, t.attempt(pp, i)),
             "linePrefix"
           )
         )
@@ -11028,11 +11028,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
   }
-  const um = { resolveAll: ju() },
-    cm = Lu("string"),
-    hm = Lu("text");
+  const cm = { resolveAll: ju() },
+    hm = Lu("string"),
+    dm = Lu("text");
   function Lu(t) {
-    return { resolveAll: ju(t === "text" ? dm : void 0), tokenize: e };
+    return { resolveAll: ju(t === "text" ? fm : void 0), tokenize: e };
     function e(n) {
       const r = this,
         i = this.parser.constructs[t],
@@ -11081,7 +11081,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return t ? t(n, r) : n;
     }
   }
-  function dm(t, e) {
+  function fm(t, e) {
     let n = 0;
     for (; ++n <= t.length; )
       if (
@@ -11128,12 +11128,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       }
     return t;
   }
-  const fm = Object.freeze(
+  const pm = Object.freeze(
     Object.defineProperty(
       {
         __proto__: null,
         attentionMarkers: { null: [42, 95] },
-        contentInitial: { 91: yp },
+        contentInitial: { 91: wp },
         disable: { null: [] },
         document: {
           42: xe,
@@ -11152,38 +11152,38 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           62: ku,
         },
         flow: {
-          35: Sp,
+          35: Ep,
           42: Br,
           45: [$u, Br],
-          60: Pp,
+          60: Tp,
           61: $u,
           95: Br,
           96: Au,
           126: Au,
         },
         flowInitial: { [-2]: Ns, [-1]: Ns, 32: Ns },
-        insideSpan: { null: [js, um] },
+        insideSpan: { null: [js, cm] },
         string: { 38: Eu, 92: Su },
         text: {
           [-5]: Fs,
           [-4]: Fs,
           [-3]: Fs,
-          33: Wp,
+          33: Jp,
           38: Eu,
           42: js,
-          60: [Kf, jp],
-          91: Kp,
-          92: [xp, Su],
+          60: [Gf, Np],
+          91: Gp,
+          92: [kp, Su],
           93: Ds,
           95: js,
-          96: op,
+          96: lp,
         },
       },
       Symbol.toStringTag,
       { value: "Module" }
     )
   );
-  function pm(t, e, n) {
+  function mm(t, e, n) {
     let r = {
       _bufferIndex: -1,
       _index: 0,
@@ -11196,9 +11196,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     let a = [],
       o = [];
     const l = {
-        attempt: T(P),
+        attempt: T(A),
         check: T(v),
-        consume: w,
+        consume: b,
         enter: x,
         exit: S,
         interrupt: T(v, { interrupt: !0 }),
@@ -11227,10 +11227,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       );
     }
     function f(C, I) {
-      return gm(d(C), I);
+      return _m(d(C), I);
     }
     function d(C) {
-      return mm(a, C);
+      return gm(a, C);
     }
     function g() {
       const { _bufferIndex: C, _index: I, line: L, column: R, offset: D } = r;
@@ -11249,14 +11249,14 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             r._index === C && r._bufferIndex < I.length;
 
           )
-            b(I.charCodeAt(r._bufferIndex));
-        else b(I);
+            w(I.charCodeAt(r._bufferIndex));
+        else w(I);
       }
     }
-    function b(C) {
+    function w(C) {
       c = c(C);
     }
-    function w(C) {
+    function b(C) {
       F(C)
         ? (r.line++, (r.column = 1), (r.offset += C === -3 ? 2 : 1), j())
         : C !== -1 && (r.column++, r.offset++),
@@ -11281,7 +11281,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       const I = o.pop();
       return (I.end = g()), u.events.push(["exit", I, u]), I;
     }
-    function P(C, I) {
+    function A(C, I) {
       V(C, I.from);
     }
     function v(C, I) {
@@ -11361,7 +11361,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         ((r.column = i[r.line]), (r.offset += i[r.line] - 1));
     }
   }
-  function mm(t, e) {
+  function gm(t, e) {
     const n = e.start._index,
       r = e.start._bufferIndex,
       i = e.end._index,
@@ -11377,7 +11377,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return a;
   }
-  function gm(t, e) {
+  function _m(t, e) {
     let n = -1;
     const r = [];
     let i;
@@ -11417,31 +11417,31 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return r.join("");
   }
-  function _m(t) {
+  function ym(t) {
     const r = {
-      constructs: $f([fm, ...((t || {}).extensions || [])]),
-      content: i(Uf),
+      constructs: Lf([pm, ...((t || {}).extensions || [])]),
+      content: i(zf),
       defined: [],
-      document: i(qf),
-      flow: i(om),
+      document: i(Hf),
+      flow: i(lm),
       lazy: {},
-      string: i(cm),
-      text: i(hm),
+      string: i(hm),
+      text: i(dm),
     };
     return r;
     function i(s) {
       return a;
       function a(o) {
-        return pm(r, s, o);
+        return mm(r, s, o);
       }
     }
   }
-  function ym(t) {
+  function wm(t) {
     for (; !Pu(t); );
     return t;
   }
   const Nu = /[\0\t\n\r]/g;
-  function wm() {
+  function bm() {
     let t = 1,
       e = "",
       n = !0,
@@ -11499,12 +11499,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return o && (r && l.push(-5), e && l.push(e), l.push(null)), l;
     }
   }
-  const bm =
+  const vm =
     /\\([!-/:-@[-`{-~])|&(#(?:\d{1,7}|x[\da-f]{1,6})|[\da-z]{1,31});/gi;
-  function vm(t) {
-    return t.replace(bm, xm);
+  function xm(t) {
+    return t.replace(vm, km);
   }
-  function xm(t, e, n) {
+  function km(t, e, n) {
     if (e) return e;
     if (n.charCodeAt(0) === 35) {
       const i = n.charCodeAt(1),
@@ -11514,13 +11514,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     return Rs(n) || t;
   }
   const Du = {}.hasOwnProperty;
-  function km(t, e, n) {
+  function Sm(t, e, n) {
     return (
       typeof e != "string" && ((n = e), (e = void 0)),
-      Sm(n)(ym(_m(n).document().write(wm()(t, e, !0))))
+      Em(n)(wm(ym(n).document().write(bm()(t, e, !0))))
     );
   }
-  function Sm(t) {
+  function Em(t) {
     const e = {
       transforms: [],
       canContainEols: [
@@ -11531,10 +11531,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         "strong",
       ],
       enter: {
-        autolink: s(rh),
+        autolink: s(ih),
         autolinkProtocol: O,
         autolinkEmail: O,
-        atxHeading: s(eh),
+        atxHeading: s(th),
         blockQuote: s(cn),
         characterEscape: O,
         characterReference: O,
@@ -11542,40 +11542,40 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         codeFencedFenceInfo: a,
         codeFencedFenceMeta: a,
         codeIndented: s(ti, a),
-        codeText: s(nw, a),
+        codeText: s(iw, a),
         codeTextData: O,
         data: O,
         codeFlowValue: O,
-        definition: s(rw),
+        definition: s(sw),
         definitionDestinationString: a,
         definitionLabelString: a,
         definitionTitleString: a,
-        emphasis: s(iw),
-        hardBreakEscape: s(th),
-        hardBreakTrailing: s(th),
-        htmlFlow: s(nh, a),
+        emphasis: s(aw),
+        hardBreakEscape: s(nh),
+        hardBreakTrailing: s(nh),
+        htmlFlow: s(rh, a),
         htmlFlowData: O,
-        htmlText: s(nh, a),
+        htmlText: s(rh, a),
         htmlTextData: O,
-        image: s(sw),
+        image: s(ow),
         label: a,
-        link: s(rh),
-        listItem: s(aw),
+        link: s(ih),
+        listItem: s(lw),
         listItemValue: f,
-        listOrdered: s(ih, h),
-        listUnordered: s(ih),
-        paragraph: s(ow),
+        listOrdered: s(sh, h),
+        listUnordered: s(sh),
+        paragraph: s(uw),
         reference: m,
         referenceString: a,
         resourceDestinationString: a,
         resourceTitleString: a,
-        setextHeading: s(eh),
-        strong: s(lw),
-        thematicBreak: s(cw),
+        setextHeading: s(th),
+        strong: s(cw),
+        thematicBreak: s(dw),
       },
       exit: {
         atxHeading: l(),
-        atxHeadingSequence: P,
+        atxHeadingSequence: A,
         autolink: l(),
         autolinkEmail: un,
         autolinkProtocol: _t,
@@ -11590,13 +11590,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         codeFencedFenceInfo: d,
         codeFencedFenceMeta: g,
         codeFlowValue: j,
-        codeIndented: l(b),
+        codeIndented: l(w),
         codeText: l(D),
         codeTextData: j,
         data: j,
         definition: l(),
         definitionDestinationString: S,
-        definitionLabelString: w,
+        definitionLabelString: b,
         definitionTitleString: x,
         emphasis: l(),
         hardBreakEscape: l(I),
@@ -11629,9 +11629,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     const n = {};
     return r;
     function r(k) {
-      let A = { type: "root", children: [] };
+      let P = { type: "root", children: [] };
       const B = {
-          stack: [A],
+          stack: [P],
           tokenStack: [],
           config: e,
           enter: o,
@@ -11662,7 +11662,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         (Be[1] || Mu).call(B, void 0, Be[0]);
       }
       for (
-        A.position = {
+        P.position = {
           start: ht(
             k.length > 0 ? k[0][1].start : { line: 1, column: 1, offset: 0 }
           ),
@@ -11676,11 +11676,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         ++Q < e.transforms.length;
 
       )
-        A = e.transforms[Q](A) || A;
-      return A;
+        P = e.transforms[Q](P) || P;
+      return P;
     }
-    function i(k, A, B) {
-      let J = A - 1,
+    function i(k, P, B) {
+      let J = P - 1,
         Q = -1,
         Be = !1,
         Tt,
@@ -11761,35 +11761,35 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           }
         }
       }
-      return (k[A][1]._spread = Be), B;
+      return (k[P][1]._spread = Be), B;
     }
-    function s(k, A) {
+    function s(k, P) {
       return B;
       function B(J) {
-        o.call(this, k(J), J), A && A.call(this, J);
+        o.call(this, k(J), J), P && P.call(this, J);
       }
     }
     function a() {
       this.stack.push({ type: "fragment", children: [] });
     }
-    function o(k, A, B) {
+    function o(k, P, B) {
       this.stack[this.stack.length - 1].children.push(k),
         this.stack.push(k),
-        this.tokenStack.push([A, B || void 0]),
-        (k.position = { start: ht(A.start), end: void 0 });
+        this.tokenStack.push([P, B || void 0]),
+        (k.position = { start: ht(P.start), end: void 0 });
     }
     function l(k) {
-      return A;
-      function A(B) {
+      return P;
+      function P(B) {
         k && k.call(this, B), u.call(this, B);
       }
     }
-    function u(k, A) {
+    function u(k, P) {
       const B = this.stack.pop(),
         J = this.tokenStack.pop();
       if (J)
         J[0].type !== k.type &&
-          (A ? A.call(this, k, J[0]) : (J[1] || Mu).call(this, k, J[0]));
+          (P ? P.call(this, k, J[0]) : (J[1] || Mu).call(this, k, J[0]));
       else
         throw new Error(
           "Cannot close `" +
@@ -11801,27 +11801,27 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       B.position.end = ht(k.end);
     }
     function c() {
-      return Rf(this.stack.pop());
+      return Of(this.stack.pop());
     }
     function h() {
       this.data.expectingFirstListItemValue = !0;
     }
     function f(k) {
       if (this.data.expectingFirstListItemValue) {
-        const A = this.stack[this.stack.length - 2];
-        (A.start = Number.parseInt(this.sliceSerialize(k), 10)),
+        const P = this.stack[this.stack.length - 2];
+        (P.start = Number.parseInt(this.sliceSerialize(k), 10)),
           (this.data.expectingFirstListItemValue = void 0);
       }
     }
     function d() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.lang = k;
+        P = this.stack[this.stack.length - 1];
+      P.lang = k;
     }
     function g() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.meta = k;
+        P = this.stack[this.stack.length - 1];
+      P.meta = k;
     }
     function _() {
       this.data.flowCodeInside ||
@@ -11829,43 +11829,43 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     function y() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      (A.value = k.replace(/^(\r?\n|\r)|(\r?\n|\r)$/g, "")),
+        P = this.stack[this.stack.length - 1];
+      (P.value = k.replace(/^(\r?\n|\r)|(\r?\n|\r)$/g, "")),
         (this.data.flowCodeInside = void 0);
     }
-    function b() {
+    function w() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.value = k.replace(/(\r?\n|\r)$/g, "");
+        P = this.stack[this.stack.length - 1];
+      P.value = k.replace(/(\r?\n|\r)$/g, "");
     }
-    function w(k) {
-      const A = this.resume(),
+    function b(k) {
+      const P = this.resume(),
         B = this.stack[this.stack.length - 1];
-      (B.label = A), (B.identifier = Jt(this.sliceSerialize(k)).toLowerCase());
+      (B.label = P), (B.identifier = Jt(this.sliceSerialize(k)).toLowerCase());
     }
     function x() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.title = k;
+        P = this.stack[this.stack.length - 1];
+      P.title = k;
     }
     function S() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.url = k;
+        P = this.stack[this.stack.length - 1];
+      P.url = k;
     }
-    function P(k) {
-      const A = this.stack[this.stack.length - 1];
-      if (!A.depth) {
+    function A(k) {
+      const P = this.stack[this.stack.length - 1];
+      if (!P.depth) {
         const B = this.sliceSerialize(k).length;
-        A.depth = B;
+        P.depth = B;
       }
     }
     function v() {
       this.data.setextHeadingSlurpLineEnding = !0;
     }
     function T(k) {
-      const A = this.stack[this.stack.length - 1];
-      A.depth = this.sliceSerialize(k).codePointAt(0) === 61 ? 1 : 2;
+      const P = this.stack[this.stack.length - 1];
+      P.depth = this.sliceSerialize(k).codePointAt(0) === 61 ? 1 : 2;
     }
     function V() {
       this.data.setextHeadingSlurpLineEnding = void 0;
@@ -11874,24 +11874,24 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       const B = this.stack[this.stack.length - 1].children;
       let J = B[B.length - 1];
       (!J || J.type !== "text") &&
-        ((J = uw()),
+        ((J = hw()),
         (J.position = { start: ht(k.start), end: void 0 }),
         B.push(J)),
         this.stack.push(J);
     }
     function j(k) {
-      const A = this.stack.pop();
-      (A.value += this.sliceSerialize(k)), (A.position.end = ht(k.end));
+      const P = this.stack.pop();
+      (P.value += this.sliceSerialize(k)), (P.position.end = ht(k.end));
     }
     function C(k) {
-      const A = this.stack[this.stack.length - 1];
+      const P = this.stack[this.stack.length - 1];
       if (this.data.atHardBreak) {
-        const B = A.children[A.children.length - 1];
+        const B = P.children[P.children.length - 1];
         (B.position.end = ht(k.end)), (this.data.atHardBreak = void 0);
         return;
       }
       !this.data.setextHeadingSlurpLineEnding &&
-        e.canContainEols.includes(A.type) &&
+        e.canContainEols.includes(P.type) &&
         (O.call(this, k), j.call(this, k));
     }
     function I() {
@@ -11899,25 +11899,25 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     function L() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.value = k;
+        P = this.stack[this.stack.length - 1];
+      P.value = k;
     }
     function R() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.value = k;
+        P = this.stack[this.stack.length - 1];
+      P.value = k;
     }
     function D() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.value = k;
+        P = this.stack[this.stack.length - 1];
+      P.value = k;
     }
     function he() {
       const k = this.stack[this.stack.length - 1];
       if (this.data.inReference) {
-        const A = this.data.referenceType || "shortcut";
+        const P = this.data.referenceType || "shortcut";
         (k.type += "Reference"),
-          (k.referenceType = A),
+          (k.referenceType = P),
           delete k.url,
           delete k.title;
       } else delete k.identifier, delete k.label;
@@ -11926,37 +11926,37 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     function me() {
       const k = this.stack[this.stack.length - 1];
       if (this.data.inReference) {
-        const A = this.data.referenceType || "shortcut";
+        const P = this.data.referenceType || "shortcut";
         (k.type += "Reference"),
-          (k.referenceType = A),
+          (k.referenceType = P),
           delete k.url,
           delete k.title;
       } else delete k.identifier, delete k.label;
       this.data.referenceType = void 0;
     }
     function De(k) {
-      const A = this.sliceSerialize(k),
+      const P = this.sliceSerialize(k),
         B = this.stack[this.stack.length - 2];
-      (B.label = vm(A)), (B.identifier = Jt(A).toLowerCase());
+      (B.label = xm(P)), (B.identifier = Jt(P).toLowerCase());
     }
     function et() {
       const k = this.stack[this.stack.length - 1],
-        A = this.resume(),
+        P = this.resume(),
         B = this.stack[this.stack.length - 1];
       if (((this.data.inReference = !0), B.type === "link")) {
         const J = k.children;
         B.children = J;
-      } else B.alt = A;
+      } else B.alt = P;
     }
     function p() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.url = k;
+        P = this.stack[this.stack.length - 1];
+      P.url = k;
     }
     function Fe() {
       const k = this.resume(),
-        A = this.stack[this.stack.length - 1];
-      A.title = k;
+        P = this.stack[this.stack.length - 1];
+      P.title = k;
     }
     function tt() {
       this.data.inReference = void 0;
@@ -11965,9 +11965,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       this.data.referenceType = "collapsed";
     }
     function Me(k) {
-      const A = this.resume(),
+      const P = this.resume(),
         B = this.stack[this.stack.length - 1];
-      (B.label = A),
+      (B.label = P),
         (B.identifier = Jt(this.sliceSerialize(k)).toLowerCase()),
         (this.data.referenceType = "full");
     }
@@ -11975,29 +11975,29 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       this.data.characterReferenceType = k.type;
     }
     function ge(k) {
-      const A = this.sliceSerialize(k),
+      const P = this.sliceSerialize(k),
         B = this.data.characterReferenceType;
       let J;
       B
-        ? ((J = wu(A, B === "characterReferenceMarkerNumeric" ? 10 : 16)),
+        ? ((J = wu(P, B === "characterReferenceMarkerNumeric" ? 10 : 16)),
           (this.data.characterReferenceType = void 0))
-        : (J = Rs(A));
+        : (J = Rs(P));
       const Q = this.stack[this.stack.length - 1];
       Q.value += J;
     }
     function Xn(k) {
-      const A = this.stack.pop();
-      A.position.end = ht(k.end);
+      const P = this.stack.pop();
+      P.position.end = ht(k.end);
     }
     function _t(k) {
       j.call(this, k);
-      const A = this.stack[this.stack.length - 1];
-      A.url = this.sliceSerialize(k);
+      const P = this.stack[this.stack.length - 1];
+      P.url = this.sliceSerialize(k);
     }
     function un(k) {
       j.call(this, k);
-      const A = this.stack[this.stack.length - 1];
-      A.url = "mailto:" + this.sliceSerialize(k);
+      const P = this.stack[this.stack.length - 1];
+      P.url = "mailto:" + this.sliceSerialize(k);
     }
     function cn() {
       return { type: "blockquote", children: [] };
@@ -12005,10 +12005,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     function ti() {
       return { type: "code", lang: null, meta: null, value: "" };
     }
-    function nw() {
+    function iw() {
       return { type: "inlineCode", value: "" };
     }
-    function rw() {
+    function sw() {
       return {
         type: "definition",
         identifier: "",
@@ -12017,25 +12017,25 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         url: "",
       };
     }
-    function iw() {
+    function aw() {
       return { type: "emphasis", children: [] };
     }
-    function eh() {
+    function th() {
       return { type: "heading", depth: 0, children: [] };
     }
-    function th() {
+    function nh() {
       return { type: "break" };
     }
-    function nh() {
+    function rh() {
       return { type: "html", value: "" };
     }
-    function sw() {
+    function ow() {
       return { type: "image", title: null, url: "", alt: null };
     }
-    function rh() {
+    function ih() {
       return { type: "link", title: null, url: "", children: [] };
     }
-    function ih(k) {
+    function sh(k) {
       return {
         type: "list",
         ordered: k.type === "listOrdered",
@@ -12044,7 +12044,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         children: [],
       };
     }
-    function aw(k) {
+    function lw(k) {
       return {
         type: "listItem",
         spread: k._spread,
@@ -12052,16 +12052,16 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         children: [],
       };
     }
-    function ow() {
+    function uw() {
       return { type: "paragraph", children: [] };
     }
-    function lw() {
+    function cw() {
       return { type: "strong", children: [] };
     }
-    function uw() {
+    function hw() {
       return { type: "text", value: "" };
     }
-    function cw() {
+    function dw() {
       return { type: "thematicBreak" };
     }
   }
@@ -12072,10 +12072,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     let n = -1;
     for (; ++n < e.length; ) {
       const r = e[n];
-      Array.isArray(r) ? Fu(t, r) : Em(t, r);
+      Array.isArray(r) ? Fu(t, r) : Cm(t, r);
     }
   }
-  function Em(t, e) {
+  function Cm(t, e) {
     let n;
     for (n in e)
       if (Du.call(e, n))
@@ -12119,11 +12119,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             ") is still open"
         );
   }
-  function Cm(t) {
+  function Am(t) {
     const e = this;
     e.parser = n;
     function n(r) {
-      return km(r, {
+      return Sm(r, {
         ...e.data("settings"),
         ...t,
         extensions: e.data("micromarkExtensions") || [],
@@ -12131,7 +12131,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       });
     }
   }
-  function Am(t, e) {
+  function Pm(t, e) {
     const n = {
       type: "element",
       tagName: "blockquote",
@@ -12140,7 +12140,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, n), t.applyData(e, n);
   }
-  function Pm(t, e) {
+  function Tm(t, e) {
     const n = { type: "element", tagName: "br", properties: {}, children: [] };
     return (
       t.patch(e, n),
@@ -12154,7 +12154,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       ]
     );
   }
-  function Tm(t, e) {
+  function Im(t, e) {
     const n = e.value
         ? e.value +
           `
@@ -12177,7 +12177,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       i
     );
   }
-  function Im(t, e) {
+  function Rm(t, e) {
     const n = {
       type: "element",
       tagName: "del",
@@ -12186,7 +12186,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, n), t.applyData(e, n);
   }
-  function Rm(t, e) {
+  function Om(t, e) {
     const n = {
       type: "element",
       tagName: "em",
@@ -12195,7 +12195,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, n), t.applyData(e, n);
   }
-  function Om(t, e) {
+  function $m(t, e) {
     const n =
         typeof t.options.clobberPrefix == "string"
           ? t.options.clobberPrefix
@@ -12230,7 +12230,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, u), t.applyData(e, u);
   }
-  function $m(t, e) {
+  function Lm(t, e) {
     const n = {
       type: "element",
       tagName: "h" + e.depth,
@@ -12239,7 +12239,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, n), t.applyData(e, n);
   }
-  function Lm(t, e) {
+  function jm(t, e) {
     if (t.options.allowDangerousHtml) {
       const n = { type: "raw", value: e.value };
       return t.patch(e, n), t.applyData(e, n);
@@ -12268,7 +12268,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       i
     );
   }
-  function jm(t, e) {
+  function Nm(t, e) {
     const n = String(e.identifier).toUpperCase(),
       r = t.definitionById.get(n);
     if (!r) return Bu(t, e);
@@ -12277,14 +12277,14 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     const s = { type: "element", tagName: "img", properties: i, children: [] };
     return t.patch(e, s), t.applyData(e, s);
   }
-  function Nm(t, e) {
+  function Dm(t, e) {
     const n = { src: Kt(e.url) };
     e.alt !== null && e.alt !== void 0 && (n.alt = e.alt),
       e.title !== null && e.title !== void 0 && (n.title = e.title);
     const r = { type: "element", tagName: "img", properties: n, children: [] };
     return t.patch(e, r), t.applyData(e, r);
   }
-  function Dm(t, e) {
+  function Fm(t, e) {
     const n = { type: "text", value: e.value.replace(/\r?\n|\r/g, " ") };
     t.patch(e, n);
     const r = {
@@ -12295,7 +12295,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, r), t.applyData(e, r);
   }
-  function Fm(t, e) {
+  function Mm(t, e) {
     const n = String(e.identifier).toUpperCase(),
       r = t.definitionById.get(n);
     if (!r) return Bu(t, e);
@@ -12309,7 +12309,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, s), t.applyData(e, s);
   }
-  function Mm(t, e) {
+  function Bm(t, e) {
     const n = { href: Kt(e.url) };
     e.title !== null && e.title !== void 0 && (n.title = e.title);
     const r = {
@@ -12320,9 +12320,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, r), t.applyData(e, r);
   }
-  function Bm(t, e, n) {
+  function Um(t, e, n) {
     const r = t.all(e),
-      i = n ? Um(n) : Uu(e),
+      i = n ? zm(n) : Uu(e),
       s = {},
       a = [];
     if (typeof e.checked == "boolean") {
@@ -12371,7 +12371,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     const u = { type: "element", tagName: "li", properties: s, children: a };
     return t.patch(e, u), t.applyData(e, u);
   }
-  function Um(t) {
+  function zm(t) {
     let e = !1;
     if (t.type === "list") {
       e = t.spread || !1;
@@ -12385,7 +12385,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     const e = t.spread;
     return e ?? t.children.length > 1;
   }
-  function zm(t, e) {
+  function qm(t, e) {
     const n = {},
       r = t.all(e);
     let i = -1;
@@ -12414,7 +12414,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, s), t.applyData(e, s);
   }
-  function qm(t, e) {
+  function Hm(t, e) {
     const n = {
       type: "element",
       tagName: "p",
@@ -12423,11 +12423,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, n), t.applyData(e, n);
   }
-  function Hm(t, e) {
+  function Vm(t, e) {
     const n = { type: "root", children: t.wrap(t.all(e)) };
     return t.patch(e, n), t.applyData(e, n);
   }
-  function Vm(t, e) {
+  function Wm(t, e) {
     const n = {
       type: "element",
       tagName: "strong",
@@ -12436,7 +12436,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, n), t.applyData(e, n);
   }
-  function Wm(t, e) {
+  function Jm(t, e) {
     const n = t.all(e),
       r = n.shift(),
       i = [];
@@ -12468,7 +12468,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, s), t.applyData(e, s);
   }
-  function Jm(t, e, n) {
+  function Km(t, e, n) {
     const r = n ? n.children : void 0,
       s = (r ? r.indexOf(e) : 1) === 0 ? "th" : "td",
       a = n && n.type === "table" ? n.align : void 0,
@@ -12492,7 +12492,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     };
     return t.patch(e, c), t.applyData(e, c);
   }
-  function Km(t, e) {
+  function Gm(t, e) {
     const n = {
       type: "element",
       tagName: "td",
@@ -12503,7 +12503,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   }
   const zu = 9,
     qu = 32;
-  function Gm(t) {
+  function Xm(t) {
     const e = String(t),
       n = /\r?\n|\r/g;
     let r = n.exec(e),
@@ -12528,38 +12528,38 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return i > r ? t.slice(r, i) : "";
   }
-  function Xm(t, e) {
-    const n = { type: "text", value: Gm(String(e.value)) };
+  function Qm(t, e) {
+    const n = { type: "text", value: Xm(String(e.value)) };
     return t.patch(e, n), t.applyData(e, n);
   }
-  function Qm(t, e) {
+  function Ym(t, e) {
     const n = { type: "element", tagName: "hr", properties: {}, children: [] };
     return t.patch(e, n), t.applyData(e, n);
   }
-  const Ym = {
-    blockquote: Am,
-    break: Pm,
-    code: Tm,
-    delete: Im,
-    emphasis: Rm,
-    footnoteReference: Om,
-    heading: $m,
-    html: Lm,
-    imageReference: jm,
-    image: Nm,
-    inlineCode: Dm,
-    linkReference: Fm,
-    link: Mm,
-    listItem: Bm,
-    list: zm,
-    paragraph: qm,
-    root: Hm,
-    strong: Vm,
-    table: Wm,
-    tableCell: Km,
-    tableRow: Jm,
-    text: Xm,
-    thematicBreak: Qm,
+  const Zm = {
+    blockquote: Pm,
+    break: Tm,
+    code: Im,
+    delete: Rm,
+    emphasis: Om,
+    footnoteReference: $m,
+    heading: Lm,
+    html: jm,
+    imageReference: Nm,
+    image: Dm,
+    inlineCode: Fm,
+    linkReference: Mm,
+    link: Bm,
+    listItem: Um,
+    list: qm,
+    paragraph: Hm,
+    root: Vm,
+    strong: Wm,
+    table: Jm,
+    tableCell: Gm,
+    tableRow: Km,
+    text: Qm,
+    thematicBreak: Ym,
     toml: Ur,
     yaml: Ur,
     definition: Ur,
@@ -12577,7 +12577,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     Wu = 7,
     Ju = 8,
     Ku = typeof self == "object" ? self : globalThis,
-    Zm = (t, e) => {
+    eg = (t, e) => {
       const n = (i, s) => (t.set(s, i), i),
         r = (i) => {
           if (t.has(i)) return t.get(i);
@@ -12631,14 +12631,14 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         };
       return r;
     },
-    Gu = (t) => Zm(new Map(), t)(0),
+    Gu = (t) => eg(new Map(), t)(0),
     Gt = "",
-    { toString: eg } = {},
-    { keys: tg } = Object,
+    { toString: tg } = {},
+    { keys: ng } = Object,
     Bn = (t) => {
       const e = typeof t;
       if (e !== "object" || !t) return [zr, e];
-      const n = eg.call(t).slice(8, -1);
+      const n = tg.call(t).slice(8, -1);
       switch (n) {
         case "Array":
           return [Mn, Gt];
@@ -12662,7 +12662,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         : [qr, n];
     },
     Hr = ([t, e]) => t === zr && (e === "function" || e === "symbol"),
-    ng = (t, e, n, r) => {
+    rg = (t, e, n, r) => {
       const i = (a, o) => {
           const l = r.push(a) - 1;
           return n.set(o, l), l;
@@ -12715,7 +12715,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
               if (e && "toJSON" in a) return s(a.toJSON());
               const c = [],
                 h = i([o, c], a);
-              for (const f of tg(a))
+              for (const f of ng(a))
                 (t || !Hr(Bn(a[f]))) && c.push([s(f), s(a[f])]);
               return h;
             }
@@ -12746,7 +12746,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     },
     Xu = (t, { json: e, lossy: n } = {}) => {
       const r = [];
-      return ng(!(e || n), !!e, new Map(), r)(t), r;
+      return rg(!(e || n), !!e, new Map(), r)(t), r;
     },
     Vr =
       typeof structuredClone == "function"
@@ -12755,7 +12755,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
               ? Gu(Xu(t, e))
               : structuredClone(t)
         : (t, e) => Gu(Xu(t, e));
-  function rg(t, e) {
+  function ig(t, e) {
     const n = [{ type: "text", value: "↩" }];
     return (
       e > 1 &&
@@ -12768,16 +12768,16 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       n
     );
   }
-  function ig(t, e) {
+  function sg(t, e) {
     return "Back to reference " + (t + 1) + (e > 1 ? "-" + e : "");
   }
-  function sg(t) {
+  function ag(t) {
     const e =
         typeof t.options.clobberPrefix == "string"
           ? t.options.clobberPrefix
           : "user-content-",
-      n = t.options.footnoteBackContent || rg,
-      r = t.options.footnoteBackLabel || ig,
+      n = t.options.footnoteBackContent || ig,
+      r = t.options.footnoteBackLabel || sg,
       i = t.options.footnoteLabel || "Footnotes",
       s = t.options.footnoteLabelTagName || "h2",
       a = t.options.footnoteLabelProperties || { className: ["sr-only"] },
@@ -12794,8 +12794,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         _ = t.footnoteCounts.get(h);
       for (; _ !== void 0 && ++d <= _; ) {
         g.length > 0 && g.push({ type: "text", value: " " });
-        let w = typeof n == "string" ? n : n(l, d);
-        typeof w == "string" && (w = { type: "text", value: w }),
+        let b = typeof n == "string" ? n : n(l, d);
+        typeof b == "string" && (b = { type: "text", value: b }),
           g.push({
             type: "element",
             tagName: "a",
@@ -12805,24 +12805,24 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
               ariaLabel: typeof r == "string" ? r : r(l, d),
               className: ["data-footnote-backref"],
             },
-            children: Array.isArray(w) ? w : [w],
+            children: Array.isArray(b) ? b : [b],
           });
       }
       const y = c[c.length - 1];
       if (y && y.type === "element" && y.tagName === "p") {
-        const w = y.children[y.children.length - 1];
-        w && w.type === "text"
-          ? (w.value += " ")
+        const b = y.children[y.children.length - 1];
+        b && b.type === "text"
+          ? (b.value += " ")
           : y.children.push({ type: "text", value: " " }),
           y.children.push(...g);
       } else c.push(...g);
-      const b = {
+      const w = {
         type: "element",
         tagName: "li",
         properties: { id: e + "fn-" + f },
         children: t.wrap(c, !0),
       };
-      t.patch(u, b), o.push(b);
+      t.patch(u, w), o.push(w);
     }
     if (o.length !== 0)
       return {
@@ -12856,13 +12856,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       };
   }
   const Qu = function (t) {
-    if (t == null) return ug;
+    if (t == null) return cg;
     if (typeof t == "function") return Wr(t);
-    if (typeof t == "object") return Array.isArray(t) ? ag(t) : og(t);
-    if (typeof t == "string") return lg(t);
+    if (typeof t == "object") return Array.isArray(t) ? og(t) : lg(t);
+    if (typeof t == "string") return ug(t);
     throw new Error("Expected function, string, or object as test");
   };
-  function ag(t) {
+  function og(t) {
     const e = [];
     let n = -1;
     for (; ++n < t.length; ) e[n] = Qu(t[n]);
@@ -12873,7 +12873,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return !1;
     }
   }
-  function og(t) {
+  function lg(t) {
     const e = t;
     return Wr(n);
     function n(r) {
@@ -12883,7 +12883,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return !0;
     }
   }
-  function lg(t) {
+  function ug(t) {
     return Wr(e);
     function e(n) {
       return n && n.type === t;
@@ -12893,24 +12893,24 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     return e;
     function e(n, r, i) {
       return !!(
-        cg(n) && t.call(this, n, typeof r == "number" ? r : void 0, i || void 0)
+        hg(n) && t.call(this, n, typeof r == "number" ? r : void 0, i || void 0)
       );
     }
   }
-  function ug() {
+  function cg() {
     return !0;
   }
-  function cg(t) {
+  function hg(t) {
     return t !== null && typeof t == "object" && "type" in t;
   }
-  function kw(t) {
+  function Ew(t) {
     return t;
   }
   const Yu = [],
-    hg = !0,
+    dg = !0,
     Zu = !1,
-    dg = "skip";
-  function fg(t, e, n, r) {
+    fg = "skip";
+  function pg(t, e, n, r) {
     let i;
     typeof e == "function" && typeof n != "function"
       ? ((r = n), (n = e))
@@ -12939,19 +12939,19 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           y;
         if (
           (!e || s(l, u, c[c.length - 1] || void 0)) &&
-          ((d = pg(n(l, c))), d[0] === Zu)
+          ((d = mg(n(l, c))), d[0] === Zu)
         )
           return d;
         if ("children" in l && l.children) {
-          const b = l;
-          if (b.children && d[0] !== dg)
+          const w = l;
+          if (w.children && d[0] !== fg)
             for (
-              _ = (r ? b.children.length : -1) + a, y = c.concat(b);
-              _ > -1 && _ < b.children.length;
+              _ = (r ? w.children.length : -1) + a, y = c.concat(w);
+              _ > -1 && _ < w.children.length;
 
             ) {
-              const w = b.children[_];
-              if (((g = o(w, _, y)()), g[0] === Zu)) return g;
+              const b = w.children[_];
+              if (((g = o(b, _, y)()), g[0] === Zu)) return g;
               _ = typeof g[1] == "number" ? g[1] : _ + a;
             }
         }
@@ -12959,11 +12959,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       }
     }
   }
-  function pg(t) {
+  function mg(t) {
     return Array.isArray(t)
       ? t
       : typeof t == "number"
-      ? [hg, t]
+      ? [dg, t]
       : t == null
       ? Yu
       : [t];
@@ -12973,7 +12973,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     typeof e == "function"
       ? ((s = void 0), (a = e), (i = n))
       : ((s = e), (a = n), (i = r)),
-      fg(t, s, o, i);
+      pg(t, s, o, i);
     function o(l, u) {
       const c = u[u.length - 1],
         h = c ? c.children.indexOf(l) : void 0;
@@ -12981,16 +12981,16 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
   }
   const qs = {}.hasOwnProperty,
-    mg = {};
-  function gg(t, e) {
-    const n = e || mg,
+    gg = {};
+  function _g(t, e) {
+    const n = e || gg,
       r = new Map(),
       i = new Map(),
       s = new Map(),
-      a = { ...Ym, ...n.handlers },
+      a = { ...Zm, ...n.handlers },
       o = {
         all: u,
-        applyData: yg,
+        applyData: wg,
         definitionById: r,
         footnoteById: i,
         footnoteCounts: s,
@@ -12998,8 +12998,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         handlers: a,
         one: l,
         options: n,
-        patch: _g,
-        wrap: bg,
+        patch: yg,
+        wrap: vg,
       };
     return (
       ec(t, function (c) {
@@ -13018,12 +13018,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       if (o.options.passThrough && o.options.passThrough.includes(f)) {
         if ("children" in c) {
           const { children: _, ...y } = c,
-            b = Vr(y);
-          return (b.children = o.all(c)), b;
+            w = Vr(y);
+          return (w.children = o.all(c)), w;
         }
         return Vr(c);
       }
-      return (o.options.unknownHandler || wg)(o, c, h);
+      return (o.options.unknownHandler || bg)(o, c, h);
     }
     function u(c) {
       const h = [];
@@ -13051,10 +13051,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return h;
     }
   }
-  function _g(t, e) {
-    t.position && (e.position = Vd(t));
-  }
   function yg(t, e) {
+    t.position && (e.position = Wd(t));
+  }
+  function wg(t, e) {
     let n = e;
     if (t && t.data) {
       const r = t.data.hName,
@@ -13075,7 +13075,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     }
     return n;
   }
-  function wg(t, e) {
+  function bg(t, e) {
     const n = e.data || {},
       r =
         "value" in e && !(qs.call(n, "hProperties") || qs.call(n, "hChildren"))
@@ -13088,7 +13088,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             };
     return t.patch(e, r), t.applyData(e, r);
   }
-  function bg(t, e) {
+  function vg(t, e) {
     const n = [];
     let r = -1;
     for (
@@ -13126,9 +13126,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     return t.slice(e);
   }
   function nc(t, e) {
-    const n = gg(t, e),
+    const n = _g(t, e),
       r = n.one(t, void 0),
-      i = sg(n),
+      i = ag(n),
       s = Array.isArray(r)
         ? { type: "root", children: r }
         : r || { type: "root", children: [] };
@@ -13145,7 +13145,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       s
     );
   }
-  function vg(t, e) {
+  function xg(t, e) {
     return t && "run" in t
       ? async function (n, r) {
           const i = nc(n, { file: r, ...e });
@@ -13159,7 +13159,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     if (t) throw t;
   }
   var Hs, ic;
-  function xg() {
+  function kg() {
     if (ic) return Hs;
     ic = 1;
     var t = Object.prototype.hasOwnProperty,
@@ -13210,13 +13210,13 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           g,
           _ = arguments[0],
           y = 1,
-          b = arguments.length,
-          w = !1;
+          w = arguments.length,
+          b = !1;
         for (
-          typeof _ == "boolean" && ((w = _), (_ = arguments[1] || {}), (y = 2)),
+          typeof _ == "boolean" && ((b = _), (_ = arguments[1] || {}), (y = 2)),
             (_ == null || (typeof _ != "object" && typeof _ != "function")) &&
               (_ = {});
-          y < b;
+          y < w;
           ++y
         )
           if (((u = arguments[y]), u != null))
@@ -13224,19 +13224,19 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
               (h = o(_, c)),
                 (f = o(u, c)),
                 _ !== f &&
-                  (w && f && (s(f) || (d = i(f)))
+                  (b && f && (s(f) || (d = i(f)))
                     ? (d
                         ? ((d = !1), (g = h && i(h) ? h : []))
                         : (g = h && s(h) ? h : {}),
-                      a(_, { name: c, newValue: l(w, g, f) }))
+                      a(_, { name: c, newValue: l(b, g, f) }))
                     : typeof f < "u" && a(_, { name: c, newValue: f }));
         return _;
       }),
       Hs
     );
   }
-  var kg = xg();
-  const Vs = jr(kg);
+  var Sg = kg();
+  const Vs = jr(Sg);
   function Ws(t) {
     if (typeof t != "object" || t === null) return !1;
     const e = Object.getPrototypeOf(t);
@@ -13248,7 +13248,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       !(Symbol.iterator in t)
     );
   }
-  function Sg() {
+  function Eg() {
     const t = [],
       e = { run: n, use: r };
     return e;
@@ -13267,7 +13267,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         }
         for (; ++h < i.length; )
           (u[h] === null || u[h] === void 0) && (u[h] = i[h]);
-        (i = u), c ? Eg(c, o)(...u) : a(null, ...u);
+        (i = u), c ? Cg(c, o)(...u) : a(null, ...u);
       }
     }
     function r(i) {
@@ -13276,7 +13276,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return t.push(i), e;
     }
   }
-  function Eg(t, e) {
+  function Cg(t, e) {
     let n;
     return r;
     function r(...a) {
@@ -13304,8 +13304,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       i(null, a);
     }
   }
-  const Je = { basename: Cg, dirname: Ag, extname: Pg, join: Tg, sep: "/" };
-  function Cg(t, e) {
+  const Je = { basename: Ag, dirname: Pg, extname: Tg, join: Ig, sep: "/" };
+  function Ag(t, e) {
     if (e !== void 0 && typeof e != "string")
       throw new TypeError('"ext" argument must be a string');
     Un(t);
@@ -13340,7 +13340,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
               : ((o = -1), (r = a)));
     return n === r ? (r = a) : r < 0 && (r = t.length), t.slice(n, r);
   }
-  function Ag(t) {
+  function Pg(t) {
     if ((Un(t), t.length === 0)) return ".";
     let e = -1,
       n = t.length,
@@ -13360,7 +13360,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       ? "//"
       : t.slice(0, e);
   }
-  function Pg(t) {
+  function Tg(t) {
     Un(t);
     let e = t.length,
       n = -1,
@@ -13384,24 +13384,24 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       ? ""
       : t.slice(i, n);
   }
-  function Tg(...t) {
+  function Ig(...t) {
     let e = -1,
       n;
     for (; ++e < t.length; )
       Un(t[e]), t[e] && (n = n === void 0 ? t[e] : n + "/" + t[e]);
-    return n === void 0 ? "." : Ig(n);
+    return n === void 0 ? "." : Rg(n);
   }
-  function Ig(t) {
+  function Rg(t) {
     Un(t);
     const e = t.codePointAt(0) === 47;
-    let n = Rg(t, !e);
+    let n = Og(t, !e);
     return (
       n.length === 0 && !e && (n = "."),
       n.length > 0 && t.codePointAt(t.length - 1) === 47 && (n += "/"),
       e ? "/" + n : n
     );
   }
-  function Rg(t, e) {
+  function Og(t, e) {
     let n = "",
       r = 0,
       i = -1,
@@ -13456,8 +13456,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         "Path must be a string. Received " + JSON.stringify(t)
       );
   }
-  const Og = { cwd: $g };
-  function $g() {
+  const $g = { cwd: Lg };
+  function Lg() {
     return "/";
   }
   function Js(t) {
@@ -13471,7 +13471,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       t.auth === void 0
     );
   }
-  function Lg(t) {
+  function jg(t) {
     if (typeof t == "string") t = new URL(t);
     else if (!Js(t)) {
       const e = new TypeError(
@@ -13485,9 +13485,9 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       const e = new TypeError("The URL must be of scheme file");
       throw ((e.code = "ERR_INVALID_URL_SCHEME"), e);
     }
-    return jg(t);
+    return Ng(t);
   }
-  function jg(t) {
+  function Ng(t) {
     if (t.hostname !== "") {
       const r = new TypeError(
         'File URL host must be "localhost" or empty on darwin'
@@ -13515,11 +13515,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       e
         ? Js(e)
           ? (n = { path: e })
-          : typeof e == "string" || Ng(e)
+          : typeof e == "string" || Dg(e)
           ? (n = { value: e })
           : (n = e)
         : (n = {}),
-        (this.cwd = "cwd" in n ? "" : Og.cwd()),
+        (this.cwd = "cwd" in n ? "" : $g.cwd()),
         (this.data = {}),
         (this.history = []),
         (this.messages = []),
@@ -13569,7 +13569,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return this.history[this.history.length - 1];
     }
     set path(e) {
-      Js(e) && (e = Lg(e)),
+      Js(e) && (e = jg(e)),
         Xs(e, "path"),
         this.path !== e && this.history.push(e);
     }
@@ -13622,7 +13622,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
     if (!t)
       throw new Error("Setting `" + e + "` requires `path` to be set too");
   }
-  function Ng(t) {
+  function Dg(t) {
     return !!(
       t &&
       typeof t == "object" &&
@@ -13630,7 +13630,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       "byteOffset" in t
     );
   }
-  const Dg = function (t) {
+  const Fg = function (t) {
       const r = this.constructor.prototype,
         i = r[t],
         s = function () {
@@ -13638,8 +13638,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         };
       return Object.setPrototypeOf(s, r), s;
     },
-    Fg = {}.hasOwnProperty;
-  class Qs extends Dg {
+    Mg = {}.hasOwnProperty;
+  class Qs extends Fg {
     constructor() {
       super("copy"),
         (this.Compiler = void 0),
@@ -13650,7 +13650,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         (this.frozen = void 0),
         (this.namespace = {}),
         (this.parser = void 0),
-        (this.transformers = Sg());
+        (this.transformers = Eg());
     }
     copy() {
       const e = new Qs();
@@ -13665,7 +13665,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       return typeof e == "string"
         ? arguments.length === 2
           ? (ea("data", this.frozen), (this.namespace[e] = n), this)
-          : (Fg.call(this.namespace, e) && this.namespace[e]) || void 0
+          : (Mg.call(this.namespace, e) && this.namespace[e]) || void 0
         : e
         ? (ea("data", this.frozen), (this.namespace = e), this)
         : this.namespace;
@@ -13705,7 +13705,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           if (c || !h || !f) return u(c);
           const d = h,
             g = r.stringify(d, f);
-          Ug(g) ? (f.value = g) : (f.result = g), u(c, f);
+          zg(g) ? (f.value = g) : (f.result = g), u(c, f);
         });
         function u(c, h) {
           c || !h ? a(c) : s ? s(h) : n(void 0, h);
@@ -13810,7 +13810,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       }
     }
   }
-  const Mg = new Qs().freeze();
+  const Bg = new Qs().freeze();
   function Ys(t, e) {
     if (typeof e != "function")
       throw new TypeError("Cannot `" + t + "` without `parser`");
@@ -13836,15 +13836,15 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       throw new Error("`" + t + "` finished async. Use `" + e + "` instead");
   }
   function Jr(t) {
-    return Bg(t) ? t : new sc(t);
-  }
-  function Bg(t) {
-    return !!(t && typeof t == "object" && "message" in t && "messages" in t);
+    return Ug(t) ? t : new sc(t);
   }
   function Ug(t) {
-    return typeof t == "string" || zg(t);
+    return !!(t && typeof t == "object" && "message" in t && "messages" in t);
   }
   function zg(t) {
+    return typeof t == "string" || qg(t);
+  }
+  function qg(t) {
     return !!(
       t &&
       typeof t == "object" &&
@@ -13852,12 +13852,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       "byteOffset" in t
     );
   }
-  const qg =
+  const Hg =
       "https://github.com/remarkjs/react-markdown/blob/main/changelog.md",
     uc = [],
     cc = { allowDangerousHtml: !0 },
-    Hg = /^(https?|ircs?|mailto|xmpp)$/i,
-    Vg = [
+    Vg = /^(https?|ircs?|mailto|xmpp)$/i,
+    Wg = [
       { from: "astPlugins", id: "remove-buggy-html-in-markdown-parser" },
       {
         from: "allowDangerousHtml",
@@ -13906,41 +13906,41 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       },
       { from: "transformLinkUri", id: "#add-urltransform", to: "urlTransform" },
     ];
-  function Wg(t) {
-    const e = Jg(t),
-      n = Kg(t);
-    return Gg(e.runSync(e.parse(n), n), t);
-  }
   function Jg(t) {
+    const e = Kg(t),
+      n = Gg(t);
+    return Xg(e.runSync(e.parse(n), n), t);
+  }
+  function Kg(t) {
     const e = t.rehypePlugins || uc,
       n = t.remarkPlugins || uc,
       r = t.remarkRehypeOptions ? { ...t.remarkRehypeOptions, ...cc } : cc;
-    return Mg().use(Cm).use(n).use(vg, r).use(e);
+    return Bg().use(Am).use(n).use(xg, r).use(e);
   }
-  function Kg(t) {
+  function Gg(t) {
     const e = t.children || "",
       n = new sc();
     return typeof e == "string" && (n.value = e), n;
   }
-  function Gg(t, e) {
+  function Xg(t, e) {
     const n = e.allowedElements,
       r = e.allowElement,
       i = e.components,
       s = e.disallowedElements,
       a = e.skipHtml,
       o = e.unwrapDisallowed,
-      l = e.urlTransform || Xg;
-    for (const c of Vg)
+      l = e.urlTransform || Qg;
+    for (const c of Wg)
       Object.hasOwn(e, c.from) &&
         ("" +
           c.from +
           (c.to ? "use `" + c.to + "` instead" : "remove it") +
-          qg +
+          Hg +
           c.id,
         void 0);
     return (
       ec(t, u),
-      Xd(t, {
+      Qd(t, {
         Fragment: wt,
         components: i,
         ignoreInvalidStyle: !0,
@@ -13983,7 +13983,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       }
     }
   }
-  function Xg(t) {
+  function Qg(t) {
     const e = t.indexOf(":"),
       n = t.indexOf("?"),
       r = t.indexOf("#"),
@@ -13992,192 +13992,30 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       (i !== -1 && e > i) ||
       (n !== -1 && e > n) ||
       (r !== -1 && e > r) ||
-      Hg.test(t.slice(0, e))
+      Vg.test(t.slice(0, e))
       ? t
       : "";
   }
-  function Qg({ site: t, productURL: e, openKey: n }) {
-    const [r, i] = Nn([]),
-      [s, a] = Nn(""),
-      [o, l] = Nn([]),
-      [u, c] = Nn(!1),
-      [h, f] = Nn(!1),
-      d = pf(null),
-      g = wd(n),
-      _ = () => {
-        d.current && (d.current.scrollTop = d.current.scrollHeight);
-      };
-    Zl(() => {
-      _();
-    }, [r]),
-      Zl(() => {
-        u || (y(), c(!0));
-      }, []);
-    const y = async () => {
-        const w = bd(t, e);
-        f(!0);
-        const x = await fs(g, o, w);
-        if ((f(!1), x)) {
-          const S = { role: "assistant", content: x };
-          i((P) => [...P, S]),
-            l((P) => [...P, { role: "user", content: w }, S]);
-        }
-      },
-      b = async () => {
-        if (!s.trim()) return;
-        f(!0);
-        const w = { role: "user", content: s };
-        i((S) => [...S, w]), a("");
-        const x = await fs(g, [...o, w], s);
-        if ((f(!1), x)) {
-          const S = { role: "assistant", content: x };
-          i((P) => [...P, S]), l((P) => [...P, w, S]);
-        }
-      };
-    return G("div", {
-      className: "relative w-full  bg-white ",
-      children: [
-        G("div", {
-          style: { scrollbarWidth: "thin" },
-          className:
-            "h-300 p-3 overflow-y-auto  border-b border-gray-200 chat-bubble",
-          ref: d,
-          children: [
-            r.map((w, x) =>
-              G(
-                "div",
-                {
-                  className: `flex ${
-                    w.role === "user" ? "justify-end" : "justify-start"
-                  }`,
-                  children: G("div", {
-                    className: `p-2 rounded-md ${
-                      w.role === "user" ? "bg-dark text-white" : "bg-gray-100"
-                    }`,
-                    style: {
-                      maxWidth: "80%",
-                      wordWrap: "break-word",
-                      whiteSpace: "pre-wrap",
-                    },
-                    children: G(Wg, {
-                      components: {
-                        a: ({ ...S }) =>
-                          G("a", {
-                            ...S,
-                            target: "_blank",
-                            rel: "noopener noreferrer",
-                            children: S.children,
-                          }),
-                      },
-                      children: w.content,
-                    }),
-                  }),
-                },
-                x
-              )
-            ),
-            h &&
-              G("div", {
-                className:
-                  "p-2 rounded-md w-fit bg-gray-100 text-left flex items-center space-x-2",
-                children: [
-                  G("div", { className: "dot-pulse" }),
-                  G("div", { className: "dot-pulse" }),
-                  G("div", { className: "dot-pulse" }),
-                ],
-              }),
-          ],
-        }),
-        G("div", {
-          className: "p-3 flex gap-3 items-center  chat-footer",
-          children: [
-            G("input", {
-              onKeyDown: (w) => {
-                w.key === "Enter" && b();
-              },
-              type: "text",
-              value: s,
-              onChange: (w) => a(w.target.value),
-              placeholder: "Ask me anything about this product...",
-              className: "flex-1 input-chat ",
-            }),
-            G("svg", {
-              style: { cursor: "pointer" },
-              xmlns: "http://www.w3.org/2000/svg",
-              fill: "#000000",
-              viewBox: "0 0 24 24",
-              className: "w-6 h-6",
-              onClick: b,
-              children: [
-                G("g", {
-                  children: G("path", {
-                    d: "M2,3v7.8L18,12L2,13.2V21l20-9L2,3z",
-                  }),
-                }),
-                G("rect", { width: "24", height: "24", fill: "none" }),
-              ],
-            }),
-          ],
-        }),
-      ],
-    });
-  }
-  function Yg({ agentInfo: t }) {
-    return G("div", {
-      className: "border border-gray-200",
-      children: [
-        G("div", {
-          className: "flex gap-2 border-b border-gray-200  chat-header",
-          children: [
-            G("div", {
-              children: G("img", {
-                className: "rounded-full",
-                width: 40,
-                src: t.image,
-                alt: t.name,
-              }),
-            }),
-            G("div", {
-              children: [
-                G("h3", {
-                  style: { margin: 0 },
-                  className: "font-bold",
-                  children: t.name,
-                }),
-                G("p", {
-                  style: { marginBottom: 0, marginTop: "5px" },
-                  className: "text-sm text-gray-500",
-                  children: t.description,
-                }),
-              ],
-            }),
-          ],
-        }),
-        G("div", {
-          className: " my-1",
-          children: G(Qg, {
-            site: window.location.origin,
-            productURL: window.location.href,
-            openKey: t.openApiKey,
-          }),
-        }),
-      ],
-    });
-  }
-  const Zg = (t) => {
-    let e;
-    return (
-      t
-        ? (e = t)
-        : typeof fetch > "u"
-        ? (e = (...n) =>
-            Promise.resolve()
-              .then(() => nn)
-              .then(({ default: r }) => r(...n)))
-        : (e = fetch),
-      (...n) => e(...n)
-    );
-  };
+  const Yg = (t, e, n = 30) => {
+      const r = new Date();
+      r.setTime(r.getTime() + n * 24 * 60 * 60 * 1e3);
+      const i = `expires=${r.toUTCString()}`;
+      document.cookie = `${t}=${e};${i};path=/`;
+    },
+    Zg = (t) => {
+      let e;
+      return (
+        t
+          ? (e = t)
+          : typeof fetch > "u"
+          ? (e = (...n) =>
+              Promise.resolve()
+                .then(() => nn)
+                .then(({ default: r }) => r(...n)))
+          : (e = fetch),
+        (...n) => e(...n)
+      );
+    };
   class ta extends Error {
     constructor(e, n = "FunctionsError", r) {
       super(e), (this.name = n), (this.context = r);
@@ -14358,7 +14196,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         { value: "Module" }
       )
     ),
-    u_ = Fd(nn);
+    u_ = Md(nn);
   var Kr = {},
     fc;
   function pc() {
@@ -14434,18 +14272,18 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             g = null,
             _ = null,
             y = u.status,
-            b = u.statusText;
+            w = u.statusText;
           if (u.ok) {
             if (this.method !== "HEAD") {
-              const P = await u.text();
-              P === "" ||
+              const A = await u.text();
+              A === "" ||
                 (this.headers.Accept === "text/csv" ||
                 (this.headers.Accept &&
                   this.headers.Accept.includes(
                     "application/vnd.pgrst.plan+text"
                   ))
-                  ? (g = P)
-                  : (g = JSON.parse(P)));
+                  ? (g = A)
+                  : (g = JSON.parse(A)));
             }
             const x =
                 (c = this.headers.Prefer) === null || c === void 0
@@ -14470,7 +14308,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
                     (g = null),
                     (_ = null),
                     (y = 406),
-                    (b = "Not Acceptable"))
+                    (w = "Not Acceptable"))
                   : g.length === 1
                   ? (g = g[0])
                   : (g = null));
@@ -14480,10 +14318,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
               (d = JSON.parse(x)),
                 Array.isArray(d) &&
                   u.status === 404 &&
-                  ((g = []), (d = null), (y = 200), (b = "OK"));
+                  ((g = []), (d = null), (y = 200), (w = "OK"));
             } catch {
               u.status === 404 && x === ""
-                ? ((y = 204), (b = "No Content"))
+                ? ((y = 204), (w = "No Content"))
                 : (d = { message: x });
             }
             if (
@@ -14493,12 +14331,12 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
                   (f = d == null ? void 0 : d.details) === null || f === void 0
                 ) &&
                 f.includes("0 rows") &&
-                ((d = null), (y = 200), (b = "OK")),
+                ((d = null), (y = 200), (w = "OK")),
               d && this.shouldThrowOnError)
             )
               throw new n.default(d);
           }
-          return { error: d, data: g, count: _, status: y, statusText: b };
+          return { error: d, data: g, count: _, status: y, statusText: w };
         });
         return (
           this.shouldThrowOnError ||
@@ -15084,11 +14922,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
   const m_ = jr(p_),
     {
       PostgrestClient: g_,
-      PostgrestQueryBuilder: Sw,
-      PostgrestFilterBuilder: Ew,
-      PostgrestTransformBuilder: Cw,
-      PostgrestBuilder: Aw,
-      PostgrestError: Pw,
+      PostgrestQueryBuilder: Cw,
+      PostgrestFilterBuilder: Aw,
+      PostgrestTransformBuilder: Pw,
+      PostgrestBuilder: Tw,
+      PostgrestError: Iw,
     } = m_,
     __ = { "X-Client-Info": "realtime-js/2.11.2" },
     y_ = "1.0.0",
@@ -15664,17 +15502,17 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
                 for (let _ = 0; _ < d; _++) {
                   const y = f[_],
                     {
-                      filter: { event: b, schema: w, table: x, filter: S },
+                      filter: { event: w, schema: b, table: x, filter: S },
                     } = y,
-                    P = c && c[_];
+                    A = c && c[_];
                   if (
-                    P &&
-                    P.event === b &&
-                    P.schema === w &&
-                    P.table === x &&
-                    P.filter === S
+                    A &&
+                    A.event === w &&
+                    A.schema === b &&
+                    A.table === x &&
+                    A.filter === S
                   )
-                    g.push(Object.assign(Object.assign({}, y), { id: P.id }));
+                    g.push(Object.assign(Object.assign({}, y), { id: A.id }));
                   else {
                     this.unsubscribe(),
                       e == null ||
@@ -15868,11 +15706,11 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           s === void 0 ||
           s
             .filter((d) => {
-              var g, _, y, b, w, x;
+              var g, _, y, w, b, x;
               if (["broadcast", "presence", "postgres_changes"].includes(a))
                 if ("id" in d) {
                   const S = d.id,
-                    P =
+                    A =
                       (g = d.filter) === null || g === void 0
                         ? void 0
                         : g.event;
@@ -15881,21 +15719,21 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
                     ((_ = n.ids) === null || _ === void 0
                       ? void 0
                       : _.includes(S)) &&
-                    (P === "*" ||
-                      (P == null ? void 0 : P.toLocaleLowerCase()) ===
+                    (A === "*" ||
+                      (A == null ? void 0 : A.toLocaleLowerCase()) ===
                         ((y = n.data) === null || y === void 0
                           ? void 0
                           : y.type.toLocaleLowerCase()))
                   );
                 } else {
                   const S =
-                    (w =
-                      (b = d == null ? void 0 : d.filter) === null ||
-                      b === void 0
+                    (b =
+                      (w = d == null ? void 0 : d.filter) === null ||
+                      w === void 0
                         ? void 0
-                        : b.event) === null || w === void 0
+                        : w.event) === null || b === void 0
                       ? void 0
-                      : w.toLocaleLowerCase();
+                      : b.toLocaleLowerCase();
                   return (
                     S === "*" ||
                     S ===
@@ -15913,8 +15751,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
                   {
                     schema: _,
                     table: y,
-                    commit_timestamp: b,
-                    type: w,
+                    commit_timestamp: w,
+                    type: b,
                     errors: x,
                   } = g;
                 f = Object.assign(
@@ -15923,8 +15761,8 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
                     {
                       schema: _,
                       table: y,
-                      commit_timestamp: b,
-                      eventType: w,
+                      commit_timestamp: w,
+                      eventType: b,
                       new: {},
                       old: {},
                       errors: x,
@@ -16121,7 +15959,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           },
         })),
           Promise.resolve()
-            .then(() => tw)
+            .then(() => rw)
             .then(({ default: e }) => {
               (this.conn = new e(this.endpointURL(), void 0, {
                 headers: this.headers,
@@ -19226,7 +19064,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             !e.code)
           )
             throw new Bc("No code detected.");
-          const { data: w, error: x } = await this._exchangeCodeForSession(
+          const { data: b, error: x } = await this._exchangeCodeForSession(
             e.code
           );
           if (x) throw x;
@@ -19234,7 +19072,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           return (
             S.searchParams.delete("code"),
             window.history.replaceState(window.history.state, "", S.toString()),
-            { data: { session: w.session, redirectType: null }, error: null }
+            { data: { session: b.session, redirectType: null }, error: null }
           );
         }
         const {
@@ -19273,7 +19111,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
             );
         const { data: _, error: y } = await this._getUser(s);
         if (y) throw y;
-        const b = {
+        const w = {
           provider_token: r,
           provider_refresh_token: i,
           access_token: s,
@@ -19286,7 +19124,7 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
         return (
           (window.location.hash = ""),
           this._debug("#_getSessionFromURL()", "clearing window.location.hash"),
-          { data: { session: b, redirectType: e.type }, error: null }
+          { data: { session: w, redirectType: e.type }, error: null }
         );
       } catch (r) {
         if (H(r))
@@ -20279,36 +20117,215 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
           (this.changedAccessToken = void 0));
     }
   }
-  const Xy = ((t, e, n) => new Gy(t, e, n))(
+  const Zc = ((t, e, n) => new Gy(t, e, n))(
       "https://sqesugujbokqdacsgqxu.supabase.co",
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNxZXN1Z3VqYm9rcWRhY3NncXh1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzIwNzQzMjEsImV4cCI6MjA0NzY1MDMyMX0.NdG4HHj-12E1SPTYKQQ7onMsBM7vRzoFrH27T4CgsCc"
     ),
-    Qy = async (t) => {
+    Xy = async (t) => {
       var r;
-      const { data: e, error: n } = await Xy.from("product_agent")
+      const { data: e, error: n } = await Zc.from("product_agent")
         .select("data")
         .eq("agentID", t);
       return n
         ? (console.error(n), null)
         : ((r = e[0]) == null ? void 0 : r.data) || null;
     },
-    Yy = async () => {
-      const t = document.getElementById("sjois-product-agent");
-      if (!t) return null;
-      const e = t.getAttribute("data-agent-id");
-      if (e) {
-        const n = await Qy(e);
-        ch(G(Yg, { agentInfo: n }), t);
-      } else return;
+    Qy = async () => {
+      const { data: t, error: e } = await Zc.from("product_agent")
+        .select("prompt")
+        .eq("agentID", "mapys8t2");
+      return e ? (console.log(e), !1) : t[0].prompt;
     };
+  function Yy({ site: t, productURL: e, openKey: n, agentID: r }) {
+    const [i, s] = Nn([]),
+      [a, o] = Nn(""),
+      [l, u] = Nn([]),
+      [c, h] = Nn(!1),
+      [f, d] = Nn(!1),
+      g = mf(null),
+      _ = bd(n),
+      y = () => {
+        g.current && (g.current.scrollTop = g.current.scrollHeight);
+      };
+    Zl(() => {
+      y();
+    }, [i]),
+      Zl(() => {
+        c || (w(), h(!0));
+      }, []);
+    const w = async () => {
+        let x = vd(t, e);
+        d(!0),
+          r === "mapys8t2" &&
+            (console.log("Fetching TRIS prompt"), (x = await Qy()));
+        const S = await fs(_, l, x);
+        if ((d(!1), S)) {
+          const A = { role: "assistant", content: S };
+          s((v) => [...v, A]),
+            u((v) => [...v, { role: "user", content: x }, A]);
+        }
+      },
+      b = async () => {
+        if (!a.trim()) return;
+        d(!0);
+        const x = { role: "user", content: a };
+        s((A) => [...A, x]), o("");
+        const S = await fs(_, [...l, x], a);
+        if ((d(!1), S)) {
+          const A = { role: "assistant", content: S };
+          s((v) => [...v, A]),
+            u((v) => [...v, x, A]),
+            Yg("sjois_prduct_agentID", r);
+        }
+      };
+    return G("div", {
+      className: "relative w-full  bg-white ",
+      children: [
+        G("div", {
+          style: { scrollbarWidth: "thin" },
+          className:
+            "h-300 p-3 overflow-y-auto  border-b border-gray-200 chat-bubble",
+          ref: g,
+          children: [
+            i.map((x, S) =>
+              G(
+                "div",
+                {
+                  className: `flex ${
+                    x.role === "user" ? "justify-end" : "justify-start"
+                  }`,
+                  children: G("div", {
+                    className: `p-2 rounded-md ${
+                      x.role === "user" ? "bg-dark text-white" : "bg-gray-100"
+                    }`,
+                    style: {
+                      maxWidth: "80%",
+                      wordWrap: "break-word",
+                      whiteSpace: "pre-wrap",
+                    },
+                    children: G(Jg, {
+                      components: {
+                        a: ({ ...A }) =>
+                          G("a", {
+                            ...A,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            children: A.children,
+                          }),
+                      },
+                      children: x.content,
+                    }),
+                  }),
+                },
+                S
+              )
+            ),
+            f &&
+              G("div", {
+                className:
+                  "p-2 rounded-md w-fit bg-gray-100 text-left flex items-center space-x-2",
+                children: [
+                  G("div", { className: "dot-pulse" }),
+                  G("div", { className: "dot-pulse" }),
+                  G("div", { className: "dot-pulse" }),
+                ],
+              }),
+          ],
+        }),
+        G("div", {
+          className: "p-3 flex gap-3 items-center  chat-footer",
+          children: [
+            G("input", {
+              onKeyDown: (x) => {
+                x.key === "Enter" && b();
+              },
+              type: "text",
+              value: a,
+              onChange: (x) => o(x.target.value),
+              placeholder: "Ask me anything about this product...",
+              className: "flex-1 input-chat ",
+            }),
+            G("svg", {
+              style: { cursor: "pointer" },
+              xmlns: "http://www.w3.org/2000/svg",
+              fill: "#000000",
+              viewBox: "0 0 24 24",
+              className: "w-6 h-6",
+              onClick: b,
+              children: [
+                G("g", {
+                  children: G("path", {
+                    d: "M2,3v7.8L18,12L2,13.2V21l20-9L2,3z",
+                  }),
+                }),
+                G("rect", { width: "24", height: "24", fill: "none" }),
+              ],
+            }),
+          ],
+        }),
+      ],
+    });
+  }
+  function Zy({ agentInfo: t, agentID: e }) {
+    return G("div", {
+      className: "border border-gray-200",
+      children: [
+        G("div", {
+          className: "flex gap-2 border-b border-gray-200  chat-header",
+          children: [
+            G("div", {
+              children: G("img", {
+                className: "rounded-full",
+                width: 40,
+                src: t.image,
+                alt: t.name,
+              }),
+            }),
+            G("div", {
+              children: [
+                G("h3", {
+                  style: { margin: 0 },
+                  className: "font-bold",
+                  children: t.name,
+                }),
+                G("p", {
+                  style: { marginBottom: 0, marginTop: "5px" },
+                  className: "text-sm text-gray-500",
+                  children: t.description,
+                }),
+              ],
+            }),
+          ],
+        }),
+        G("div", {
+          className: " my-1",
+          children: G(Yy, {
+            site: window.location.origin,
+            productURL: window.location.href,
+            openKey: t.openApiKey,
+            agentID: e,
+          }),
+        }),
+      ],
+    });
+  }
+  const ew = async () => {
+    const t = document.getElementById("sjois-product-agent");
+    if (!t) return null;
+    const e = t.getAttribute("data-agent-id");
+    if (e) {
+      const n = await Xy(e);
+      hh(G(Zy, { agentInfo: n, agentID: e }), t);
+    } else return;
+  };
   document.addEventListener("DOMContentLoaded", () => {
-    Yy();
+    ew();
   });
-  var ba, Zc;
-  function Zy() {
+  var ba, eh;
+  function tw() {
     return (
-      Zc ||
-        ((Zc = 1),
+      eh ||
+        ((eh = 1),
         (ba = function () {
           throw new Error(
             "ws does not work in the browser. Browser clients must use the native WebSocket object"
@@ -20317,10 +20334,10 @@ Sure! The [Bushveld Tundra Roof Top Tent](https://www.example.com/product/bushve
       ba
     );
   }
-  var ew = Zy();
-  const tw = Object.freeze(
+  var nw = tw();
+  const rw = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, default: jr(ew) },
+      { __proto__: null, default: jr(nw) },
       Symbol.toStringTag,
       { value: "Module" }
     )
